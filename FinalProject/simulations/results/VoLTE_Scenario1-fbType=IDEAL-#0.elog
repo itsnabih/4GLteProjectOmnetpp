@@ -1,0 +1,323 @@
+SB ov 1536 ev 2 rid VoLTE_Scenario1-0-20241114-18:51:44-22487
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t finalproject.simulations.Network n Network cm 1
+MDC id 1 d bgb=1002.3001,552.50006,,,0;bgi=background/budapest
+MC id 2 c ChannelControl t simu5g.world.radio.ChannelControl pid 1 n channelControl
+MDC id 2 d is=vs;p=87.10001,20.800003;i=misc/sun
+MC id 3 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB1 cm 1
+GC m 3 g 0 n ppp$i o 0
+GC m 3 g 1 n ppp$o o 1
+GC m 3 g 2 n radioIn o 0
+GC m 3 g 6 n pppMEHost$i o 0
+GC m 3 g 7 n pppMEHost$o o 1
+MDC id 3 d p=228.8,137.8;i=device/antennatower;bgb=1260,600
+MC id 4 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB2 cm 1
+GC m 4 g 0 n ppp$i o 0
+GC m 4 g 1 n ppp$o o 1
+GC m 4 g 2 n radioIn o 0
+GC m 4 g 6 n pppMEHost$i o 0
+GC m 4 g 7 n pppMEHost$o o 1
+MDC id 4 d p=211.90002,353.60004;i=device/antennatower;bgb=1260,600
+MC id 5 c inet::NodeBase t inet.node.inet.Router pid 1 n router1 cm 1
+MDC id 5 d p=414.70004,136.50002;i=abstract/router;bgb=1256,1125
+GC m 5 g 3145728 n ethg$i i 0 o 0
+GC m 5 g 3670016 n ethg$o i 0 o 1
+GC m 5 g 3145729 n ethg$i i 1 o 0
+GC m 5 g 3670017 n ethg$o i 1 o 1
+MC id 6 c inet::NodeBase t inet.node.inet.Router pid 1 n router2 cm 1
+MDC id 6 d p=462.8,356.19998;i=abstract/router;bgb=1256,1125
+GC m 6 g 3145728 n ethg$i i 0 o 0
+GC m 6 g 3670016 n ethg$o i 0 o 1
+GC m 6 g 3145729 n ethg$i i 1 o 0
+GC m 6 g 3670017 n ethg$o i 1 o 1
+MC id 7 c inet::NodeBase t inet.node.inet.Router pid 1 n coreRouter cm 1
+MDC id 7 d p=594.1001,235.30003;i=abstract/router;bgb=1256,1125
+GC m 7 g 3145728 n ethg$i i 0 o 0
+GC m 7 g 3670016 n ethg$o i 0 o 1
+GC m 7 g 3145729 n ethg$i i 1 o 0
+GC m 7 g 3670017 n ethg$o i 1 o 1
+GC m 7 g 3145730 n ethg$i i 2 o 0
+GC m 7 g 3670018 n ethg$o i 2 o 1
+MC id 8 c inet::NodeBase t simu5g.nodes.PgwStandard pid 1 n pgw cm 1
+GC m 8 g 6 n filterGate$i o 0
+GC m 8 g 7 n filterGate$o o 1
+MDC id 8 d is=s;p=728.0001,235.30003;i=device/mainframe;bgb=1350,750
+GC m 8 g 3145728 n ethg$i i 0 o 0
+GC m 8 g 3670016 n ethg$o i 0 o 1
+GC m 8 g 3145729 n ethg$i i 1 o 0
+GC m 8 g 3670017 n ethg$o i 1 o 1
+MC id 9 c inet::NodeBase t inet.node.inet.Router pid 1 n edgeRouter cm 1
+MDC id 9 d p=907.40015,235.30003;i=abstract/router;bgb=1256,1125
+GC m 9 g 3145728 n ethg$i i 0 o 0
+GC m 9 g 3670016 n ethg$o i 0 o 1
+GC m 9 g 3145729 n ethg$i i 1 o 0
+GC m 9 g 3670017 n ethg$o i 1 o 1
+MC id 10 c inet::NodeBase t inet.node.inet.StandardHost pid 1 n standardHost cm 1
+MDC id 10 d p=763.1,55.899998;i=device/pc2;bgb=1256,1125
+GC m 10 g 3145728 n ethg$i i 0 o 0
+GC m 10 g 3670016 n ethg$o i 0 o 1
+MC id 11 c Binder t simu5g.common.binder.Binder pid 1 n binder
+MDC id 11 d is=vs;p=88.40001,171.60002;i=block/cogwheel
+MC id 12 c inet::RoutingTableRecorder t inet.networklayer.ipv4.RoutingTableRecorder pid 1 n routingRecorder
+MDC id 12 d is=vs;p=88.40001,72.80001;i=block/control
+MC id 13 c inet::Ipv4NetworkConfigurator t inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator pid 1 n Configurator
+MDC id 13 d is=vs;p=88.40001,122.20002;i=block/cogwheel
+MC id 14 c inet::NodeBase t simu5g.nodes.Upf pid 1 n upf1 cm 1
+GC m 14 g 6 n filterGate$i o 0
+GC m 14 g 7 n filterGate$o o 1
+MDC id 14 d p=592.8001,137.80002;i=abstract/switch;bgb=1348.9225,1103.51
+GC m 14 g 3145728 n ethg$i i 0 o 0
+GC m 14 g 3670016 n ethg$o i 0 o 1
+GC m 14 g 3145729 n ethg$i i 1 o 0
+GC m 14 g 3670017 n ethg$o i 1 o 1
+GC m 14 g 3145730 n ethg$i i 2 o 0
+GC m 14 g 3670018 n ethg$o i 2 o 1
+MC id 15 c inet::NodeBase t simu5g.nodes.Upf pid 1 n upf2 cm 1
+GC m 15 g 6 n filterGate$i o 0
+GC m 15 g 7 n filterGate$o o 1
+MDC id 15 d p=594.1001,353.60004;i=abstract/switch;bgb=1348.9225,1103.51
+GC m 15 g 3145728 n ethg$i i 0 o 0
+GC m 15 g 3670016 n ethg$o i 0 o 1
+GC m 15 g 3145729 n ethg$i i 1 o 0
+GC m 15 g 3670017 n ethg$o i 1 o 1
+MC id 16 c inet::NodeBase t inet.node.inet.WirelessHost pid 1 n InternetHost cm 1
+MDC id 16 d p=907.40015,353.60004;i=device/wifilaptop;bgb=1256,1125
+GC m 16 g 1048576 n radioIn i 0 o 0
+GC m 16 g 3145728 n ethg$i i 0 o 0
+GC m 16 g 3670016 n ethg$o i 0 o 1
+MC id 17 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue cm 1
+GC m 17 g 0 n radioIn o 0
+MDC id 17 d is=s;p=291.20004,78.00001;i=device/pocketpc;bgb=858.888,659.568
+MC id 18 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue1 cm 1
+GC m 18 g 0 n radioIn o 0
+MDC id 18 d is=s;p=283.40002,401.70004;i=device/pocketpc;bgb=858.888,659.568
+MC id 19 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue2 cm 1
+GC m 19 g 0 n radioIn o 0
+MDC id 19 d is=s;p=341.90005,409.50006;i=device/pocketpc;bgb=858.888,659.568
+CC sm 9 sg 3670016 dm 16 dg 3145728
+CDC sm 9 sg 3670016 d ""
+CC sm 16 sg 3670016 dm 9 dg 3145728
+CDC sm 16 sg 3670016 d ""
+CC sm 5 sg 3670017 dm 14 dg 3145728
+CDC sm 5 sg 3670017 d ""
+CC sm 14 sg 3670016 dm 5 dg 3145729
+CDC sm 14 sg 3670016 d ""
+CC sm 10 sg 3670016 dm 14 dg 3145729
+CDC sm 10 sg 3670016 d ""
+CC sm 14 sg 3670017 dm 10 dg 3145728
+CDC sm 14 sg 3670017 d ""
+CC sm 14 sg 3670018 dm 7 dg 3145728
+CDC sm 14 sg 3670018 d ""
+CC sm 7 sg 3670016 dm 14 dg 3145730
+CDC sm 7 sg 3670016 d ""
+CC sm 6 sg 3670017 dm 15 dg 3145728
+CDC sm 6 sg 3670017 d ""
+CC sm 15 sg 3670016 dm 6 dg 3145729
+CDC sm 15 sg 3670016 d ""
+CC sm 15 sg 3670017 dm 7 dg 3145729
+CDC sm 15 sg 3670017 d ""
+CC sm 7 sg 3670017 dm 15 dg 3145729
+CDC sm 7 sg 3670017 d ""
+CC sm 7 sg 3670018 dm 8 dg 3145728
+CDC sm 7 sg 3670018 d ""
+CC sm 8 sg 3670016 dm 7 dg 3145730
+CDC sm 8 sg 3670016 d ""
+CC sm 8 sg 3670017 dm 9 dg 3145729
+CDC sm 8 sg 3670017 d ""
+CC sm 9 sg 3670017 dm 8 dg 3145729
+CDC sm 9 sg 3670017 d ""
+CC sm 3 sg 1 dm 5 dg 3145728
+CDC sm 3 sg 1 d ""
+CC sm 5 sg 3670016 dm 3 dg 0
+CDC sm 5 sg 3670016 d ""
+CC sm 4 sg 1 dm 6 dg 3145728
+CDC sm 4 sg 1 d ""
+CC sm 6 sg 3670016 dm 4 dg 0
+CDC sm 6 sg 3670016 d ""
+MC id 40 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 3 n interfaceTable
+MDC id 40 d is=s;p=110.43,158.4875;i=block/table
+MC id 41 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 3 n mobility
+MDC id 41 d is=s;p=110.43,343.56;i=block/cogwheel
+MC id 42 c CellInfo t simu5g.common.cellInfo.CellInfo pid 3 n cellInfo
+MDC id 42 d is=s;p=110.43,244.3775;i=block/control
+MC id 43 c inet::NetworkInterface t simu5g.stack.LteNicEnb pid 3 n cellularNic
+GC m 43 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 43 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 43 g 2 n upperLayerIn o 0
+GC m 43 g 5 n upperLayerOut o 1
+GC m 43 g 6 n radioIn o 0
+GC m 43 g 8 n nrRadioIn o 0
+MDC id 43 d p=433.54,520.4525;bgl=3;bgb=704,443;i=block/ifcard
+MC id 44 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 3 n pppIf
+GC m 44 g 0 n upperLayerIn o 0
+GC m 44 g 3 n upperLayerOut o 1
+GC m 44 g 4 n phys$i o 0
+GC m 44 g 5 n phys$o o 1
+MDC id 44 d p=824.76,519.82;i=block/ifcard
+MC id 45 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 3 n pppMEHostIf
+GC m 45 g 0 n upperLayerIn o 0
+GC m 45 g 3 n upperLayerOut o 1
+GC m 45 g 4 n phys$i o 0
+GC m 45 g 5 n phys$o o 1
+MDC id 45 d p=657.28,519.82;i=block/ifcard
+MC id 46 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 3 n ipv4 cm 1
+GC m 46 g 0 n ifIn o 0
+GC m 46 g 3 n ifOut o 1
+GC m 46 g 4 n transportIn o 0
+GC m 46 g 7 n transportOut o 1
+MDC id 46 d q=queue;p=494.54,372.88;i=block/fork
+MC id 47 c inet::Udp t inet.transportlayer.udp.Udp pid 3 n udp
+GC m 47 g 0 n appIn o 0
+GC m 47 g 2 n ipIn o 0
+GC m 47 g 5 n appOut o 1
+GC m 47 g 7 n ipOut o 1
+MDC id 47 d p=682.0075,212.68001;i=block/transport
+MC id 48 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 3 n tcp
+GC m 48 g 0 n appIn o 0
+GC m 48 g 2 n ipIn o 0
+GC m 48 g 5 n appOut o 1
+GC m 48 g 7 n ipOut o 1
+MDC id 48 d p=963.195,212.68001;i=block/wheelbarrow
+MC id 49 c inet::sctp::Sctp t inet.transportlayer.sctp.Sctp pid 3 n sctp
+GC m 49 g 0 n appIn o 0
+GC m 49 g 2 n ipIn o 0
+GC m 49 g 5 n appOut o 1
+GC m 49 g 7 n ipOut o 1
+MDC id 49 d p=494.54,211.72;i=block/wheelbarrow
+MC id 50 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n at
+MDC id 50 d p=750,146;b=1000,5,,,,1
+MC id 51 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n tn
+MDC id 51 d p=750,296;b=1000,5,,,,1
+MC id 52 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n nl
+MDC id 52 d p=750,446;b=1000,5,,,,1
+MC id 53 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 3 n trafficFlowFilter
+GC m 53 g 0 n internetFilterGateIn o 0
+GC m 53 g 3 n gtpUserGateOut o 1
+MDC id 53 d p=1172.36,372.88;i=block/filter
+MC id 54 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 3 n gtpUser
+GC m 54 g 1 n socketOut o 1
+GC m 54 g 2 n socketIn o 0
+GC m 54 g 4 n trafficFlowFilterGate o 0
+GC m 54 g 7 n pppGate o 1
+MDC id 54 d p=1041.22,372.88;i=block/tunnel
+MC id 55 c GtpUserX2 t simu5g.corenetwork.gtp.GtpUserX2 pid 3 n gtpUserX2
+GC m 55 g 1 n socketOut o 1
+GC m 55 g 2 n socketIn o 0
+GC m 55 g 5 n lteStackOut o 1
+GC m 55 g 6 n lteStackIn o 0
+MDC id 55 d p=900.60004,372.88;i=block/tunnel
+CC sm 3 sg 2 dm 43 dg 6
+CC sm 44 sg 5 dm 3 dg 1
+CC sm 3 sg 0 dm 44 dg 4
+GC m 52 g 1048576 n in i 0 o 0
+CC sm 44 sg 3 dm 52 dg 1048576
+GC m 52 g 2621440 n out i 0 o 1
+CC sm 52 sg 2621440 dm 44 dg 0
+GC m 52 g 1048577 n in i 1 o 0
+CC sm 54 sg 7 dm 52 dg 1048577
+CC sm 53 sg 3 dm 54 dg 4
+GC m 52 g 2621441 n out i 1 o 1
+CC sm 52 sg 2621441 dm 53 dg 0
+GC m 50 g 1048576 n in i 0 o 0
+CC sm 54 sg 1 dm 50 dg 1048576
+GC m 50 g 2621440 n out i 0 o 1
+CC sm 50 sg 2621440 dm 54 dg 2
+GC m 43 g 6291456 n x2$i i 0 o 0
+GC m 43 g 6815744 n x2$o i 0 o 1
+CC sm 55 sg 5 dm 43 dg 6291456
+CC sm 43 sg 6815744 dm 55 dg 6
+GC m 50 g 1048577 n in i 1 o 0
+CC sm 55 sg 1 dm 50 dg 1048577
+GC m 50 g 2621441 n out i 1 o 1
+CC sm 50 sg 2621441 dm 55 dg 2
+GC m 50 g 2621442 n out i 2 o 1
+CC sm 50 sg 2621442 dm 47 dg 0
+GC m 50 g 1048578 n in i 2 o 0
+CC sm 47 sg 5 dm 50 dg 1048578
+GC m 50 g 2621443 n out i 3 o 1
+CC sm 50 sg 2621443 dm 48 dg 0
+GC m 50 g 1048579 n in i 3 o 0
+CC sm 48 sg 5 dm 50 dg 1048579
+GC m 50 g 2621444 n out i 4 o 1
+CC sm 50 sg 2621444 dm 49 dg 0
+GC m 50 g 1048580 n in i 4 o 0
+CC sm 49 sg 5 dm 50 dg 1048580
+GC m 51 g 1048576 n in i 0 o 0
+CC sm 47 sg 7 dm 51 dg 1048576
+GC m 51 g 2621440 n out i 0 o 1
+CC sm 51 sg 2621440 dm 47 dg 2
+GC m 51 g 1048577 n in i 1 o 0
+CC sm 48 sg 7 dm 51 dg 1048577
+GC m 51 g 2621441 n out i 1 o 1
+CC sm 51 sg 2621441 dm 48 dg 2
+GC m 51 g 1048578 n in i 2 o 0
+CC sm 49 sg 7 dm 51 dg 1048578
+GC m 51 g 2621442 n out i 2 o 1
+CC sm 51 sg 2621442 dm 49 dg 2
+GC m 52 g 2621442 n out i 2 o 1
+CC sm 52 sg 2621442 dm 46 dg 0
+GC m 52 g 1048578 n in i 2 o 0
+CC sm 46 sg 3 dm 52 dg 1048578
+GC m 51 g 2621443 n out i 3 o 1
+CC sm 51 sg 2621443 dm 46 dg 4
+GC m 51 g 1048579 n in i 3 o 0
+CC sm 46 sg 7 dm 51 dg 1048579
+GC m 51 g 2621444 n out i 4 o 1
+GC m 52 g 1048579 n in i 3 o 0
+CC sm 51 sg 2621444 dm 52 dg 1048579
+GC m 52 g 2621443 n out i 3 o 1
+GC m 51 g 1048580 n in i 4 o 0
+CC sm 52 sg 2621443 dm 51 dg 1048580
+GC m 50 g 2621445 n out i 5 o 1
+GC m 51 g 1048581 n in i 5 o 0
+CC sm 50 sg 2621445 dm 51 dg 1048581
+GC m 51 g 2621445 n out i 5 o 1
+GC m 50 g 1048581 n in i 5 o 0
+CC sm 51 sg 2621445 dm 50 dg 1048581
+GC m 52 g 2621444 n out i 4 o 1
+CC sm 52 sg 2621444 dm 43 dg 2
+GC m 52 g 1048580 n in i 4 o 0
+CC sm 43 sg 5 dm 52 dg 1048580
+GC m 52 g 2621445 n out i 5 o 1
+CC sm 52 sg 2621445 dm 45 dg 0
+GC m 52 g 1048581 n in i 5 o 0
+CC sm 45 sg 3 dm 52 dg 1048581
+CC sm 3 sg 6 dm 45 dg 4
+CC sm 45 sg 5 dm 3 dg 7
+MC id 56 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 43 n ip2nic
+GC m 56 g 0 n upperLayerIn o 0
+GC m 56 g 3 n upperLayerOut o 1
+GC m 56 g 4 n stackNic$i o 0
+GC m 56 g 5 n stackNic$o o 1
+MDC id 56 d p=362,67;i=block/layer
+MC id 57 c LtePdcpRrcEnb t simu5g.stack.pdcp_rrc.LtePdcpRrcEnb pid 43 n pdcpRrc
+GC m 57 g 0 n DataPort$i o 0
+GC m 57 g 1 n DataPort$o o 1
+GC m 57 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 57 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 57 d p=362,141;i=block/fork
+MC id 58 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 43 n rlc cm 1
+GC m 58 g 0 n TM_Sap$i o 0
+GC m 58 g 1 n TM_Sap$o o 1
+GC m 58 g 2 n UM_Sap$i o 0
+GC m 58 g 3 n UM_Sap$o o 1
+GC m 58 g 4 n AM_Sap$i o 0
+GC m 58 g 5 n AM_Sap$o o 1
+GC m 58 g 6 n MAC_to_RLC o 0
+GC m 58 g 9 n RLC_to_MAC o 1
+MDC id 58 d p=362,226;i=block/transport
+MC id 59 c LteMacEnb t simu5g.stack.mac.LteMacEnb pid 43 n mac
+GC m 59 g 0 n RLC_to_MAC o 0
+GC m 59 g 3 n MAC_to_RLC o 1
+GC m 59 g 4 n PHY_to_MAC o 0
+GC m 59 g 7 n MAC_to_PHY o 1
+MDC id 59 d p=363,314;i=block/mac
+MC id 60 c LtePhyEnb t simu5g.stack.phy.LtePhyEnb pid 43 n phy
+GC m 60 g 0 n upperGateIn o 0
+GC m 60 g 3 n upperGateOut o 1
+GC m 60 g 4 n radioIn o 0
+MDC id 60 d p=363,389;i=block/wrxtx
+MC id 61 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 43 n channelModel[0]
+
+SE e 0 c -1 m ""

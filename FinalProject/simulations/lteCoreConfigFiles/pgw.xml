@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lteCoreConfigFiles/pgw.xml -->
+<filterTable>
+    <!-- Default bearer -->
+    <filter>
+        <id>1</id>
+        <precedence>1</precedence>
+        <tftFlow>
+            <direction>BIDIRECTIONAL</direction>
+            <type>IPV4</type>
+            <source>10.0.0.0/24</source>  <!-- UE subnet -->
+            <destination>10.0.4.0/24</destination>  <!-- Internet subnet -->
+            <tos>0</tos>
+            <protocol>17</protocol>  <!-- UDP for VoLTE -->
+            <sourcePortStart>3000</sourcePortStart>
+            <sourcePortEnd>3000</sourcePortEnd>
+            <destinationPortStart>3000</destinationPortStart>
+            <destinationPortEnd>3000</destinationPortEnd>
+        </tftFlow>
+        <qosInfo>
+            <qci>1</qci>  <!-- QCI 1 for VoLTE -->
+            <gbr>128</gbr>
+            <mbr>256</mbr>
+            <arp>1</arp>
+        </qosInfo>
+    </filter>
+    
+    <!-- Additional bearer for signaling -->
+    <filter>
+        <id>2</id>
+        <precedence>2</precedence>
+        <tftFlow>
+            <direction>BIDIRECTIONAL</direction>
+            <type>IPV4</type>
+            <source>10.0.0.0/24</source>
+            <destination>10.0.4.0/24</destination>
+            <tos>0</tos>
+            <protocol>17</protocol>
+        </tftFlow>
+        <qosInfo>
+            <qci>5</qci>  <!-- QCI 5 for IMS signaling -->
+            <gbr>64</gbr>
+            <mbr>128</mbr>
+            <arp>2</arp>
+        </qosInfo>
+    </filter>
+</filterTable>

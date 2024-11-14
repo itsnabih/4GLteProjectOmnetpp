@@ -1,0 +1,4563 @@
+SB ov 1536 ev 2 rid VoLTE_Scenario1-0-20241114-19:40:00-25942
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t finalproject.simulations.Network n Network cm 1
+MDC id 1 d bgb=1002.3001,552.50006,,,0;bgi=background/budapest
+MC id 2 c ChannelControl t simu5g.world.radio.ChannelControl pid 1 n channelControl
+MDC id 2 d is=vs;p=87.10001,20.800003;i=misc/sun
+MC id 3 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB1 cm 1
+GC m 3 g 0 n ppp$i o 0
+GC m 3 g 1 n ppp$o o 1
+GC m 3 g 2 n radioIn o 0
+GC m 3 g 6 n pppMEHost$i o 0
+GC m 3 g 7 n pppMEHost$o o 1
+MDC id 3 d p=228.8,137.8;i=device/antennatower;bgb=1260,600
+MC id 4 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB2 cm 1
+GC m 4 g 0 n ppp$i o 0
+GC m 4 g 1 n ppp$o o 1
+GC m 4 g 2 n radioIn o 0
+GC m 4 g 6 n pppMEHost$i o 0
+GC m 4 g 7 n pppMEHost$o o 1
+MDC id 4 d p=211.90002,353.60004;i=device/antennatower;bgb=1260,600
+MC id 5 c inet::NodeBase t inet.node.inet.Router pid 1 n router1 cm 1
+MDC id 5 d p=414.70004,136.50002;i=abstract/router;bgb=1256,1125
+GC m 5 g 3145728 n ethg$i i 0 o 0
+GC m 5 g 3670016 n ethg$o i 0 o 1
+GC m 5 g 3145729 n ethg$i i 1 o 0
+GC m 5 g 3670017 n ethg$o i 1 o 1
+MC id 6 c inet::NodeBase t inet.node.inet.Router pid 1 n router2 cm 1
+MDC id 6 d p=462.8,356.19998;i=abstract/router;bgb=1256,1125
+GC m 6 g 3145728 n ethg$i i 0 o 0
+GC m 6 g 3670016 n ethg$o i 0 o 1
+GC m 6 g 3145729 n ethg$i i 1 o 0
+GC m 6 g 3670017 n ethg$o i 1 o 1
+MC id 7 c inet::NodeBase t inet.node.inet.Router pid 1 n coreRouter cm 1
+MDC id 7 d p=594.1001,235.30003;i=abstract/router;bgb=1256,1125
+GC m 7 g 3145728 n ethg$i i 0 o 0
+GC m 7 g 3670016 n ethg$o i 0 o 1
+GC m 7 g 3145729 n ethg$i i 1 o 0
+GC m 7 g 3670017 n ethg$o i 1 o 1
+GC m 7 g 3145730 n ethg$i i 2 o 0
+GC m 7 g 3670018 n ethg$o i 2 o 1
+MC id 8 c inet::NodeBase t simu5g.nodes.PgwStandard pid 1 n pgw cm 1
+GC m 8 g 6 n filterGate$i o 0
+GC m 8 g 7 n filterGate$o o 1
+MDC id 8 d is=s;p=728.0001,235.30003;i=device/mainframe;bgb=1350,750
+GC m 8 g 3145728 n ethg$i i 0 o 0
+GC m 8 g 3670016 n ethg$o i 0 o 1
+GC m 8 g 3145729 n ethg$i i 1 o 0
+GC m 8 g 3670017 n ethg$o i 1 o 1
+MC id 9 c inet::NodeBase t inet.node.inet.Router pid 1 n edgeRouter cm 1
+MDC id 9 d p=907.40015,235.30003;i=abstract/router;bgb=1256,1125
+GC m 9 g 3145728 n ethg$i i 0 o 0
+GC m 9 g 3670016 n ethg$o i 0 o 1
+GC m 9 g 3145729 n ethg$i i 1 o 0
+GC m 9 g 3670017 n ethg$o i 1 o 1
+MC id 10 c inet::NodeBase t inet.node.inet.StandardHost pid 1 n standardHost cm 1
+MDC id 10 d p=763.1,55.899998;i=device/pc2;bgb=1256,1125
+GC m 10 g 3145728 n ethg$i i 0 o 0
+GC m 10 g 3670016 n ethg$o i 0 o 1
+MC id 11 c Binder t simu5g.common.binder.Binder pid 1 n binder
+MDC id 11 d is=vs;p=88.40001,171.60002;i=block/cogwheel
+MC id 12 c inet::RoutingTableRecorder t inet.networklayer.ipv4.RoutingTableRecorder pid 1 n routingRecorder
+MDC id 12 d is=vs;p=88.40001,72.80001;i=block/control
+MC id 13 c inet::Ipv4NetworkConfigurator t inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator pid 1 n Configurator
+MDC id 13 d is=vs;p=88.40001,122.20002;i=block/cogwheel
+MC id 14 c inet::NodeBase t simu5g.nodes.Upf pid 1 n upf1 cm 1
+GC m 14 g 6 n filterGate$i o 0
+GC m 14 g 7 n filterGate$o o 1
+MDC id 14 d p=592.8001,137.80002;i=abstract/switch;bgb=1348.9225,1103.51
+GC m 14 g 3145728 n ethg$i i 0 o 0
+GC m 14 g 3670016 n ethg$o i 0 o 1
+GC m 14 g 3145729 n ethg$i i 1 o 0
+GC m 14 g 3670017 n ethg$o i 1 o 1
+GC m 14 g 3145730 n ethg$i i 2 o 0
+GC m 14 g 3670018 n ethg$o i 2 o 1
+MC id 15 c inet::NodeBase t simu5g.nodes.Upf pid 1 n upf2 cm 1
+GC m 15 g 6 n filterGate$i o 0
+GC m 15 g 7 n filterGate$o o 1
+MDC id 15 d p=594.1001,353.60004;i=abstract/switch;bgb=1348.9225,1103.51
+GC m 15 g 3145728 n ethg$i i 0 o 0
+GC m 15 g 3670016 n ethg$o i 0 o 1
+GC m 15 g 3145729 n ethg$i i 1 o 0
+GC m 15 g 3670017 n ethg$o i 1 o 1
+MC id 16 c inet::NodeBase t inet.node.inet.WirelessHost pid 1 n InternetHost cm 1
+MDC id 16 d p=907.40015,353.60004;i=device/wifilaptop;bgb=1256,1125
+GC m 16 g 1048576 n radioIn i 0 o 0
+GC m 16 g 3145728 n ethg$i i 0 o 0
+GC m 16 g 3670016 n ethg$o i 0 o 1
+MC id 17 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue cm 1
+GC m 17 g 0 n radioIn o 0
+MDC id 17 d is=s;p=291.20004,78.00001;i=device/pocketpc;bgb=858.888,659.568
+MC id 18 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue1 cm 1
+GC m 18 g 0 n radioIn o 0
+MDC id 18 d is=s;p=283.40002,401.70004;i=device/pocketpc;bgb=858.888,659.568
+MC id 19 c omnetpp::cModule t simu5g.nodes.Ue pid 1 n ue2 cm 1
+GC m 19 g 0 n radioIn o 0
+MDC id 19 d is=s;p=341.90005,409.50006;i=device/pocketpc;bgb=858.888,659.568
+MC id 20 c inet::ScenarioManager t inet.common.scenario.ScenarioManager pid 1 n scenarioManager
+MDC id 20 d is=vs;p=88.40001,224.90002;i=block/control
+MC id 21 c omnetpp::cModule t simu5g.common.carrierAggregation.CarrierAggregation pid 1 n carrierAggregation cm 1
+MDC id 21 d is=vs;p=88.40001,271.70004;i=block/control
+CC sm 9 sg 3670016 dm 16 dg 3145728
+CDC sm 9 sg 3670016 d ""
+CC sm 16 sg 3670016 dm 9 dg 3145728
+CDC sm 16 sg 3670016 d ""
+CC sm 5 sg 3670017 dm 14 dg 3145728
+CDC sm 5 sg 3670017 d ""
+CC sm 14 sg 3670016 dm 5 dg 3145729
+CDC sm 14 sg 3670016 d ""
+CC sm 10 sg 3670016 dm 14 dg 3145729
+CDC sm 10 sg 3670016 d ""
+CC sm 14 sg 3670017 dm 10 dg 3145728
+CDC sm 14 sg 3670017 d ""
+CC sm 14 sg 3670018 dm 7 dg 3145728
+CDC sm 14 sg 3670018 d ""
+CC sm 7 sg 3670016 dm 14 dg 3145730
+CDC sm 7 sg 3670016 d ""
+CC sm 6 sg 3670017 dm 15 dg 3145728
+CDC sm 6 sg 3670017 d ""
+CC sm 15 sg 3670016 dm 6 dg 3145729
+CDC sm 15 sg 3670016 d ""
+CC sm 15 sg 3670017 dm 7 dg 3145729
+CDC sm 15 sg 3670017 d ""
+CC sm 7 sg 3670017 dm 15 dg 3145729
+CDC sm 7 sg 3670017 d ""
+CC sm 7 sg 3670018 dm 8 dg 3145728
+CDC sm 7 sg 3670018 d ""
+CC sm 8 sg 3670016 dm 7 dg 3145730
+CDC sm 8 sg 3670016 d ""
+CC sm 8 sg 3670017 dm 9 dg 3145729
+CDC sm 8 sg 3670017 d ""
+CC sm 9 sg 3670017 dm 8 dg 3145729
+CDC sm 9 sg 3670017 d ""
+CC sm 3 sg 1 dm 5 dg 3145728
+CDC sm 3 sg 1 d ""
+CC sm 5 sg 3670016 dm 3 dg 0
+CDC sm 5 sg 3670016 d ""
+CC sm 4 sg 1 dm 6 dg 3145728
+CDC sm 4 sg 1 d ""
+CC sm 6 sg 3670016 dm 4 dg 0
+CDC sm 6 sg 3670016 d ""
+MC id 42 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 3 n interfaceTable
+MDC id 42 d is=s;p=110.43,158.4875;i=block/table
+MC id 43 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 3 n mobility
+MDC id 43 d is=s;p=110.43,343.56;i=block/cogwheel
+MC id 44 c CellInfo t simu5g.common.cellInfo.CellInfo pid 3 n cellInfo
+MDC id 44 d is=s;p=110.43,244.3775;i=block/control
+MC id 45 c inet::NetworkInterface t simu5g.stack.LteNicEnb pid 3 n cellularNic
+GC m 45 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 45 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 45 g 2 n upperLayerIn o 0
+GC m 45 g 5 n upperLayerOut o 1
+GC m 45 g 6 n radioIn o 0
+GC m 45 g 8 n nrRadioIn o 0
+MDC id 45 d p=433.54,520.4525;bgl=3;bgb=704,443;i=block/ifcard
+MC id 46 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 3 n pppIf
+GC m 46 g 0 n upperLayerIn o 0
+GC m 46 g 3 n upperLayerOut o 1
+GC m 46 g 4 n phys$i o 0
+GC m 46 g 5 n phys$o o 1
+MDC id 46 d p=824.76,519.82;i=block/ifcard
+MC id 47 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 3 n pppMEHostIf
+GC m 47 g 0 n upperLayerIn o 0
+GC m 47 g 3 n upperLayerOut o 1
+GC m 47 g 4 n phys$i o 0
+GC m 47 g 5 n phys$o o 1
+MDC id 47 d p=657.28,519.82;i=block/ifcard
+MC id 48 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 3 n ipv4 cm 1
+GC m 48 g 0 n ifIn o 0
+GC m 48 g 3 n ifOut o 1
+GC m 48 g 4 n transportIn o 0
+GC m 48 g 7 n transportOut o 1
+MDC id 48 d q=queue;p=494.54,372.88;i=block/fork
+MC id 49 c inet::Udp t inet.transportlayer.udp.Udp pid 3 n udp
+GC m 49 g 0 n appIn o 0
+GC m 49 g 2 n ipIn o 0
+GC m 49 g 5 n appOut o 1
+GC m 49 g 7 n ipOut o 1
+MDC id 49 d p=682.0075,212.68001;i=block/transport
+MC id 50 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 3 n tcp
+GC m 50 g 0 n appIn o 0
+GC m 50 g 2 n ipIn o 0
+GC m 50 g 5 n appOut o 1
+GC m 50 g 7 n ipOut o 1
+MDC id 50 d p=963.195,212.68001;i=block/wheelbarrow
+MC id 51 c inet::sctp::Sctp t inet.transportlayer.sctp.Sctp pid 3 n sctp
+GC m 51 g 0 n appIn o 0
+GC m 51 g 2 n ipIn o 0
+GC m 51 g 5 n appOut o 1
+GC m 51 g 7 n ipOut o 1
+MDC id 51 d p=494.54,211.72;i=block/wheelbarrow
+MC id 52 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n at
+MDC id 52 d p=750,146;b=1000,5,,,,1
+MC id 53 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n tn
+MDC id 53 d p=750,296;b=1000,5,,,,1
+MC id 54 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 3 n nl
+MDC id 54 d p=750,446;b=1000,5,,,,1
+MC id 55 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 3 n trafficFlowFilter
+GC m 55 g 0 n internetFilterGateIn o 0
+GC m 55 g 3 n gtpUserGateOut o 1
+MDC id 55 d p=1172.36,372.88;i=block/filter
+MC id 56 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 3 n gtpUser
+GC m 56 g 1 n socketOut o 1
+GC m 56 g 2 n socketIn o 0
+GC m 56 g 4 n trafficFlowFilterGate o 0
+GC m 56 g 7 n pppGate o 1
+MDC id 56 d p=1041.22,372.88;i=block/tunnel
+MC id 57 c GtpUserX2 t simu5g.corenetwork.gtp.GtpUserX2 pid 3 n gtpUserX2
+GC m 57 g 1 n socketOut o 1
+GC m 57 g 2 n socketIn o 0
+GC m 57 g 5 n lteStackOut o 1
+GC m 57 g 6 n lteStackIn o 0
+MDC id 57 d p=900.60004,372.88;i=block/tunnel
+CC sm 3 sg 2 dm 45 dg 6
+CC sm 46 sg 5 dm 3 dg 1
+CC sm 3 sg 0 dm 46 dg 4
+GC m 54 g 1048576 n in i 0 o 0
+CC sm 46 sg 3 dm 54 dg 1048576
+GC m 54 g 2621440 n out i 0 o 1
+CC sm 54 sg 2621440 dm 46 dg 0
+GC m 54 g 1048577 n in i 1 o 0
+CC sm 56 sg 7 dm 54 dg 1048577
+CC sm 55 sg 3 dm 56 dg 4
+GC m 54 g 2621441 n out i 1 o 1
+CC sm 54 sg 2621441 dm 55 dg 0
+GC m 52 g 1048576 n in i 0 o 0
+CC sm 56 sg 1 dm 52 dg 1048576
+GC m 52 g 2621440 n out i 0 o 1
+CC sm 52 sg 2621440 dm 56 dg 2
+GC m 45 g 6291456 n x2$i i 0 o 0
+GC m 45 g 6815744 n x2$o i 0 o 1
+CC sm 57 sg 5 dm 45 dg 6291456
+CC sm 45 sg 6815744 dm 57 dg 6
+GC m 52 g 1048577 n in i 1 o 0
+CC sm 57 sg 1 dm 52 dg 1048577
+GC m 52 g 2621441 n out i 1 o 1
+CC sm 52 sg 2621441 dm 57 dg 2
+GC m 52 g 2621442 n out i 2 o 1
+CC sm 52 sg 2621442 dm 49 dg 0
+GC m 52 g 1048578 n in i 2 o 0
+CC sm 49 sg 5 dm 52 dg 1048578
+GC m 52 g 2621443 n out i 3 o 1
+CC sm 52 sg 2621443 dm 50 dg 0
+GC m 52 g 1048579 n in i 3 o 0
+CC sm 50 sg 5 dm 52 dg 1048579
+GC m 52 g 2621444 n out i 4 o 1
+CC sm 52 sg 2621444 dm 51 dg 0
+GC m 52 g 1048580 n in i 4 o 0
+CC sm 51 sg 5 dm 52 dg 1048580
+GC m 53 g 1048576 n in i 0 o 0
+CC sm 49 sg 7 dm 53 dg 1048576
+GC m 53 g 2621440 n out i 0 o 1
+CC sm 53 sg 2621440 dm 49 dg 2
+GC m 53 g 1048577 n in i 1 o 0
+CC sm 50 sg 7 dm 53 dg 1048577
+GC m 53 g 2621441 n out i 1 o 1
+CC sm 53 sg 2621441 dm 50 dg 2
+GC m 53 g 1048578 n in i 2 o 0
+CC sm 51 sg 7 dm 53 dg 1048578
+GC m 53 g 2621442 n out i 2 o 1
+CC sm 53 sg 2621442 dm 51 dg 2
+GC m 54 g 2621442 n out i 2 o 1
+CC sm 54 sg 2621442 dm 48 dg 0
+GC m 54 g 1048578 n in i 2 o 0
+CC sm 48 sg 3 dm 54 dg 1048578
+GC m 53 g 2621443 n out i 3 o 1
+CC sm 53 sg 2621443 dm 48 dg 4
+GC m 53 g 1048579 n in i 3 o 0
+CC sm 48 sg 7 dm 53 dg 1048579
+GC m 53 g 2621444 n out i 4 o 1
+GC m 54 g 1048579 n in i 3 o 0
+CC sm 53 sg 2621444 dm 54 dg 1048579
+GC m 54 g 2621443 n out i 3 o 1
+GC m 53 g 1048580 n in i 4 o 0
+CC sm 54 sg 2621443 dm 53 dg 1048580
+GC m 52 g 2621445 n out i 5 o 1
+GC m 53 g 1048581 n in i 5 o 0
+CC sm 52 sg 2621445 dm 53 dg 1048581
+GC m 53 g 2621445 n out i 5 o 1
+GC m 52 g 1048581 n in i 5 o 0
+CC sm 53 sg 2621445 dm 52 dg 1048581
+GC m 54 g 2621444 n out i 4 o 1
+CC sm 54 sg 2621444 dm 45 dg 2
+GC m 54 g 1048580 n in i 4 o 0
+CC sm 45 sg 5 dm 54 dg 1048580
+GC m 54 g 2621445 n out i 5 o 1
+CC sm 54 sg 2621445 dm 47 dg 0
+GC m 54 g 1048581 n in i 5 o 0
+CC sm 47 sg 3 dm 54 dg 1048581
+CC sm 3 sg 6 dm 47 dg 4
+CC sm 47 sg 5 dm 3 dg 7
+MC id 58 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 45 n ip2nic
+GC m 58 g 0 n upperLayerIn o 0
+GC m 58 g 3 n upperLayerOut o 1
+GC m 58 g 4 n stackNic$i o 0
+GC m 58 g 5 n stackNic$o o 1
+MDC id 58 d p=362,67;i=block/layer
+MC id 59 c LtePdcpRrcEnb t simu5g.stack.pdcp_rrc.LtePdcpRrcEnb pid 45 n pdcpRrc
+GC m 59 g 0 n DataPort$i o 0
+GC m 59 g 1 n DataPort$o o 1
+GC m 59 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 59 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 59 d p=362,141;i=block/fork
+MC id 60 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 45 n rlc cm 1
+GC m 60 g 0 n TM_Sap$i o 0
+GC m 60 g 1 n TM_Sap$o o 1
+GC m 60 g 2 n UM_Sap$i o 0
+GC m 60 g 3 n UM_Sap$o o 1
+GC m 60 g 4 n AM_Sap$i o 0
+GC m 60 g 5 n AM_Sap$o o 1
+GC m 60 g 6 n MAC_to_RLC o 0
+GC m 60 g 9 n RLC_to_MAC o 1
+MDC id 60 d p=362,226;i=block/transport
+MC id 61 c LteMacEnb t simu5g.stack.mac.LteMacEnb pid 45 n mac
+GC m 61 g 0 n RLC_to_MAC o 0
+GC m 61 g 3 n MAC_to_RLC o 1
+GC m 61 g 4 n PHY_to_MAC o 0
+GC m 61 g 7 n MAC_to_PHY o 1
+MDC id 61 d p=363,314;i=block/mac
+MC id 62 c LtePhyEnb t simu5g.stack.phy.LtePhyEnb pid 45 n phy
+GC m 62 g 0 n upperGateIn o 0
+GC m 62 g 3 n upperGateOut o 1
+GC m 62 g 4 n radioIn o 0
+MDC id 62 d p=363,389;i=block/wrxtx
+MC id 63 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 45 n channelModel[0]
+MDC id 63 d p=100,389;i=block/classifier2
+CC sm 58 sg 5 dm 59 dg 0
+CC sm 59 sg 1 dm 58 dg 4
+CC sm 45 sg 0 dm 59 dg 2
+CC sm 59 sg 3 dm 45 dg 1
+GC m 59 g 4194304 n UM_Sap$i i 0 o 0
+GC m 59 g 4718592 n UM_Sap$o i 0 o 1
+CC sm 59 sg 4718592 dm 60 dg 2
+CC sm 60 sg 3 dm 59 dg 4194304
+GC m 59 g 5242880 n AM_Sap$i i 0 o 0
+GC m 59 g 5767168 n AM_Sap$o i 0 o 1
+CC sm 59 sg 5767168 dm 60 dg 4
+CC sm 60 sg 5 dm 59 dg 5242880
+GC m 59 g 3145728 n TM_Sap$i i 0 o 0
+GC m 59 g 3670016 n TM_Sap$o i 0 o 1
+CC sm 59 sg 3670016 dm 60 dg 0
+CC sm 60 sg 1 dm 59 dg 3145728
+CC sm 60 sg 9 dm 61 dg 0
+CC sm 61 sg 3 dm 60 dg 6
+CC sm 61 sg 7 dm 62 dg 0
+CC sm 62 sg 3 dm 61 dg 4
+CC sm 45 sg 6 dm 62 dg 4
+CC sm 58 sg 3 dm 45 dg 5
+CDC sm 58 sg 3 d ""
+CC sm 45 sg 2 dm 58 dg 0
+CDC sm 45 sg 2 d ""
+MC id 66 c LteX2Manager t simu5g.x2.LteX2Manager pid 45 n x2Manager
+GC m 66 g 4 n x2Gtp$i o 0
+GC m 66 g 5 n x2Gtp$o o 1
+MDC id 66 d p=623,226,row;i=block/cogwheel
+MC id 67 c LteHandoverManager t simu5g.stack.handoverManager.LteHandoverManager pid 45 n handoverManager
+GC m 67 g 0 n x2ManagerIn o 0
+GC m 67 g 3 n x2ManagerOut o 1
+MDC id 67 d p=493,226,row;i=block/cogwheel
+MC id 68 c omnetpp::cModule t simu5g.stack.backgroundTrafficGenerator.BackgroundTrafficGenerator pid 45 n bgTrafficGenerator[0] cm 1
+MDC id 68 d p=100,307,row;i=block/source
+GC m 66 g 1048576 n dataPort$i i 0 o 0
+GC m 66 g 1572864 n dataPort$o i 0 o 1
+CC sm 66 sg 1572864 dm 67 dg 0
+CC sm 67 sg 3 dm 66 dg 1048576
+CC sm 45 sg 6291456 dm 66 dg 4
+CC sm 66 sg 5 dm 45 dg 6815744
+MC id 69 c LteRlcTm t simu5g.stack.rlc.LteRlcTm pid 60 n tm
+GC m 69 g 0 n TM_Sap_up$i o 0
+GC m 69 g 1 n TM_Sap_up$o o 1
+GC m 69 g 2 n TM_Sap_down$i o 0
+GC m 69 g 3 n TM_Sap_down$o o 1
+MDC id 69 d p=100,100;i=block/wheelbarrow
+MC id 70 c LteRlcUm t simu5g.stack.rlc.LteRlcUm pid 60 n um
+GC m 70 g 0 n UM_Sap_up$i o 0
+GC m 70 g 1 n UM_Sap_up$o o 1
+GC m 70 g 2 n UM_Sap_down$i o 0
+GC m 70 g 3 n UM_Sap_down$o o 1
+MDC id 70 d p=200,100;i=block/wheelbarrow
+MC id 71 c LteRlcAm t simu5g.stack.rlc.LteRlcAm pid 60 n am
+GC m 71 g 0 n AM_Sap_up$i o 0
+GC m 71 g 1 n AM_Sap_up$o o 1
+GC m 71 g 2 n AM_Sap_down$i o 0
+GC m 71 g 3 n AM_Sap_down$o o 1
+MDC id 71 d p=300,100;i=block/wheelbarrow
+MC id 72 c LteRlcMux t simu5g.stack.rlc.LteRlcMux pid 60 n mux
+GC m 72 g 0 n TM_Sap$i o 0
+GC m 72 g 1 n TM_Sap$o o 1
+GC m 72 g 2 n UM_Sap$i o 0
+GC m 72 g 3 n UM_Sap$o o 1
+GC m 72 g 4 n AM_Sap$i o 0
+GC m 72 g 5 n AM_Sap$o o 1
+GC m 72 g 6 n MAC_to_RLC o 0
+GC m 72 g 9 n RLC_to_MAC o 1
+MDC id 72 d p=200,200;i=block/classifier
+CC sm 69 sg 1 dm 60 dg 1
+CC sm 60 sg 0 dm 69 dg 0
+CC sm 70 sg 1 dm 60 dg 3
+CC sm 60 sg 2 dm 70 dg 0
+CC sm 71 sg 1 dm 60 dg 5
+CC sm 60 sg 4 dm 71 dg 0
+CC sm 69 sg 3 dm 72 dg 0
+CC sm 72 sg 1 dm 69 dg 2
+CC sm 70 sg 3 dm 72 dg 2
+CC sm 72 sg 3 dm 70 dg 2
+CC sm 71 sg 3 dm 72 dg 4
+CC sm 72 sg 5 dm 71 dg 2
+CC sm 60 sg 6 dm 72 dg 6
+CC sm 72 sg 9 dm 60 dg 9
+MC id 73 c BackgroundTrafficManager t simu5g.stack.backgroundTrafficGenerator.BackgroundTrafficManager pid 68 n manager
+MDC id 73 d p=77,41;i=block/control
+MC id 74 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 46 n ingressTC cm 1
+GC m 74 g 0 n in o 0
+GC m 74 g 3 n out o 1
+MDC id 74 d p=500,100;i=block/downarrow,black,50
+MC id 75 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 46 n egressTC cm 1
+GC m 75 g 0 n in o 0
+GC m 75 g 3 n out o 1
+MDC id 75 d p=300,100;i=block/downarrow,black,50
+MC id 76 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 46 n queue
+GC m 76 g 0 n in o 0
+GC m 76 g 3 n out o 1
+MDC id 76 d q=l2queue;p=300,200;i=block/queue
+MC id 77 c inet::Ppp t inet.linklayer.ppp.Ppp pid 46 n ppp
+GC m 77 g 0 n upperLayerIn o 0
+GC m 77 g 3 n upperLayerOut o 1
+GC m 77 g 4 n phys$i o 0
+GC m 77 g 5 n phys$o o 1
+MDC id 77 d p=500,300;i=block/rxtx
+CC sm 46 sg 0 dm 75 dg 0
+CDC sm 46 sg 0 d m=n
+CC sm 75 sg 3 dm 76 dg 0
+CC sm 76 sg 3 dm 77 dg 0
+CC sm 46 sg 4 dm 77 dg 4
+CDC sm 46 sg 4 d m=s
+CC sm 77 sg 5 dm 46 dg 5
+CDC sm 77 sg 5 d m=s
+CC sm 77 sg 3 dm 74 dg 0
+CC sm 74 sg 3 dm 46 dg 3
+CDC sm 74 sg 3 d m=n
+CC sm 74 sg 0 dm 74 dg 3
+CC sm 75 sg 0 dm 75 dg 3
+MC id 82 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 47 n ingressTC cm 1
+GC m 82 g 0 n in o 0
+GC m 82 g 3 n out o 1
+MDC id 82 d p=500,100;i=block/downarrow,black,50
+MC id 83 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 47 n egressTC cm 1
+GC m 83 g 0 n in o 0
+GC m 83 g 3 n out o 1
+MDC id 83 d p=300,100;i=block/downarrow,black,50
+MC id 84 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 47 n queue
+GC m 84 g 0 n in o 0
+GC m 84 g 3 n out o 1
+MDC id 84 d q=l2queue;p=300,200;i=block/queue
+MC id 85 c inet::Ppp t inet.linklayer.ppp.Ppp pid 47 n ppp
+GC m 85 g 0 n upperLayerIn o 0
+GC m 85 g 3 n upperLayerOut o 1
+GC m 85 g 4 n phys$i o 0
+GC m 85 g 5 n phys$o o 1
+MDC id 85 d p=500,300;i=block/rxtx
+CC sm 47 sg 0 dm 83 dg 0
+CDC sm 47 sg 0 d m=n
+CC sm 83 sg 3 dm 84 dg 0
+CC sm 84 sg 3 dm 85 dg 0
+CC sm 47 sg 4 dm 85 dg 4
+CDC sm 47 sg 4 d m=s
+CC sm 85 sg 5 dm 47 dg 5
+CDC sm 85 sg 5 d m=s
+CC sm 85 sg 3 dm 82 dg 0
+CC sm 82 sg 3 dm 47 dg 3
+CDC sm 82 sg 3 d m=n
+CC sm 82 sg 0 dm 82 dg 3
+CC sm 83 sg 0 dm 83 dg 3
+MC id 90 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 48 n configurator
+MDC id 90 d is=s;p=100,100;i=block/cogwheel
+MC id 91 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 48 n routingTable
+MDC id 91 d is=s;p=100,200;i=block/table
+MC id 92 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 48 n natTable
+MDC id 92 d is=s;p=100,300;i=block/table
+MC id 93 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 48 n up
+MDC id 93 d p=550,100;b=600,5,,,,1
+MC id 94 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 48 n igmp
+GC m 94 g 0 n ipIn o 0
+GC m 94 g 3 n ipOut o 1
+GC m 94 g 4 n routerIn o 0
+GC m 94 g 7 n routerOut o 1
+MDC id 94 d p=400,200;i=block/cogwheel
+MC id 95 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 48 n icmp
+GC m 95 g 0 n transportIn o 0
+GC m 95 g 3 n transportOut o 1
+GC m 95 g 4 n ipIn o 0
+GC m 95 g 7 n ipOut o 1
+MDC id 95 d p=700,200;i=block/control
+MC id 96 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 48 n mp
+MDC id 96 d p=550,300;b=600,5,,,,1
+MC id 97 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 48 n ip
+GC m 97 g 0 n transportIn o 0
+GC m 97 g 3 n transportOut o 1
+GC m 97 g 4 n queueIn o 0
+GC m 97 g 7 n queueOut o 1
+MDC id 97 d q=queue;p=700,400;i=block/routing
+MC id 98 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 48 n arp
+GC m 98 g 0 n netwIn o 0
+GC m 98 g 3 n netwOut o 1
+GC m 98 g 4 n ifIn o 0
+GC m 98 g 7 n ifOut o 1
+MDC id 98 d q=pendingQueue;p=400,400;i=block/layer
+MC id 99 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 48 n lp
+MDC id 99 d p=550,500;b=600,5,,,,1
+GC m 93 g 1048576 n in i 0 o 0
+CC sm 48 sg 4 dm 93 dg 1048576
+CDC sm 48 sg 4 d m=n
+GC m 93 g 2621440 n out i 0 o 1
+CC sm 93 sg 2621440 dm 48 dg 7
+CDC sm 93 sg 2621440 d m=n
+GC m 93 g 2621441 n out i 1 o 1
+CC sm 93 sg 2621441 dm 94 dg 4
+GC m 93 g 1048577 n in i 1 o 0
+CC sm 94 sg 7 dm 93 dg 1048577
+GC m 93 g 2621442 n out i 2 o 1
+GC m 96 g 1048576 n in i 0 o 0
+CC sm 93 sg 2621442 dm 96 dg 1048576
+GC m 96 g 2621440 n out i 0 o 1
+GC m 93 g 1048578 n in i 2 o 0
+CC sm 96 sg 2621440 dm 93 dg 1048578
+GC m 93 g 2621443 n out i 3 o 1
+CC sm 93 sg 2621443 dm 95 dg 0
+GC m 93 g 1048579 n in i 3 o 0
+CC sm 95 sg 3 dm 93 dg 1048579
+GC m 96 g 1048577 n in i 1 o 0
+CC sm 94 sg 3 dm 96 dg 1048577
+GC m 96 g 2621441 n out i 1 o 1
+CC sm 96 sg 2621441 dm 94 dg 0
+GC m 96 g 1048578 n in i 2 o 0
+CC sm 95 sg 7 dm 96 dg 1048578
+GC m 96 g 2621442 n out i 2 o 1
+CC sm 96 sg 2621442 dm 95 dg 4
+GC m 96 g 2621443 n out i 3 o 1
+CC sm 96 sg 2621443 dm 97 dg 0
+GC m 96 g 1048579 n in i 3 o 0
+CC sm 97 sg 3 dm 96 dg 1048579
+GC m 99 g 1048576 n in i 0 o 0
+CC sm 98 sg 7 dm 99 dg 1048576
+GC m 99 g 2621440 n out i 0 o 1
+CC sm 99 sg 2621440 dm 98 dg 4
+GC m 99 g 1048577 n in i 1 o 0
+CC sm 97 sg 7 dm 99 dg 1048577
+GC m 99 g 2621441 n out i 1 o 1
+CC sm 99 sg 2621441 dm 97 dg 4
+GC m 99 g 2621442 n out i 2 o 1
+CC sm 99 sg 2621442 dm 48 dg 3
+CDC sm 99 sg 2621442 d m=s
+GC m 99 g 1048578 n in i 2 o 0
+CC sm 48 sg 0 dm 99 dg 1048578
+CDC sm 48 sg 0 d m=s
+MC id 104 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 4 n interfaceTable
+MDC id 104 d is=s;p=110.43,158.4875;i=block/table
+MC id 105 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 4 n mobility
+MDC id 105 d is=s;p=110.43,343.56;i=block/cogwheel
+MC id 106 c CellInfo t simu5g.common.cellInfo.CellInfo pid 4 n cellInfo
+MDC id 106 d is=s;p=110.43,244.3775;i=block/control
+MC id 107 c inet::NetworkInterface t simu5g.stack.LteNicEnb pid 4 n cellularNic
+GC m 107 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 107 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 107 g 2 n upperLayerIn o 0
+GC m 107 g 5 n upperLayerOut o 1
+GC m 107 g 6 n radioIn o 0
+GC m 107 g 8 n nrRadioIn o 0
+MDC id 107 d p=433.54,520.4525;bgl=3;bgb=704,443;i=block/ifcard
+MC id 108 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 4 n pppIf
+GC m 108 g 0 n upperLayerIn o 0
+GC m 108 g 3 n upperLayerOut o 1
+GC m 108 g 4 n phys$i o 0
+GC m 108 g 5 n phys$o o 1
+MDC id 108 d p=824.76,519.82;i=block/ifcard
+MC id 109 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 4 n pppMEHostIf
+GC m 109 g 0 n upperLayerIn o 0
+GC m 109 g 3 n upperLayerOut o 1
+GC m 109 g 4 n phys$i o 0
+GC m 109 g 5 n phys$o o 1
+MDC id 109 d p=657.28,519.82;i=block/ifcard
+MC id 110 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 4 n ipv4 cm 1
+GC m 110 g 0 n ifIn o 0
+GC m 110 g 3 n ifOut o 1
+GC m 110 g 4 n transportIn o 0
+GC m 110 g 7 n transportOut o 1
+MDC id 110 d q=queue;p=494.54,372.88;i=block/fork
+MC id 111 c inet::Udp t inet.transportlayer.udp.Udp pid 4 n udp
+GC m 111 g 0 n appIn o 0
+GC m 111 g 2 n ipIn o 0
+GC m 111 g 5 n appOut o 1
+GC m 111 g 7 n ipOut o 1
+MDC id 111 d p=682.0075,212.68001;i=block/transport
+MC id 112 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 4 n tcp
+GC m 112 g 0 n appIn o 0
+GC m 112 g 2 n ipIn o 0
+GC m 112 g 5 n appOut o 1
+GC m 112 g 7 n ipOut o 1
+MDC id 112 d p=963.195,212.68001;i=block/wheelbarrow
+MC id 113 c inet::sctp::Sctp t inet.transportlayer.sctp.Sctp pid 4 n sctp
+GC m 113 g 0 n appIn o 0
+GC m 113 g 2 n ipIn o 0
+GC m 113 g 5 n appOut o 1
+GC m 113 g 7 n ipOut o 1
+MDC id 113 d p=494.54,211.72;i=block/wheelbarrow
+MC id 114 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 4 n at
+MDC id 114 d p=750,146;b=1000,5,,,,1
+MC id 115 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 4 n tn
+MDC id 115 d p=750,296;b=1000,5,,,,1
+MC id 116 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 4 n nl
+MDC id 116 d p=750,446;b=1000,5,,,,1
+MC id 117 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 4 n trafficFlowFilter
+GC m 117 g 0 n internetFilterGateIn o 0
+GC m 117 g 3 n gtpUserGateOut o 1
+MDC id 117 d p=1172.36,372.88;i=block/filter
+MC id 118 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 4 n gtpUser
+GC m 118 g 1 n socketOut o 1
+GC m 118 g 2 n socketIn o 0
+GC m 118 g 4 n trafficFlowFilterGate o 0
+GC m 118 g 7 n pppGate o 1
+MDC id 118 d p=1041.22,372.88;i=block/tunnel
+MC id 119 c GtpUserX2 t simu5g.corenetwork.gtp.GtpUserX2 pid 4 n gtpUserX2
+GC m 119 g 1 n socketOut o 1
+GC m 119 g 2 n socketIn o 0
+GC m 119 g 5 n lteStackOut o 1
+GC m 119 g 6 n lteStackIn o 0
+MDC id 119 d p=900.60004,372.88;i=block/tunnel
+CC sm 4 sg 2 dm 107 dg 6
+CC sm 108 sg 5 dm 4 dg 1
+CC sm 4 sg 0 dm 108 dg 4
+GC m 116 g 1048576 n in i 0 o 0
+CC sm 108 sg 3 dm 116 dg 1048576
+GC m 116 g 2621440 n out i 0 o 1
+CC sm 116 sg 2621440 dm 108 dg 0
+GC m 116 g 1048577 n in i 1 o 0
+CC sm 118 sg 7 dm 116 dg 1048577
+CC sm 117 sg 3 dm 118 dg 4
+GC m 116 g 2621441 n out i 1 o 1
+CC sm 116 sg 2621441 dm 117 dg 0
+GC m 114 g 1048576 n in i 0 o 0
+CC sm 118 sg 1 dm 114 dg 1048576
+GC m 114 g 2621440 n out i 0 o 1
+CC sm 114 sg 2621440 dm 118 dg 2
+GC m 107 g 6291456 n x2$i i 0 o 0
+GC m 107 g 6815744 n x2$o i 0 o 1
+CC sm 119 sg 5 dm 107 dg 6291456
+CC sm 107 sg 6815744 dm 119 dg 6
+GC m 114 g 1048577 n in i 1 o 0
+CC sm 119 sg 1 dm 114 dg 1048577
+GC m 114 g 2621441 n out i 1 o 1
+CC sm 114 sg 2621441 dm 119 dg 2
+GC m 114 g 2621442 n out i 2 o 1
+CC sm 114 sg 2621442 dm 111 dg 0
+GC m 114 g 1048578 n in i 2 o 0
+CC sm 111 sg 5 dm 114 dg 1048578
+GC m 114 g 2621443 n out i 3 o 1
+CC sm 114 sg 2621443 dm 112 dg 0
+GC m 114 g 1048579 n in i 3 o 0
+CC sm 112 sg 5 dm 114 dg 1048579
+GC m 114 g 2621444 n out i 4 o 1
+CC sm 114 sg 2621444 dm 113 dg 0
+GC m 114 g 1048580 n in i 4 o 0
+CC sm 113 sg 5 dm 114 dg 1048580
+GC m 115 g 1048576 n in i 0 o 0
+CC sm 111 sg 7 dm 115 dg 1048576
+GC m 115 g 2621440 n out i 0 o 1
+CC sm 115 sg 2621440 dm 111 dg 2
+GC m 115 g 1048577 n in i 1 o 0
+CC sm 112 sg 7 dm 115 dg 1048577
+GC m 115 g 2621441 n out i 1 o 1
+CC sm 115 sg 2621441 dm 112 dg 2
+GC m 115 g 1048578 n in i 2 o 0
+CC sm 113 sg 7 dm 115 dg 1048578
+GC m 115 g 2621442 n out i 2 o 1
+CC sm 115 sg 2621442 dm 113 dg 2
+GC m 116 g 2621442 n out i 2 o 1
+CC sm 116 sg 2621442 dm 110 dg 0
+GC m 116 g 1048578 n in i 2 o 0
+CC sm 110 sg 3 dm 116 dg 1048578
+GC m 115 g 2621443 n out i 3 o 1
+CC sm 115 sg 2621443 dm 110 dg 4
+GC m 115 g 1048579 n in i 3 o 0
+CC sm 110 sg 7 dm 115 dg 1048579
+GC m 115 g 2621444 n out i 4 o 1
+GC m 116 g 1048579 n in i 3 o 0
+CC sm 115 sg 2621444 dm 116 dg 1048579
+GC m 116 g 2621443 n out i 3 o 1
+GC m 115 g 1048580 n in i 4 o 0
+CC sm 116 sg 2621443 dm 115 dg 1048580
+GC m 114 g 2621445 n out i 5 o 1
+GC m 115 g 1048581 n in i 5 o 0
+CC sm 114 sg 2621445 dm 115 dg 1048581
+GC m 115 g 2621445 n out i 5 o 1
+GC m 114 g 1048581 n in i 5 o 0
+CC sm 115 sg 2621445 dm 114 dg 1048581
+GC m 116 g 2621444 n out i 4 o 1
+CC sm 116 sg 2621444 dm 107 dg 2
+GC m 116 g 1048580 n in i 4 o 0
+CC sm 107 sg 5 dm 116 dg 1048580
+GC m 116 g 2621445 n out i 5 o 1
+CC sm 116 sg 2621445 dm 109 dg 0
+GC m 116 g 1048581 n in i 5 o 0
+CC sm 109 sg 3 dm 116 dg 1048581
+CC sm 4 sg 6 dm 109 dg 4
+CC sm 109 sg 5 dm 4 dg 7
+MC id 120 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 107 n ip2nic
+GC m 120 g 0 n upperLayerIn o 0
+GC m 120 g 3 n upperLayerOut o 1
+GC m 120 g 4 n stackNic$i o 0
+GC m 120 g 5 n stackNic$o o 1
+MDC id 120 d p=362,67;i=block/layer
+MC id 121 c LtePdcpRrcEnb t simu5g.stack.pdcp_rrc.LtePdcpRrcEnb pid 107 n pdcpRrc
+GC m 121 g 0 n DataPort$i o 0
+GC m 121 g 1 n DataPort$o o 1
+GC m 121 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 121 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 121 d p=362,141;i=block/fork
+MC id 122 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 107 n rlc cm 1
+GC m 122 g 0 n TM_Sap$i o 0
+GC m 122 g 1 n TM_Sap$o o 1
+GC m 122 g 2 n UM_Sap$i o 0
+GC m 122 g 3 n UM_Sap$o o 1
+GC m 122 g 4 n AM_Sap$i o 0
+GC m 122 g 5 n AM_Sap$o o 1
+GC m 122 g 6 n MAC_to_RLC o 0
+GC m 122 g 9 n RLC_to_MAC o 1
+MDC id 122 d p=362,226;i=block/transport
+MC id 123 c LteMacEnb t simu5g.stack.mac.LteMacEnb pid 107 n mac
+GC m 123 g 0 n RLC_to_MAC o 0
+GC m 123 g 3 n MAC_to_RLC o 1
+GC m 123 g 4 n PHY_to_MAC o 0
+GC m 123 g 7 n MAC_to_PHY o 1
+MDC id 123 d p=363,314;i=block/mac
+MC id 124 c LtePhyEnb t simu5g.stack.phy.LtePhyEnb pid 107 n phy
+GC m 124 g 0 n upperGateIn o 0
+GC m 124 g 3 n upperGateOut o 1
+GC m 124 g 4 n radioIn o 0
+MDC id 124 d p=363,389;i=block/wrxtx
+MC id 125 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 107 n channelModel[0]
+MDC id 125 d p=100,389;i=block/classifier2
+CC sm 120 sg 5 dm 121 dg 0
+CC sm 121 sg 1 dm 120 dg 4
+CC sm 107 sg 0 dm 121 dg 2
+CC sm 121 sg 3 dm 107 dg 1
+GC m 121 g 4194304 n UM_Sap$i i 0 o 0
+GC m 121 g 4718592 n UM_Sap$o i 0 o 1
+CC sm 121 sg 4718592 dm 122 dg 2
+CC sm 122 sg 3 dm 121 dg 4194304
+GC m 121 g 5242880 n AM_Sap$i i 0 o 0
+GC m 121 g 5767168 n AM_Sap$o i 0 o 1
+CC sm 121 sg 5767168 dm 122 dg 4
+CC sm 122 sg 5 dm 121 dg 5242880
+GC m 121 g 3145728 n TM_Sap$i i 0 o 0
+GC m 121 g 3670016 n TM_Sap$o i 0 o 1
+CC sm 121 sg 3670016 dm 122 dg 0
+CC sm 122 sg 1 dm 121 dg 3145728
+CC sm 122 sg 9 dm 123 dg 0
+CC sm 123 sg 3 dm 122 dg 6
+CC sm 123 sg 7 dm 124 dg 0
+CC sm 124 sg 3 dm 123 dg 4
+CC sm 107 sg 6 dm 124 dg 4
+CC sm 120 sg 3 dm 107 dg 5
+CDC sm 120 sg 3 d ""
+CC sm 107 sg 2 dm 120 dg 0
+CDC sm 107 sg 2 d ""
+MC id 128 c LteX2Manager t simu5g.x2.LteX2Manager pid 107 n x2Manager
+GC m 128 g 4 n x2Gtp$i o 0
+GC m 128 g 5 n x2Gtp$o o 1
+MDC id 128 d p=623,226,row;i=block/cogwheel
+MC id 129 c LteHandoverManager t simu5g.stack.handoverManager.LteHandoverManager pid 107 n handoverManager
+GC m 129 g 0 n x2ManagerIn o 0
+GC m 129 g 3 n x2ManagerOut o 1
+MDC id 129 d p=493,226,row;i=block/cogwheel
+MC id 130 c omnetpp::cModule t simu5g.stack.backgroundTrafficGenerator.BackgroundTrafficGenerator pid 107 n bgTrafficGenerator[0] cm 1
+MDC id 130 d p=100,307,row;i=block/source
+GC m 128 g 1048576 n dataPort$i i 0 o 0
+GC m 128 g 1572864 n dataPort$o i 0 o 1
+CC sm 128 sg 1572864 dm 129 dg 0
+CC sm 129 sg 3 dm 128 dg 1048576
+CC sm 107 sg 6291456 dm 128 dg 4
+CC sm 128 sg 5 dm 107 dg 6815744
+MC id 131 c LteRlcTm t simu5g.stack.rlc.LteRlcTm pid 122 n tm
+GC m 131 g 0 n TM_Sap_up$i o 0
+GC m 131 g 1 n TM_Sap_up$o o 1
+GC m 131 g 2 n TM_Sap_down$i o 0
+GC m 131 g 3 n TM_Sap_down$o o 1
+MDC id 131 d p=100,100;i=block/wheelbarrow
+MC id 132 c LteRlcUm t simu5g.stack.rlc.LteRlcUm pid 122 n um
+GC m 132 g 0 n UM_Sap_up$i o 0
+GC m 132 g 1 n UM_Sap_up$o o 1
+GC m 132 g 2 n UM_Sap_down$i o 0
+GC m 132 g 3 n UM_Sap_down$o o 1
+MDC id 132 d p=200,100;i=block/wheelbarrow
+MC id 133 c LteRlcAm t simu5g.stack.rlc.LteRlcAm pid 122 n am
+GC m 133 g 0 n AM_Sap_up$i o 0
+GC m 133 g 1 n AM_Sap_up$o o 1
+GC m 133 g 2 n AM_Sap_down$i o 0
+GC m 133 g 3 n AM_Sap_down$o o 1
+MDC id 133 d p=300,100;i=block/wheelbarrow
+MC id 134 c LteRlcMux t simu5g.stack.rlc.LteRlcMux pid 122 n mux
+GC m 134 g 0 n TM_Sap$i o 0
+GC m 134 g 1 n TM_Sap$o o 1
+GC m 134 g 2 n UM_Sap$i o 0
+GC m 134 g 3 n UM_Sap$o o 1
+GC m 134 g 4 n AM_Sap$i o 0
+GC m 134 g 5 n AM_Sap$o o 1
+GC m 134 g 6 n MAC_to_RLC o 0
+GC m 134 g 9 n RLC_to_MAC o 1
+MDC id 134 d p=200,200;i=block/classifier
+CC sm 131 sg 1 dm 122 dg 1
+CC sm 122 sg 0 dm 131 dg 0
+CC sm 132 sg 1 dm 122 dg 3
+CC sm 122 sg 2 dm 132 dg 0
+CC sm 133 sg 1 dm 122 dg 5
+CC sm 122 sg 4 dm 133 dg 0
+CC sm 131 sg 3 dm 134 dg 0
+CC sm 134 sg 1 dm 131 dg 2
+CC sm 132 sg 3 dm 134 dg 2
+CC sm 134 sg 3 dm 132 dg 2
+CC sm 133 sg 3 dm 134 dg 4
+CC sm 134 sg 5 dm 133 dg 2
+CC sm 122 sg 6 dm 134 dg 6
+CC sm 134 sg 9 dm 122 dg 9
+MC id 135 c BackgroundTrafficManager t simu5g.stack.backgroundTrafficGenerator.BackgroundTrafficManager pid 130 n manager
+MDC id 135 d p=77,41;i=block/control
+MC id 136 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 108 n ingressTC cm 1
+GC m 136 g 0 n in o 0
+GC m 136 g 3 n out o 1
+MDC id 136 d p=500,100;i=block/downarrow,black,50
+MC id 137 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 108 n egressTC cm 1
+GC m 137 g 0 n in o 0
+GC m 137 g 3 n out o 1
+MDC id 137 d p=300,100;i=block/downarrow,black,50
+MC id 138 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 108 n queue
+GC m 138 g 0 n in o 0
+GC m 138 g 3 n out o 1
+MDC id 138 d q=l2queue;p=300,200;i=block/queue
+MC id 139 c inet::Ppp t inet.linklayer.ppp.Ppp pid 108 n ppp
+GC m 139 g 0 n upperLayerIn o 0
+GC m 139 g 3 n upperLayerOut o 1
+GC m 139 g 4 n phys$i o 0
+GC m 139 g 5 n phys$o o 1
+MDC id 139 d p=500,300;i=block/rxtx
+CC sm 108 sg 0 dm 137 dg 0
+CDC sm 108 sg 0 d m=n
+CC sm 137 sg 3 dm 138 dg 0
+CC sm 138 sg 3 dm 139 dg 0
+CC sm 108 sg 4 dm 139 dg 4
+CDC sm 108 sg 4 d m=s
+CC sm 139 sg 5 dm 108 dg 5
+CDC sm 139 sg 5 d m=s
+CC sm 139 sg 3 dm 136 dg 0
+CC sm 136 sg 3 dm 108 dg 3
+CDC sm 136 sg 3 d m=n
+CC sm 136 sg 0 dm 136 dg 3
+CC sm 137 sg 0 dm 137 dg 3
+MC id 144 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 109 n ingressTC cm 1
+GC m 144 g 0 n in o 0
+GC m 144 g 3 n out o 1
+MDC id 144 d p=500,100;i=block/downarrow,black,50
+MC id 145 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 109 n egressTC cm 1
+GC m 145 g 0 n in o 0
+GC m 145 g 3 n out o 1
+MDC id 145 d p=300,100;i=block/downarrow,black,50
+MC id 146 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 109 n queue
+GC m 146 g 0 n in o 0
+GC m 146 g 3 n out o 1
+MDC id 146 d q=l2queue;p=300,200;i=block/queue
+MC id 147 c inet::Ppp t inet.linklayer.ppp.Ppp pid 109 n ppp
+GC m 147 g 0 n upperLayerIn o 0
+GC m 147 g 3 n upperLayerOut o 1
+GC m 147 g 4 n phys$i o 0
+GC m 147 g 5 n phys$o o 1
+MDC id 147 d p=500,300;i=block/rxtx
+CC sm 109 sg 0 dm 145 dg 0
+CDC sm 109 sg 0 d m=n
+CC sm 145 sg 3 dm 146 dg 0
+CC sm 146 sg 3 dm 147 dg 0
+CC sm 109 sg 4 dm 147 dg 4
+CDC sm 109 sg 4 d m=s
+CC sm 147 sg 5 dm 109 dg 5
+CDC sm 147 sg 5 d m=s
+CC sm 147 sg 3 dm 144 dg 0
+CC sm 144 sg 3 dm 109 dg 3
+CDC sm 144 sg 3 d m=n
+CC sm 144 sg 0 dm 144 dg 3
+CC sm 145 sg 0 dm 145 dg 3
+MC id 152 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 110 n configurator
+MDC id 152 d is=s;p=100,100;i=block/cogwheel
+MC id 153 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 110 n routingTable
+MDC id 153 d is=s;p=100,200;i=block/table
+MC id 154 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 110 n natTable
+MDC id 154 d is=s;p=100,300;i=block/table
+MC id 155 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 110 n up
+MDC id 155 d p=550,100;b=600,5,,,,1
+MC id 156 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 110 n igmp
+GC m 156 g 0 n ipIn o 0
+GC m 156 g 3 n ipOut o 1
+GC m 156 g 4 n routerIn o 0
+GC m 156 g 7 n routerOut o 1
+MDC id 156 d p=400,200;i=block/cogwheel
+MC id 157 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 110 n icmp
+GC m 157 g 0 n transportIn o 0
+GC m 157 g 3 n transportOut o 1
+GC m 157 g 4 n ipIn o 0
+GC m 157 g 7 n ipOut o 1
+MDC id 157 d p=700,200;i=block/control
+MC id 158 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 110 n mp
+MDC id 158 d p=550,300;b=600,5,,,,1
+MC id 159 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 110 n ip
+GC m 159 g 0 n transportIn o 0
+GC m 159 g 3 n transportOut o 1
+GC m 159 g 4 n queueIn o 0
+GC m 159 g 7 n queueOut o 1
+MDC id 159 d q=queue;p=700,400;i=block/routing
+MC id 160 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 110 n arp
+GC m 160 g 0 n netwIn o 0
+GC m 160 g 3 n netwOut o 1
+GC m 160 g 4 n ifIn o 0
+GC m 160 g 7 n ifOut o 1
+MDC id 160 d q=pendingQueue;p=400,400;i=block/layer
+MC id 161 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 110 n lp
+MDC id 161 d p=550,500;b=600,5,,,,1
+GC m 155 g 1048576 n in i 0 o 0
+CC sm 110 sg 4 dm 155 dg 1048576
+CDC sm 110 sg 4 d m=n
+GC m 155 g 2621440 n out i 0 o 1
+CC sm 155 sg 2621440 dm 110 dg 7
+CDC sm 155 sg 2621440 d m=n
+GC m 155 g 2621441 n out i 1 o 1
+CC sm 155 sg 2621441 dm 156 dg 4
+GC m 155 g 1048577 n in i 1 o 0
+CC sm 156 sg 7 dm 155 dg 1048577
+GC m 155 g 2621442 n out i 2 o 1
+GC m 158 g 1048576 n in i 0 o 0
+CC sm 155 sg 2621442 dm 158 dg 1048576
+GC m 158 g 2621440 n out i 0 o 1
+GC m 155 g 1048578 n in i 2 o 0
+CC sm 158 sg 2621440 dm 155 dg 1048578
+GC m 155 g 2621443 n out i 3 o 1
+CC sm 155 sg 2621443 dm 157 dg 0
+GC m 155 g 1048579 n in i 3 o 0
+CC sm 157 sg 3 dm 155 dg 1048579
+GC m 158 g 1048577 n in i 1 o 0
+CC sm 156 sg 3 dm 158 dg 1048577
+GC m 158 g 2621441 n out i 1 o 1
+CC sm 158 sg 2621441 dm 156 dg 0
+GC m 158 g 1048578 n in i 2 o 0
+CC sm 157 sg 7 dm 158 dg 1048578
+GC m 158 g 2621442 n out i 2 o 1
+CC sm 158 sg 2621442 dm 157 dg 4
+GC m 158 g 2621443 n out i 3 o 1
+CC sm 158 sg 2621443 dm 159 dg 0
+GC m 158 g 1048579 n in i 3 o 0
+CC sm 159 sg 3 dm 158 dg 1048579
+GC m 161 g 1048576 n in i 0 o 0
+CC sm 160 sg 7 dm 161 dg 1048576
+GC m 161 g 2621440 n out i 0 o 1
+CC sm 161 sg 2621440 dm 160 dg 4
+GC m 161 g 1048577 n in i 1 o 0
+CC sm 159 sg 7 dm 161 dg 1048577
+GC m 161 g 2621441 n out i 1 o 1
+CC sm 161 sg 2621441 dm 159 dg 4
+GC m 161 g 2621442 n out i 2 o 1
+CC sm 161 sg 2621442 dm 110 dg 3
+CDC sm 161 sg 2621442 d m=s
+GC m 161 g 1048578 n in i 2 o 0
+CC sm 110 sg 0 dm 161 dg 1048578
+CDC sm 110 sg 0 d m=s
+MC id 166 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 5 n status
+MDC id 166 d p=125,80;i=block/cogwheel;is=s
+MC id 167 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 5 n interfaceTable
+MDC id 167 d is=s;p=125,240;i=block/table
+MC id 168 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n cb
+MDC id 168 d p=750,600;b=1000,5,,,,1
+MC id 169 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n bl
+MDC id 169 d p=750,750;b=1000,5,,,,1
+MC id 170 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 5 n ethernet
+GC m 170 g 0 n upperLayerIn o 0
+GC m 170 g 3 n upperLayerOut o 1
+GC m 170 g 4 n lowerLayerIn o 0
+GC m 170 g 7 n lowerLayerOut o 1
+MDC id 170 d p=375,825;i=block/layer
+MC id 171 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n li
+MDC id 171 d p=750,900;b=1000,5,,,,1
+MC id 172 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 5 n lo[0]
+GC m 172 g 0 n upperLayerIn o 0
+GC m 172 g 3 n upperLayerOut o 1
+MDC id 172 d p=750,975,row,150;i=block/ifcard
+MC id 173 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 5 n eth[0]
+GC m 173 g 0 n upperLayerIn o 0
+GC m 173 g 3 n upperLayerOut o 1
+GC m 173 g 4 n cutthroughIn o 0
+GC m 173 g 7 n cutthroughOut o 1
+GC m 173 g 8 n phys$i o 0
+GC m 173 g 9 n phys$o o 1
+MDC id 173 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 174 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 5 n eth[1]
+GC m 174 g 0 n upperLayerIn o 0
+GC m 174 g 3 n upperLayerOut o 1
+GC m 174 g 4 n cutthroughIn o 0
+GC m 174 g 7 n cutthroughOut o 1
+GC m 174 g 8 n phys$i o 0
+GC m 174 g 9 n phys$o o 1
+MDC id 174 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 168 g 2621440 n out i 0 o 1
+GC m 169 g 1048576 n in i 0 o 0
+CC sm 168 sg 2621440 dm 169 dg 1048576
+GC m 169 g 2621440 n out i 0 o 1
+GC m 168 g 1048576 n in i 0 o 0
+CC sm 169 sg 2621440 dm 168 dg 1048576
+GC m 169 g 2621441 n out i 1 o 1
+GC m 171 g 1048576 n in i 0 o 0
+CC sm 169 sg 2621441 dm 171 dg 1048576
+GC m 171 g 2621440 n out i 0 o 1
+GC m 169 g 1048577 n in i 1 o 0
+CC sm 171 sg 2621440 dm 169 dg 1048577
+GC m 169 g 2621442 n out i 2 o 1
+CC sm 169 sg 2621442 dm 170 dg 0
+GC m 169 g 1048578 n in i 2 o 0
+CC sm 170 sg 3 dm 169 dg 1048578
+GC m 171 g 1048577 n in i 1 o 0
+CC sm 170 sg 7 dm 171 dg 1048577
+GC m 171 g 2621441 n out i 1 o 1
+CC sm 171 sg 2621441 dm 170 dg 4
+CC sm 5 sg 3145728 dm 173 dg 8
+CDC sm 5 sg 3145728 d m=s
+CC sm 173 sg 9 dm 5 dg 3670016
+CDC sm 173 sg 9 d m=s
+CC sm 5 sg 3145729 dm 174 dg 8
+CDC sm 5 sg 3145729 d m=s
+CC sm 174 sg 9 dm 5 dg 3670017
+CDC sm 174 sg 9 d m=s
+GC m 171 g 2621442 n out i 2 o 1
+CC sm 171 sg 2621442 dm 172 dg 0
+GC m 171 g 1048578 n in i 2 o 0
+CC sm 172 sg 3 dm 171 dg 1048578
+GC m 171 g 1048579 n in i 3 o 0
+CC sm 173 sg 3 dm 171 dg 1048579
+GC m 171 g 2621443 n out i 3 o 1
+CC sm 171 sg 2621443 dm 173 dg 0
+GC m 171 g 1048580 n in i 4 o 0
+CC sm 174 sg 3 dm 171 dg 1048580
+GC m 171 g 2621444 n out i 4 o 1
+CC sm 171 sg 2621444 dm 174 dg 0
+MC id 179 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 5 n ipv4 cm 1
+GC m 179 g 0 n ifIn o 0
+GC m 179 g 3 n ifOut o 1
+GC m 179 g 4 n transportIn o 0
+GC m 179 g 7 n transportOut o 1
+MDC id 179 d q=queue;p=375,375;i=block/fork
+MC id 180 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n nl
+MDC id 180 d p=750,450;b=1000,5,,,,1
+GC m 180 g 2621440 n out i 0 o 1
+CC sm 180 sg 2621440 dm 179 dg 0
+GC m 180 g 1048576 n in i 0 o 0
+CC sm 179 sg 3 dm 180 dg 1048576
+GC m 168 g 2621441 n out i 1 o 1
+GC m 180 g 1048577 n in i 1 o 0
+CC sm 168 sg 2621441 dm 180 dg 1048577
+GC m 180 g 2621441 n out i 1 o 1
+GC m 168 g 1048577 n in i 1 o 0
+CC sm 180 sg 2621441 dm 168 dg 1048577
+MC id 181 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n tn
+MDC id 181 d p=750,300;b=1000,5,,,,1
+GC m 181 g 2621440 n out i 0 o 1
+CC sm 181 sg 2621440 dm 179 dg 4
+GC m 181 g 1048576 n in i 0 o 0
+CC sm 179 sg 7 dm 181 dg 1048576
+GC m 181 g 2621441 n out i 1 o 1
+GC m 180 g 1048578 n in i 2 o 0
+CC sm 181 sg 2621441 dm 180 dg 1048578
+GC m 180 g 2621442 n out i 2 o 1
+GC m 181 g 1048577 n in i 1 o 0
+CC sm 180 sg 2621442 dm 181 dg 1048577
+MC id 182 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 5 n at
+MDC id 182 d p=750,150;b=1000,5,,,,1
+GC m 182 g 2621440 n out i 0 o 1
+GC m 181 g 1048578 n in i 2 o 0
+CC sm 182 sg 2621440 dm 181 dg 1048578
+GC m 181 g 2621442 n out i 2 o 1
+GC m 182 g 1048576 n in i 0 o 0
+CC sm 181 sg 2621442 dm 182 dg 1048576
+MC id 183 c inet::Loopback t inet.linklayer.loopback.Loopback pid 172 n lo
+GC m 183 g 0 n upperLayerIn o 0
+GC m 183 g 3 n upperLayerOut o 1
+MDC id 183 d p=300,100;i=block/rxtx
+CC sm 172 sg 0 dm 183 dg 0
+CDC sm 172 sg 0 d m=n
+CC sm 183 sg 3 dm 172 dg 3
+CDC sm 183 sg 3 d m=n
+MC id 186 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 173 n egressTC cm 1
+GC m 186 g 0 n in o 0
+GC m 186 g 3 n out o 1
+MDC id 186 d p=300,100;i=block/downarrow,black,50
+MC id 187 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 173 n ingressTC cm 1
+GC m 187 g 0 n in o 0
+GC m 187 g 3 n out o 1
+MDC id 187 d p=700,100;i=block/uparrow,black,50
+MC id 188 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 173 n queue
+GC m 188 g 0 n in o 0
+GC m 188 g 3 n out o 1
+MDC id 188 d p=300,250;i=block/queue
+MC id 189 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 173 n mac
+GC m 189 g 0 n upperLayerIn o 0
+GC m 189 g 3 n upperLayerOut o 1
+GC m 189 g 4 n phys$i o 0
+GC m 189 g 5 n phys$o o 1
+MDC id 189 d p=500,300;i=block/rxtx
+CC sm 173 sg 0 dm 186 dg 0
+CDC sm 173 sg 0 d m=n
+CC sm 186 sg 3 dm 188 dg 0
+CC sm 188 sg 3 dm 189 dg 0
+CC sm 189 sg 5 dm 173 dg 9
+CDC sm 189 sg 5 d m=s
+CC sm 173 sg 8 dm 189 dg 4
+CDC sm 173 sg 8 d m=s
+CC sm 189 sg 3 dm 187 dg 0
+CC sm 187 sg 3 dm 173 dg 3
+CDC sm 187 sg 3 d m=n
+CC sm 186 sg 0 dm 186 dg 3
+CC sm 187 sg 0 dm 187 dg 3
+MC id 194 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 174 n egressTC cm 1
+GC m 194 g 0 n in o 0
+GC m 194 g 3 n out o 1
+MDC id 194 d p=300,100;i=block/downarrow,black,50
+MC id 195 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 174 n ingressTC cm 1
+GC m 195 g 0 n in o 0
+GC m 195 g 3 n out o 1
+MDC id 195 d p=700,100;i=block/uparrow,black,50
+MC id 196 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 174 n queue
+GC m 196 g 0 n in o 0
+GC m 196 g 3 n out o 1
+MDC id 196 d p=300,250;i=block/queue
+MC id 197 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 174 n mac
+GC m 197 g 0 n upperLayerIn o 0
+GC m 197 g 3 n upperLayerOut o 1
+GC m 197 g 4 n phys$i o 0
+GC m 197 g 5 n phys$o o 1
+MDC id 197 d p=500,300;i=block/rxtx
+CC sm 174 sg 0 dm 194 dg 0
+CDC sm 174 sg 0 d m=n
+CC sm 194 sg 3 dm 196 dg 0
+CC sm 196 sg 3 dm 197 dg 0
+CC sm 197 sg 5 dm 174 dg 9
+CDC sm 197 sg 5 d m=s
+CC sm 174 sg 8 dm 197 dg 4
+CDC sm 174 sg 8 d m=s
+CC sm 197 sg 3 dm 195 dg 0
+CC sm 195 sg 3 dm 174 dg 3
+CDC sm 195 sg 3 d m=n
+CC sm 194 sg 0 dm 194 dg 3
+CC sm 195 sg 0 dm 195 dg 3
+MC id 202 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 179 n configurator
+MDC id 202 d is=s;p=100,100;i=block/cogwheel
+MC id 203 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 179 n routingTable
+MDC id 203 d is=s;p=100,200;i=block/table
+MC id 204 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 179 n natTable
+MDC id 204 d is=s;p=100,300;i=block/table
+MC id 205 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 179 n up
+MDC id 205 d p=550,100;b=600,5,,,,1
+MC id 206 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 179 n igmp
+GC m 206 g 0 n ipIn o 0
+GC m 206 g 3 n ipOut o 1
+GC m 206 g 4 n routerIn o 0
+GC m 206 g 7 n routerOut o 1
+MDC id 206 d p=400,200;i=block/cogwheel
+MC id 207 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 179 n icmp
+GC m 207 g 0 n transportIn o 0
+GC m 207 g 3 n transportOut o 1
+GC m 207 g 4 n ipIn o 0
+GC m 207 g 7 n ipOut o 1
+MDC id 207 d p=700,200;i=block/control
+MC id 208 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 179 n mp
+MDC id 208 d p=550,300;b=600,5,,,,1
+MC id 209 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 179 n ip
+GC m 209 g 0 n transportIn o 0
+GC m 209 g 3 n transportOut o 1
+GC m 209 g 4 n queueIn o 0
+GC m 209 g 7 n queueOut o 1
+MDC id 209 d q=queue;p=700,400;i=block/routing
+MC id 210 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 179 n arp
+GC m 210 g 0 n netwIn o 0
+GC m 210 g 3 n netwOut o 1
+GC m 210 g 4 n ifIn o 0
+GC m 210 g 7 n ifOut o 1
+MDC id 210 d q=pendingQueue;p=400,400;i=block/layer
+MC id 211 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 179 n lp
+MDC id 211 d p=550,500;b=600,5,,,,1
+GC m 205 g 1048576 n in i 0 o 0
+CC sm 179 sg 4 dm 205 dg 1048576
+CDC sm 179 sg 4 d m=n
+GC m 205 g 2621440 n out i 0 o 1
+CC sm 205 sg 2621440 dm 179 dg 7
+CDC sm 205 sg 2621440 d m=n
+GC m 205 g 2621441 n out i 1 o 1
+CC sm 205 sg 2621441 dm 206 dg 4
+GC m 205 g 1048577 n in i 1 o 0
+CC sm 206 sg 7 dm 205 dg 1048577
+GC m 205 g 2621442 n out i 2 o 1
+GC m 208 g 1048576 n in i 0 o 0
+CC sm 205 sg 2621442 dm 208 dg 1048576
+GC m 208 g 2621440 n out i 0 o 1
+GC m 205 g 1048578 n in i 2 o 0
+CC sm 208 sg 2621440 dm 205 dg 1048578
+GC m 205 g 2621443 n out i 3 o 1
+CC sm 205 sg 2621443 dm 207 dg 0
+GC m 205 g 1048579 n in i 3 o 0
+CC sm 207 sg 3 dm 205 dg 1048579
+GC m 208 g 1048577 n in i 1 o 0
+CC sm 206 sg 3 dm 208 dg 1048577
+GC m 208 g 2621441 n out i 1 o 1
+CC sm 208 sg 2621441 dm 206 dg 0
+GC m 208 g 1048578 n in i 2 o 0
+CC sm 207 sg 7 dm 208 dg 1048578
+GC m 208 g 2621442 n out i 2 o 1
+CC sm 208 sg 2621442 dm 207 dg 4
+GC m 208 g 2621443 n out i 3 o 1
+CC sm 208 sg 2621443 dm 209 dg 0
+GC m 208 g 1048579 n in i 3 o 0
+CC sm 209 sg 3 dm 208 dg 1048579
+GC m 211 g 1048576 n in i 0 o 0
+CC sm 210 sg 7 dm 211 dg 1048576
+GC m 211 g 2621440 n out i 0 o 1
+CC sm 211 sg 2621440 dm 210 dg 4
+GC m 211 g 1048577 n in i 1 o 0
+CC sm 209 sg 7 dm 211 dg 1048577
+GC m 211 g 2621441 n out i 1 o 1
+CC sm 211 sg 2621441 dm 209 dg 4
+GC m 211 g 2621442 n out i 2 o 1
+CC sm 211 sg 2621442 dm 179 dg 3
+CDC sm 211 sg 2621442 d m=s
+GC m 211 g 1048578 n in i 2 o 0
+CC sm 179 sg 0 dm 211 dg 1048578
+CDC sm 179 sg 0 d m=s
+MC id 216 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 6 n status
+MDC id 216 d p=125,80;i=block/cogwheel;is=s
+MC id 217 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 6 n interfaceTable
+MDC id 217 d is=s;p=125,240;i=block/table
+MC id 218 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n cb
+MDC id 218 d p=750,600;b=1000,5,,,,1
+MC id 219 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n bl
+MDC id 219 d p=750,750;b=1000,5,,,,1
+MC id 220 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 6 n ethernet
+GC m 220 g 0 n upperLayerIn o 0
+GC m 220 g 3 n upperLayerOut o 1
+GC m 220 g 4 n lowerLayerIn o 0
+GC m 220 g 7 n lowerLayerOut o 1
+MDC id 220 d p=375,825;i=block/layer
+MC id 221 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n li
+MDC id 221 d p=750,900;b=1000,5,,,,1
+MC id 222 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 6 n lo[0]
+GC m 222 g 0 n upperLayerIn o 0
+GC m 222 g 3 n upperLayerOut o 1
+MDC id 222 d p=750,975,row,150;i=block/ifcard
+MC id 223 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 6 n eth[0]
+GC m 223 g 0 n upperLayerIn o 0
+GC m 223 g 3 n upperLayerOut o 1
+GC m 223 g 4 n cutthroughIn o 0
+GC m 223 g 7 n cutthroughOut o 1
+GC m 223 g 8 n phys$i o 0
+GC m 223 g 9 n phys$o o 1
+MDC id 223 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 224 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 6 n eth[1]
+GC m 224 g 0 n upperLayerIn o 0
+GC m 224 g 3 n upperLayerOut o 1
+GC m 224 g 4 n cutthroughIn o 0
+GC m 224 g 7 n cutthroughOut o 1
+GC m 224 g 8 n phys$i o 0
+GC m 224 g 9 n phys$o o 1
+MDC id 224 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 218 g 2621440 n out i 0 o 1
+GC m 219 g 1048576 n in i 0 o 0
+CC sm 218 sg 2621440 dm 219 dg 1048576
+GC m 219 g 2621440 n out i 0 o 1
+GC m 218 g 1048576 n in i 0 o 0
+CC sm 219 sg 2621440 dm 218 dg 1048576
+GC m 219 g 2621441 n out i 1 o 1
+GC m 221 g 1048576 n in i 0 o 0
+CC sm 219 sg 2621441 dm 221 dg 1048576
+GC m 221 g 2621440 n out i 0 o 1
+GC m 219 g 1048577 n in i 1 o 0
+CC sm 221 sg 2621440 dm 219 dg 1048577
+GC m 219 g 2621442 n out i 2 o 1
+CC sm 219 sg 2621442 dm 220 dg 0
+GC m 219 g 1048578 n in i 2 o 0
+CC sm 220 sg 3 dm 219 dg 1048578
+GC m 221 g 1048577 n in i 1 o 0
+CC sm 220 sg 7 dm 221 dg 1048577
+GC m 221 g 2621441 n out i 1 o 1
+CC sm 221 sg 2621441 dm 220 dg 4
+CC sm 6 sg 3145728 dm 223 dg 8
+CDC sm 6 sg 3145728 d m=s
+CC sm 223 sg 9 dm 6 dg 3670016
+CDC sm 223 sg 9 d m=s
+CC sm 6 sg 3145729 dm 224 dg 8
+CDC sm 6 sg 3145729 d m=s
+CC sm 224 sg 9 dm 6 dg 3670017
+CDC sm 224 sg 9 d m=s
+GC m 221 g 2621442 n out i 2 o 1
+CC sm 221 sg 2621442 dm 222 dg 0
+GC m 221 g 1048578 n in i 2 o 0
+CC sm 222 sg 3 dm 221 dg 1048578
+GC m 221 g 1048579 n in i 3 o 0
+CC sm 223 sg 3 dm 221 dg 1048579
+GC m 221 g 2621443 n out i 3 o 1
+CC sm 221 sg 2621443 dm 223 dg 0
+GC m 221 g 1048580 n in i 4 o 0
+CC sm 224 sg 3 dm 221 dg 1048580
+GC m 221 g 2621444 n out i 4 o 1
+CC sm 221 sg 2621444 dm 224 dg 0
+MC id 229 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 6 n ipv4 cm 1
+GC m 229 g 0 n ifIn o 0
+GC m 229 g 3 n ifOut o 1
+GC m 229 g 4 n transportIn o 0
+GC m 229 g 7 n transportOut o 1
+MDC id 229 d q=queue;p=375,375;i=block/fork
+MC id 230 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n nl
+MDC id 230 d p=750,450;b=1000,5,,,,1
+GC m 230 g 2621440 n out i 0 o 1
+CC sm 230 sg 2621440 dm 229 dg 0
+GC m 230 g 1048576 n in i 0 o 0
+CC sm 229 sg 3 dm 230 dg 1048576
+GC m 218 g 2621441 n out i 1 o 1
+GC m 230 g 1048577 n in i 1 o 0
+CC sm 218 sg 2621441 dm 230 dg 1048577
+GC m 230 g 2621441 n out i 1 o 1
+GC m 218 g 1048577 n in i 1 o 0
+CC sm 230 sg 2621441 dm 218 dg 1048577
+MC id 231 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n tn
+MDC id 231 d p=750,300;b=1000,5,,,,1
+GC m 231 g 2621440 n out i 0 o 1
+CC sm 231 sg 2621440 dm 229 dg 4
+GC m 231 g 1048576 n in i 0 o 0
+CC sm 229 sg 7 dm 231 dg 1048576
+GC m 231 g 2621441 n out i 1 o 1
+GC m 230 g 1048578 n in i 2 o 0
+CC sm 231 sg 2621441 dm 230 dg 1048578
+GC m 230 g 2621442 n out i 2 o 1
+GC m 231 g 1048577 n in i 1 o 0
+CC sm 230 sg 2621442 dm 231 dg 1048577
+MC id 232 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 6 n at
+MDC id 232 d p=750,150;b=1000,5,,,,1
+GC m 232 g 2621440 n out i 0 o 1
+GC m 231 g 1048578 n in i 2 o 0
+CC sm 232 sg 2621440 dm 231 dg 1048578
+GC m 231 g 2621442 n out i 2 o 1
+GC m 232 g 1048576 n in i 0 o 0
+CC sm 231 sg 2621442 dm 232 dg 1048576
+MC id 233 c inet::Loopback t inet.linklayer.loopback.Loopback pid 222 n lo
+GC m 233 g 0 n upperLayerIn o 0
+GC m 233 g 3 n upperLayerOut o 1
+MDC id 233 d p=300,100;i=block/rxtx
+CC sm 222 sg 0 dm 233 dg 0
+CDC sm 222 sg 0 d m=n
+CC sm 233 sg 3 dm 222 dg 3
+CDC sm 233 sg 3 d m=n
+MC id 236 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 223 n egressTC cm 1
+GC m 236 g 0 n in o 0
+GC m 236 g 3 n out o 1
+MDC id 236 d p=300,100;i=block/downarrow,black,50
+MC id 237 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 223 n ingressTC cm 1
+GC m 237 g 0 n in o 0
+GC m 237 g 3 n out o 1
+MDC id 237 d p=700,100;i=block/uparrow,black,50
+MC id 238 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 223 n queue
+GC m 238 g 0 n in o 0
+GC m 238 g 3 n out o 1
+MDC id 238 d p=300,250;i=block/queue
+MC id 239 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 223 n mac
+GC m 239 g 0 n upperLayerIn o 0
+GC m 239 g 3 n upperLayerOut o 1
+GC m 239 g 4 n phys$i o 0
+GC m 239 g 5 n phys$o o 1
+MDC id 239 d p=500,300;i=block/rxtx
+CC sm 223 sg 0 dm 236 dg 0
+CDC sm 223 sg 0 d m=n
+CC sm 236 sg 3 dm 238 dg 0
+CC sm 238 sg 3 dm 239 dg 0
+CC sm 239 sg 5 dm 223 dg 9
+CDC sm 239 sg 5 d m=s
+CC sm 223 sg 8 dm 239 dg 4
+CDC sm 223 sg 8 d m=s
+CC sm 239 sg 3 dm 237 dg 0
+CC sm 237 sg 3 dm 223 dg 3
+CDC sm 237 sg 3 d m=n
+CC sm 236 sg 0 dm 236 dg 3
+CC sm 237 sg 0 dm 237 dg 3
+MC id 244 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 224 n egressTC cm 1
+GC m 244 g 0 n in o 0
+GC m 244 g 3 n out o 1
+MDC id 244 d p=300,100;i=block/downarrow,black,50
+MC id 245 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 224 n ingressTC cm 1
+GC m 245 g 0 n in o 0
+GC m 245 g 3 n out o 1
+MDC id 245 d p=700,100;i=block/uparrow,black,50
+MC id 246 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 224 n queue
+GC m 246 g 0 n in o 0
+GC m 246 g 3 n out o 1
+MDC id 246 d p=300,250;i=block/queue
+MC id 247 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 224 n mac
+GC m 247 g 0 n upperLayerIn o 0
+GC m 247 g 3 n upperLayerOut o 1
+GC m 247 g 4 n phys$i o 0
+GC m 247 g 5 n phys$o o 1
+MDC id 247 d p=500,300;i=block/rxtx
+CC sm 224 sg 0 dm 244 dg 0
+CDC sm 224 sg 0 d m=n
+CC sm 244 sg 3 dm 246 dg 0
+CC sm 246 sg 3 dm 247 dg 0
+CC sm 247 sg 5 dm 224 dg 9
+CDC sm 247 sg 5 d m=s
+CC sm 224 sg 8 dm 247 dg 4
+CDC sm 224 sg 8 d m=s
+CC sm 247 sg 3 dm 245 dg 0
+CC sm 245 sg 3 dm 224 dg 3
+CDC sm 245 sg 3 d m=n
+CC sm 244 sg 0 dm 244 dg 3
+CC sm 245 sg 0 dm 245 dg 3
+MC id 252 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 229 n configurator
+MDC id 252 d is=s;p=100,100;i=block/cogwheel
+MC id 253 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 229 n routingTable
+MDC id 253 d is=s;p=100,200;i=block/table
+MC id 254 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 229 n natTable
+MDC id 254 d is=s;p=100,300;i=block/table
+MC id 255 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 229 n up
+MDC id 255 d p=550,100;b=600,5,,,,1
+MC id 256 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 229 n igmp
+GC m 256 g 0 n ipIn o 0
+GC m 256 g 3 n ipOut o 1
+GC m 256 g 4 n routerIn o 0
+GC m 256 g 7 n routerOut o 1
+MDC id 256 d p=400,200;i=block/cogwheel
+MC id 257 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 229 n icmp
+GC m 257 g 0 n transportIn o 0
+GC m 257 g 3 n transportOut o 1
+GC m 257 g 4 n ipIn o 0
+GC m 257 g 7 n ipOut o 1
+MDC id 257 d p=700,200;i=block/control
+MC id 258 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 229 n mp
+MDC id 258 d p=550,300;b=600,5,,,,1
+MC id 259 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 229 n ip
+GC m 259 g 0 n transportIn o 0
+GC m 259 g 3 n transportOut o 1
+GC m 259 g 4 n queueIn o 0
+GC m 259 g 7 n queueOut o 1
+MDC id 259 d q=queue;p=700,400;i=block/routing
+MC id 260 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 229 n arp
+GC m 260 g 0 n netwIn o 0
+GC m 260 g 3 n netwOut o 1
+GC m 260 g 4 n ifIn o 0
+GC m 260 g 7 n ifOut o 1
+MDC id 260 d q=pendingQueue;p=400,400;i=block/layer
+MC id 261 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 229 n lp
+MDC id 261 d p=550,500;b=600,5,,,,1
+GC m 255 g 1048576 n in i 0 o 0
+CC sm 229 sg 4 dm 255 dg 1048576
+CDC sm 229 sg 4 d m=n
+GC m 255 g 2621440 n out i 0 o 1
+CC sm 255 sg 2621440 dm 229 dg 7
+CDC sm 255 sg 2621440 d m=n
+GC m 255 g 2621441 n out i 1 o 1
+CC sm 255 sg 2621441 dm 256 dg 4
+GC m 255 g 1048577 n in i 1 o 0
+CC sm 256 sg 7 dm 255 dg 1048577
+GC m 255 g 2621442 n out i 2 o 1
+GC m 258 g 1048576 n in i 0 o 0
+CC sm 255 sg 2621442 dm 258 dg 1048576
+GC m 258 g 2621440 n out i 0 o 1
+GC m 255 g 1048578 n in i 2 o 0
+CC sm 258 sg 2621440 dm 255 dg 1048578
+GC m 255 g 2621443 n out i 3 o 1
+CC sm 255 sg 2621443 dm 257 dg 0
+GC m 255 g 1048579 n in i 3 o 0
+CC sm 257 sg 3 dm 255 dg 1048579
+GC m 258 g 1048577 n in i 1 o 0
+CC sm 256 sg 3 dm 258 dg 1048577
+GC m 258 g 2621441 n out i 1 o 1
+CC sm 258 sg 2621441 dm 256 dg 0
+GC m 258 g 1048578 n in i 2 o 0
+CC sm 257 sg 7 dm 258 dg 1048578
+GC m 258 g 2621442 n out i 2 o 1
+CC sm 258 sg 2621442 dm 257 dg 4
+GC m 258 g 2621443 n out i 3 o 1
+CC sm 258 sg 2621443 dm 259 dg 0
+GC m 258 g 1048579 n in i 3 o 0
+CC sm 259 sg 3 dm 258 dg 1048579
+GC m 261 g 1048576 n in i 0 o 0
+CC sm 260 sg 7 dm 261 dg 1048576
+GC m 261 g 2621440 n out i 0 o 1
+CC sm 261 sg 2621440 dm 260 dg 4
+GC m 261 g 1048577 n in i 1 o 0
+CC sm 259 sg 7 dm 261 dg 1048577
+GC m 261 g 2621441 n out i 1 o 1
+CC sm 261 sg 2621441 dm 259 dg 4
+GC m 261 g 2621442 n out i 2 o 1
+CC sm 261 sg 2621442 dm 229 dg 3
+CDC sm 261 sg 2621442 d m=s
+GC m 261 g 1048578 n in i 2 o 0
+CC sm 229 sg 0 dm 261 dg 1048578
+CDC sm 229 sg 0 d m=s
+MC id 266 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 7 n status
+MDC id 266 d p=125,80;i=block/cogwheel;is=s
+MC id 267 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 7 n interfaceTable
+MDC id 267 d is=s;p=125,240;i=block/table
+MC id 268 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n cb
+MDC id 268 d p=750,600;b=1000,5,,,,1
+MC id 269 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n bl
+MDC id 269 d p=750,750;b=1000,5,,,,1
+MC id 270 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 7 n ethernet
+GC m 270 g 0 n upperLayerIn o 0
+GC m 270 g 3 n upperLayerOut o 1
+GC m 270 g 4 n lowerLayerIn o 0
+GC m 270 g 7 n lowerLayerOut o 1
+MDC id 270 d p=375,825;i=block/layer
+MC id 271 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n li
+MDC id 271 d p=750,900;b=1000,5,,,,1
+MC id 272 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 7 n lo[0]
+GC m 272 g 0 n upperLayerIn o 0
+GC m 272 g 3 n upperLayerOut o 1
+MDC id 272 d p=750,975,row,150;i=block/ifcard
+MC id 273 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 7 n eth[0]
+GC m 273 g 0 n upperLayerIn o 0
+GC m 273 g 3 n upperLayerOut o 1
+GC m 273 g 4 n cutthroughIn o 0
+GC m 273 g 7 n cutthroughOut o 1
+GC m 273 g 8 n phys$i o 0
+GC m 273 g 9 n phys$o o 1
+MDC id 273 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 274 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 7 n eth[1]
+GC m 274 g 0 n upperLayerIn o 0
+GC m 274 g 3 n upperLayerOut o 1
+GC m 274 g 4 n cutthroughIn o 0
+GC m 274 g 7 n cutthroughOut o 1
+GC m 274 g 8 n phys$i o 0
+GC m 274 g 9 n phys$o o 1
+MDC id 274 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 275 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 7 n eth[2]
+GC m 275 g 0 n upperLayerIn o 0
+GC m 275 g 3 n upperLayerOut o 1
+GC m 275 g 4 n cutthroughIn o 0
+GC m 275 g 7 n cutthroughOut o 1
+GC m 275 g 8 n phys$i o 0
+GC m 275 g 9 n phys$o o 1
+MDC id 275 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 268 g 2621440 n out i 0 o 1
+GC m 269 g 1048576 n in i 0 o 0
+CC sm 268 sg 2621440 dm 269 dg 1048576
+GC m 269 g 2621440 n out i 0 o 1
+GC m 268 g 1048576 n in i 0 o 0
+CC sm 269 sg 2621440 dm 268 dg 1048576
+GC m 269 g 2621441 n out i 1 o 1
+GC m 271 g 1048576 n in i 0 o 0
+CC sm 269 sg 2621441 dm 271 dg 1048576
+GC m 271 g 2621440 n out i 0 o 1
+GC m 269 g 1048577 n in i 1 o 0
+CC sm 271 sg 2621440 dm 269 dg 1048577
+GC m 269 g 2621442 n out i 2 o 1
+CC sm 269 sg 2621442 dm 270 dg 0
+GC m 269 g 1048578 n in i 2 o 0
+CC sm 270 sg 3 dm 269 dg 1048578
+GC m 271 g 1048577 n in i 1 o 0
+CC sm 270 sg 7 dm 271 dg 1048577
+GC m 271 g 2621441 n out i 1 o 1
+CC sm 271 sg 2621441 dm 270 dg 4
+CC sm 7 sg 3145728 dm 273 dg 8
+CDC sm 7 sg 3145728 d m=s
+CC sm 273 sg 9 dm 7 dg 3670016
+CDC sm 273 sg 9 d m=s
+CC sm 7 sg 3145729 dm 274 dg 8
+CDC sm 7 sg 3145729 d m=s
+CC sm 274 sg 9 dm 7 dg 3670017
+CDC sm 274 sg 9 d m=s
+CC sm 7 sg 3145730 dm 275 dg 8
+CDC sm 7 sg 3145730 d m=s
+CC sm 275 sg 9 dm 7 dg 3670018
+CDC sm 275 sg 9 d m=s
+GC m 271 g 2621442 n out i 2 o 1
+CC sm 271 sg 2621442 dm 272 dg 0
+GC m 271 g 1048578 n in i 2 o 0
+CC sm 272 sg 3 dm 271 dg 1048578
+GC m 271 g 1048579 n in i 3 o 0
+CC sm 273 sg 3 dm 271 dg 1048579
+GC m 271 g 2621443 n out i 3 o 1
+CC sm 271 sg 2621443 dm 273 dg 0
+GC m 271 g 1048580 n in i 4 o 0
+CC sm 274 sg 3 dm 271 dg 1048580
+GC m 271 g 2621444 n out i 4 o 1
+CC sm 271 sg 2621444 dm 274 dg 0
+GC m 271 g 1048581 n in i 5 o 0
+CC sm 275 sg 3 dm 271 dg 1048581
+GC m 271 g 2621445 n out i 5 o 1
+CC sm 271 sg 2621445 dm 275 dg 0
+MC id 282 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 7 n ipv4 cm 1
+GC m 282 g 0 n ifIn o 0
+GC m 282 g 3 n ifOut o 1
+GC m 282 g 4 n transportIn o 0
+GC m 282 g 7 n transportOut o 1
+MDC id 282 d q=queue;p=375,375;i=block/fork
+MC id 283 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n nl
+MDC id 283 d p=750,450;b=1000,5,,,,1
+GC m 283 g 2621440 n out i 0 o 1
+CC sm 283 sg 2621440 dm 282 dg 0
+GC m 283 g 1048576 n in i 0 o 0
+CC sm 282 sg 3 dm 283 dg 1048576
+GC m 268 g 2621441 n out i 1 o 1
+GC m 283 g 1048577 n in i 1 o 0
+CC sm 268 sg 2621441 dm 283 dg 1048577
+GC m 283 g 2621441 n out i 1 o 1
+GC m 268 g 1048577 n in i 1 o 0
+CC sm 283 sg 2621441 dm 268 dg 1048577
+MC id 284 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n tn
+MDC id 284 d p=750,300;b=1000,5,,,,1
+GC m 284 g 2621440 n out i 0 o 1
+CC sm 284 sg 2621440 dm 282 dg 4
+GC m 284 g 1048576 n in i 0 o 0
+CC sm 282 sg 7 dm 284 dg 1048576
+GC m 284 g 2621441 n out i 1 o 1
+GC m 283 g 1048578 n in i 2 o 0
+CC sm 284 sg 2621441 dm 283 dg 1048578
+GC m 283 g 2621442 n out i 2 o 1
+GC m 284 g 1048577 n in i 1 o 0
+CC sm 283 sg 2621442 dm 284 dg 1048577
+MC id 285 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 7 n at
+MDC id 285 d p=750,150;b=1000,5,,,,1
+GC m 285 g 2621440 n out i 0 o 1
+GC m 284 g 1048578 n in i 2 o 0
+CC sm 285 sg 2621440 dm 284 dg 1048578
+GC m 284 g 2621442 n out i 2 o 1
+GC m 285 g 1048576 n in i 0 o 0
+CC sm 284 sg 2621442 dm 285 dg 1048576
+MC id 286 c inet::Loopback t inet.linklayer.loopback.Loopback pid 272 n lo
+GC m 286 g 0 n upperLayerIn o 0
+GC m 286 g 3 n upperLayerOut o 1
+MDC id 286 d p=300,100;i=block/rxtx
+CC sm 272 sg 0 dm 286 dg 0
+CDC sm 272 sg 0 d m=n
+CC sm 286 sg 3 dm 272 dg 3
+CDC sm 286 sg 3 d m=n
+MC id 289 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 273 n egressTC cm 1
+GC m 289 g 0 n in o 0
+GC m 289 g 3 n out o 1
+MDC id 289 d p=300,100;i=block/downarrow,black,50
+MC id 290 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 273 n ingressTC cm 1
+GC m 290 g 0 n in o 0
+GC m 290 g 3 n out o 1
+MDC id 290 d p=700,100;i=block/uparrow,black,50
+MC id 291 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 273 n queue
+GC m 291 g 0 n in o 0
+GC m 291 g 3 n out o 1
+MDC id 291 d p=300,250;i=block/queue
+MC id 292 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 273 n mac
+GC m 292 g 0 n upperLayerIn o 0
+GC m 292 g 3 n upperLayerOut o 1
+GC m 292 g 4 n phys$i o 0
+GC m 292 g 5 n phys$o o 1
+MDC id 292 d p=500,300;i=block/rxtx
+CC sm 273 sg 0 dm 289 dg 0
+CDC sm 273 sg 0 d m=n
+CC sm 289 sg 3 dm 291 dg 0
+CC sm 291 sg 3 dm 292 dg 0
+CC sm 292 sg 5 dm 273 dg 9
+CDC sm 292 sg 5 d m=s
+CC sm 273 sg 8 dm 292 dg 4
+CDC sm 273 sg 8 d m=s
+CC sm 292 sg 3 dm 290 dg 0
+CC sm 290 sg 3 dm 273 dg 3
+CDC sm 290 sg 3 d m=n
+CC sm 289 sg 0 dm 289 dg 3
+CC sm 290 sg 0 dm 290 dg 3
+MC id 297 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 274 n egressTC cm 1
+GC m 297 g 0 n in o 0
+GC m 297 g 3 n out o 1
+MDC id 297 d p=300,100;i=block/downarrow,black,50
+MC id 298 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 274 n ingressTC cm 1
+GC m 298 g 0 n in o 0
+GC m 298 g 3 n out o 1
+MDC id 298 d p=700,100;i=block/uparrow,black,50
+MC id 299 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 274 n queue
+GC m 299 g 0 n in o 0
+GC m 299 g 3 n out o 1
+MDC id 299 d p=300,250;i=block/queue
+MC id 300 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 274 n mac
+GC m 300 g 0 n upperLayerIn o 0
+GC m 300 g 3 n upperLayerOut o 1
+GC m 300 g 4 n phys$i o 0
+GC m 300 g 5 n phys$o o 1
+MDC id 300 d p=500,300;i=block/rxtx
+CC sm 274 sg 0 dm 297 dg 0
+CDC sm 274 sg 0 d m=n
+CC sm 297 sg 3 dm 299 dg 0
+CC sm 299 sg 3 dm 300 dg 0
+CC sm 300 sg 5 dm 274 dg 9
+CDC sm 300 sg 5 d m=s
+CC sm 274 sg 8 dm 300 dg 4
+CDC sm 274 sg 8 d m=s
+CC sm 300 sg 3 dm 298 dg 0
+CC sm 298 sg 3 dm 274 dg 3
+CDC sm 298 sg 3 d m=n
+CC sm 297 sg 0 dm 297 dg 3
+CC sm 298 sg 0 dm 298 dg 3
+MC id 305 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 275 n egressTC cm 1
+GC m 305 g 0 n in o 0
+GC m 305 g 3 n out o 1
+MDC id 305 d p=300,100;i=block/downarrow,black,50
+MC id 306 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 275 n ingressTC cm 1
+GC m 306 g 0 n in o 0
+GC m 306 g 3 n out o 1
+MDC id 306 d p=700,100;i=block/uparrow,black,50
+MC id 307 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 275 n queue
+GC m 307 g 0 n in o 0
+GC m 307 g 3 n out o 1
+MDC id 307 d p=300,250;i=block/queue
+MC id 308 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 275 n mac
+GC m 308 g 0 n upperLayerIn o 0
+GC m 308 g 3 n upperLayerOut o 1
+GC m 308 g 4 n phys$i o 0
+GC m 308 g 5 n phys$o o 1
+MDC id 308 d p=500,300;i=block/rxtx
+CC sm 275 sg 0 dm 305 dg 0
+CDC sm 275 sg 0 d m=n
+CC sm 305 sg 3 dm 307 dg 0
+CC sm 307 sg 3 dm 308 dg 0
+CC sm 308 sg 5 dm 275 dg 9
+CDC sm 308 sg 5 d m=s
+CC sm 275 sg 8 dm 308 dg 4
+CDC sm 275 sg 8 d m=s
+CC sm 308 sg 3 dm 306 dg 0
+CC sm 306 sg 3 dm 275 dg 3
+CDC sm 306 sg 3 d m=n
+CC sm 305 sg 0 dm 305 dg 3
+CC sm 306 sg 0 dm 306 dg 3
+MC id 313 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 282 n configurator
+MDC id 313 d is=s;p=100,100;i=block/cogwheel
+MC id 314 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 282 n routingTable
+MDC id 314 d is=s;p=100,200;i=block/table
+MC id 315 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 282 n natTable
+MDC id 315 d is=s;p=100,300;i=block/table
+MC id 316 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 282 n up
+MDC id 316 d p=550,100;b=600,5,,,,1
+MC id 317 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 282 n igmp
+GC m 317 g 0 n ipIn o 0
+GC m 317 g 3 n ipOut o 1
+GC m 317 g 4 n routerIn o 0
+GC m 317 g 7 n routerOut o 1
+MDC id 317 d p=400,200;i=block/cogwheel
+MC id 318 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 282 n icmp
+GC m 318 g 0 n transportIn o 0
+GC m 318 g 3 n transportOut o 1
+GC m 318 g 4 n ipIn o 0
+GC m 318 g 7 n ipOut o 1
+MDC id 318 d p=700,200;i=block/control
+MC id 319 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 282 n mp
+MDC id 319 d p=550,300;b=600,5,,,,1
+MC id 320 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 282 n ip
+GC m 320 g 0 n transportIn o 0
+GC m 320 g 3 n transportOut o 1
+GC m 320 g 4 n queueIn o 0
+GC m 320 g 7 n queueOut o 1
+MDC id 320 d q=queue;p=700,400;i=block/routing
+MC id 321 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 282 n arp
+GC m 321 g 0 n netwIn o 0
+GC m 321 g 3 n netwOut o 1
+GC m 321 g 4 n ifIn o 0
+GC m 321 g 7 n ifOut o 1
+MDC id 321 d q=pendingQueue;p=400,400;i=block/layer
+MC id 322 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 282 n lp
+MDC id 322 d p=550,500;b=600,5,,,,1
+GC m 316 g 1048576 n in i 0 o 0
+CC sm 282 sg 4 dm 316 dg 1048576
+CDC sm 282 sg 4 d m=n
+GC m 316 g 2621440 n out i 0 o 1
+CC sm 316 sg 2621440 dm 282 dg 7
+CDC sm 316 sg 2621440 d m=n
+GC m 316 g 2621441 n out i 1 o 1
+CC sm 316 sg 2621441 dm 317 dg 4
+GC m 316 g 1048577 n in i 1 o 0
+CC sm 317 sg 7 dm 316 dg 1048577
+GC m 316 g 2621442 n out i 2 o 1
+GC m 319 g 1048576 n in i 0 o 0
+CC sm 316 sg 2621442 dm 319 dg 1048576
+GC m 319 g 2621440 n out i 0 o 1
+GC m 316 g 1048578 n in i 2 o 0
+CC sm 319 sg 2621440 dm 316 dg 1048578
+GC m 316 g 2621443 n out i 3 o 1
+CC sm 316 sg 2621443 dm 318 dg 0
+GC m 316 g 1048579 n in i 3 o 0
+CC sm 318 sg 3 dm 316 dg 1048579
+GC m 319 g 1048577 n in i 1 o 0
+CC sm 317 sg 3 dm 319 dg 1048577
+GC m 319 g 2621441 n out i 1 o 1
+CC sm 319 sg 2621441 dm 317 dg 0
+GC m 319 g 1048578 n in i 2 o 0
+CC sm 318 sg 7 dm 319 dg 1048578
+GC m 319 g 2621442 n out i 2 o 1
+CC sm 319 sg 2621442 dm 318 dg 4
+GC m 319 g 2621443 n out i 3 o 1
+CC sm 319 sg 2621443 dm 320 dg 0
+GC m 319 g 1048579 n in i 3 o 0
+CC sm 320 sg 3 dm 319 dg 1048579
+GC m 322 g 1048576 n in i 0 o 0
+CC sm 321 sg 7 dm 322 dg 1048576
+GC m 322 g 2621440 n out i 0 o 1
+CC sm 322 sg 2621440 dm 321 dg 4
+GC m 322 g 1048577 n in i 1 o 0
+CC sm 320 sg 7 dm 322 dg 1048577
+GC m 322 g 2621441 n out i 1 o 1
+CC sm 322 sg 2621441 dm 320 dg 4
+GC m 322 g 2621442 n out i 2 o 1
+CC sm 322 sg 2621442 dm 282 dg 3
+CDC sm 322 sg 2621442 d m=s
+GC m 322 g 1048578 n in i 2 o 0
+CC sm 282 sg 0 dm 322 dg 1048578
+CDC sm 282 sg 0 d m=s
+MC id 327 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 8 n status
+MDC id 327 d p=125,80;i=block/cogwheel;is=s
+MC id 328 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 8 n interfaceTable
+MDC id 328 d is=s;p=125,240;i=block/table
+MC id 329 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n cb
+MDC id 329 d p=750,600;b=1000,5,,,,1
+MC id 330 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n bl
+MDC id 330 d p=750,750;b=1000,5,,,,1
+MC id 331 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 8 n ethernet
+GC m 331 g 0 n upperLayerIn o 0
+GC m 331 g 3 n upperLayerOut o 1
+GC m 331 g 4 n lowerLayerIn o 0
+GC m 331 g 7 n lowerLayerOut o 1
+MDC id 331 d p=375,825;i=block/layer
+MC id 332 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n li
+MDC id 332 d p=750,900;b=1000,5,,,,1
+MC id 333 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 8 n lo[0]
+GC m 333 g 0 n upperLayerIn o 0
+GC m 333 g 3 n upperLayerOut o 1
+MDC id 333 d p=750,975,row,150;i=block/ifcard
+MC id 334 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 8 n eth[0]
+GC m 334 g 0 n upperLayerIn o 0
+GC m 334 g 3 n upperLayerOut o 1
+GC m 334 g 4 n cutthroughIn o 0
+GC m 334 g 7 n cutthroughOut o 1
+GC m 334 g 8 n phys$i o 0
+GC m 334 g 9 n phys$o o 1
+MDC id 334 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 335 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 8 n eth[1]
+GC m 335 g 0 n upperLayerIn o 0
+GC m 335 g 3 n upperLayerOut o 1
+GC m 335 g 4 n cutthroughIn o 0
+GC m 335 g 7 n cutthroughOut o 1
+GC m 335 g 8 n phys$i o 0
+GC m 335 g 9 n phys$o o 1
+MDC id 335 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 329 g 2621440 n out i 0 o 1
+GC m 330 g 1048576 n in i 0 o 0
+CC sm 329 sg 2621440 dm 330 dg 1048576
+GC m 330 g 2621440 n out i 0 o 1
+GC m 329 g 1048576 n in i 0 o 0
+CC sm 330 sg 2621440 dm 329 dg 1048576
+GC m 330 g 2621441 n out i 1 o 1
+GC m 332 g 1048576 n in i 0 o 0
+CC sm 330 sg 2621441 dm 332 dg 1048576
+GC m 332 g 2621440 n out i 0 o 1
+GC m 330 g 1048577 n in i 1 o 0
+CC sm 332 sg 2621440 dm 330 dg 1048577
+GC m 330 g 2621442 n out i 2 o 1
+CC sm 330 sg 2621442 dm 331 dg 0
+GC m 330 g 1048578 n in i 2 o 0
+CC sm 331 sg 3 dm 330 dg 1048578
+GC m 332 g 1048577 n in i 1 o 0
+CC sm 331 sg 7 dm 332 dg 1048577
+GC m 332 g 2621441 n out i 1 o 1
+CC sm 332 sg 2621441 dm 331 dg 4
+CC sm 8 sg 3145728 dm 334 dg 8
+CDC sm 8 sg 3145728 d m=s
+CC sm 334 sg 9 dm 8 dg 3670016
+CDC sm 334 sg 9 d m=s
+CC sm 8 sg 3145729 dm 335 dg 8
+CDC sm 8 sg 3145729 d m=s
+CC sm 335 sg 9 dm 8 dg 3670017
+CDC sm 335 sg 9 d m=s
+GC m 332 g 2621442 n out i 2 o 1
+CC sm 332 sg 2621442 dm 333 dg 0
+GC m 332 g 1048578 n in i 2 o 0
+CC sm 333 sg 3 dm 332 dg 1048578
+GC m 332 g 1048579 n in i 3 o 0
+CC sm 334 sg 3 dm 332 dg 1048579
+GC m 332 g 2621443 n out i 3 o 1
+CC sm 332 sg 2621443 dm 334 dg 0
+GC m 332 g 1048580 n in i 4 o 0
+CC sm 335 sg 3 dm 332 dg 1048580
+GC m 332 g 2621444 n out i 4 o 1
+CC sm 332 sg 2621444 dm 335 dg 0
+MC id 340 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 8 n ipv4 cm 1
+GC m 340 g 0 n ifIn o 0
+GC m 340 g 3 n ifOut o 1
+GC m 340 g 4 n transportIn o 0
+GC m 340 g 7 n transportOut o 1
+MDC id 340 d q=queue;p=375,375;i=block/fork
+MC id 341 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n nl
+MDC id 341 d p=750,450;b=1000,5,,,,1
+GC m 341 g 2621440 n out i 0 o 1
+CC sm 341 sg 2621440 dm 340 dg 0
+GC m 341 g 1048576 n in i 0 o 0
+CC sm 340 sg 3 dm 341 dg 1048576
+GC m 329 g 2621441 n out i 1 o 1
+GC m 341 g 1048577 n in i 1 o 0
+CC sm 329 sg 2621441 dm 341 dg 1048577
+GC m 341 g 2621441 n out i 1 o 1
+GC m 329 g 1048577 n in i 1 o 0
+CC sm 341 sg 2621441 dm 329 dg 1048577
+MC id 342 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 8 n pppIf
+GC m 342 g 0 n upperLayerIn o 0
+GC m 342 g 3 n upperLayerOut o 1
+GC m 342 g 4 n phys$i o 0
+GC m 342 g 5 n phys$o o 1
+MDC id 342 d p=1150,525;i=block/ifcard
+MC id 343 c inet::Udp t inet.transportlayer.udp.Udp pid 8 n udp
+GC m 343 g 0 n appIn o 0
+GC m 343 g 2 n ipIn o 0
+GC m 343 g 5 n appOut o 1
+GC m 343 g 7 n ipOut o 1
+MDC id 343 d p=329,206;i=block/transport
+MC id 344 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 8 n trafficFlowFilter
+GC m 344 g 0 n internetFilterGateIn o 0
+GC m 344 g 3 n gtpUserGateOut o 1
+MDC id 344 d p=675,80;i=block/filter
+MC id 345 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 8 n gtp_user
+GC m 345 g 1 n socketOut o 1
+GC m 345 g 2 n socketIn o 0
+GC m 345 g 4 n trafficFlowFilterGate o 0
+GC m 345 g 7 n pppGate o 1
+MDC id 345 d p=525,80;i=block/tunnel
+MC id 346 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n tn
+MDC id 346 d p=750,296;b=1000,5,,,,1
+MC id 347 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 8 n at
+MDC id 347 d p=750,146;b=1000,5,,,,1
+GC m 347 g 1048576 n in i 0 o 0
+CC sm 345 sg 1 dm 347 dg 1048576
+GC m 347 g 2621440 n out i 0 o 1
+CC sm 347 sg 2621440 dm 345 dg 2
+CC sm 342 sg 3 dm 344 dg 0
+CC sm 345 sg 7 dm 342 dg 0
+CC sm 344 sg 3 dm 345 dg 4
+GC m 347 g 2621441 n out i 1 o 1
+CC sm 347 sg 2621441 dm 343 dg 0
+GC m 347 g 1048577 n in i 1 o 0
+CC sm 343 sg 5 dm 347 dg 1048577
+GC m 346 g 1048576 n in i 0 o 0
+CC sm 343 sg 7 dm 346 dg 1048576
+GC m 346 g 2621440 n out i 0 o 1
+CC sm 346 sg 2621440 dm 343 dg 2
+GC m 346 g 2621441 n out i 1 o 1
+CC sm 346 sg 2621441 dm 340 dg 4
+GC m 346 g 1048577 n in i 1 o 0
+CC sm 340 sg 7 dm 346 dg 1048577
+GC m 346 g 2621442 n out i 2 o 1
+GC m 341 g 1048578 n in i 2 o 0
+CC sm 346 sg 2621442 dm 341 dg 1048578
+GC m 341 g 2621442 n out i 2 o 1
+GC m 346 g 1048578 n in i 2 o 0
+CC sm 341 sg 2621442 dm 346 dg 1048578
+CC sm 342 sg 5 dm 8 dg 7
+CC sm 8 sg 6 dm 342 dg 4
+MC id 348 c inet::Loopback t inet.linklayer.loopback.Loopback pid 333 n lo
+GC m 348 g 0 n upperLayerIn o 0
+GC m 348 g 3 n upperLayerOut o 1
+MDC id 348 d p=300,100;i=block/rxtx
+CC sm 333 sg 0 dm 348 dg 0
+CDC sm 333 sg 0 d m=n
+CC sm 348 sg 3 dm 333 dg 3
+CDC sm 348 sg 3 d m=n
+MC id 351 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 334 n egressTC cm 1
+GC m 351 g 0 n in o 0
+GC m 351 g 3 n out o 1
+MDC id 351 d p=300,100;i=block/downarrow,black,50
+MC id 352 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 334 n ingressTC cm 1
+GC m 352 g 0 n in o 0
+GC m 352 g 3 n out o 1
+MDC id 352 d p=700,100;i=block/uparrow,black,50
+MC id 353 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 334 n queue
+GC m 353 g 0 n in o 0
+GC m 353 g 3 n out o 1
+MDC id 353 d p=300,250;i=block/queue
+MC id 354 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 334 n mac
+GC m 354 g 0 n upperLayerIn o 0
+GC m 354 g 3 n upperLayerOut o 1
+GC m 354 g 4 n phys$i o 0
+GC m 354 g 5 n phys$o o 1
+MDC id 354 d p=500,300;i=block/rxtx
+CC sm 334 sg 0 dm 351 dg 0
+CDC sm 334 sg 0 d m=n
+CC sm 351 sg 3 dm 353 dg 0
+CC sm 353 sg 3 dm 354 dg 0
+CC sm 354 sg 5 dm 334 dg 9
+CDC sm 354 sg 5 d m=s
+CC sm 334 sg 8 dm 354 dg 4
+CDC sm 334 sg 8 d m=s
+CC sm 354 sg 3 dm 352 dg 0
+CC sm 352 sg 3 dm 334 dg 3
+CDC sm 352 sg 3 d m=n
+CC sm 351 sg 0 dm 351 dg 3
+CC sm 352 sg 0 dm 352 dg 3
+MC id 359 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 335 n egressTC cm 1
+GC m 359 g 0 n in o 0
+GC m 359 g 3 n out o 1
+MDC id 359 d p=300,100;i=block/downarrow,black,50
+MC id 360 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 335 n ingressTC cm 1
+GC m 360 g 0 n in o 0
+GC m 360 g 3 n out o 1
+MDC id 360 d p=700,100;i=block/uparrow,black,50
+MC id 361 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 335 n queue
+GC m 361 g 0 n in o 0
+GC m 361 g 3 n out o 1
+MDC id 361 d p=300,250;i=block/queue
+MC id 362 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 335 n mac
+GC m 362 g 0 n upperLayerIn o 0
+GC m 362 g 3 n upperLayerOut o 1
+GC m 362 g 4 n phys$i o 0
+GC m 362 g 5 n phys$o o 1
+MDC id 362 d p=500,300;i=block/rxtx
+CC sm 335 sg 0 dm 359 dg 0
+CDC sm 335 sg 0 d m=n
+CC sm 359 sg 3 dm 361 dg 0
+CC sm 361 sg 3 dm 362 dg 0
+CC sm 362 sg 5 dm 335 dg 9
+CDC sm 362 sg 5 d m=s
+CC sm 335 sg 8 dm 362 dg 4
+CDC sm 335 sg 8 d m=s
+CC sm 362 sg 3 dm 360 dg 0
+CC sm 360 sg 3 dm 335 dg 3
+CDC sm 360 sg 3 d m=n
+CC sm 359 sg 0 dm 359 dg 3
+CC sm 360 sg 0 dm 360 dg 3
+MC id 367 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 340 n configurator
+MDC id 367 d is=s;p=100,100;i=block/cogwheel
+MC id 368 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 340 n routingTable
+MDC id 368 d is=s;p=100,200;i=block/table
+MC id 369 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 340 n natTable
+MDC id 369 d is=s;p=100,300;i=block/table
+MC id 370 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 340 n up
+MDC id 370 d p=550,100;b=600,5,,,,1
+MC id 371 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 340 n igmp
+GC m 371 g 0 n ipIn o 0
+GC m 371 g 3 n ipOut o 1
+GC m 371 g 4 n routerIn o 0
+GC m 371 g 7 n routerOut o 1
+MDC id 371 d p=400,200;i=block/cogwheel
+MC id 372 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 340 n icmp
+GC m 372 g 0 n transportIn o 0
+GC m 372 g 3 n transportOut o 1
+GC m 372 g 4 n ipIn o 0
+GC m 372 g 7 n ipOut o 1
+MDC id 372 d p=700,200;i=block/control
+MC id 373 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 340 n mp
+MDC id 373 d p=550,300;b=600,5,,,,1
+MC id 374 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 340 n ip
+GC m 374 g 0 n transportIn o 0
+GC m 374 g 3 n transportOut o 1
+GC m 374 g 4 n queueIn o 0
+GC m 374 g 7 n queueOut o 1
+MDC id 374 d q=queue;p=700,400;i=block/routing
+MC id 375 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 340 n arp
+GC m 375 g 0 n netwIn o 0
+GC m 375 g 3 n netwOut o 1
+GC m 375 g 4 n ifIn o 0
+GC m 375 g 7 n ifOut o 1
+MDC id 375 d q=pendingQueue;p=400,400;i=block/layer
+MC id 376 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 340 n lp
+MDC id 376 d p=550,500;b=600,5,,,,1
+GC m 370 g 1048576 n in i 0 o 0
+CC sm 340 sg 4 dm 370 dg 1048576
+CDC sm 340 sg 4 d m=n
+GC m 370 g 2621440 n out i 0 o 1
+CC sm 370 sg 2621440 dm 340 dg 7
+CDC sm 370 sg 2621440 d m=n
+GC m 370 g 2621441 n out i 1 o 1
+CC sm 370 sg 2621441 dm 371 dg 4
+GC m 370 g 1048577 n in i 1 o 0
+CC sm 371 sg 7 dm 370 dg 1048577
+GC m 370 g 2621442 n out i 2 o 1
+GC m 373 g 1048576 n in i 0 o 0
+CC sm 370 sg 2621442 dm 373 dg 1048576
+GC m 373 g 2621440 n out i 0 o 1
+GC m 370 g 1048578 n in i 2 o 0
+CC sm 373 sg 2621440 dm 370 dg 1048578
+GC m 370 g 2621443 n out i 3 o 1
+CC sm 370 sg 2621443 dm 372 dg 0
+GC m 370 g 1048579 n in i 3 o 0
+CC sm 372 sg 3 dm 370 dg 1048579
+GC m 373 g 1048577 n in i 1 o 0
+CC sm 371 sg 3 dm 373 dg 1048577
+GC m 373 g 2621441 n out i 1 o 1
+CC sm 373 sg 2621441 dm 371 dg 0
+GC m 373 g 1048578 n in i 2 o 0
+CC sm 372 sg 7 dm 373 dg 1048578
+GC m 373 g 2621442 n out i 2 o 1
+CC sm 373 sg 2621442 dm 372 dg 4
+GC m 373 g 2621443 n out i 3 o 1
+CC sm 373 sg 2621443 dm 374 dg 0
+GC m 373 g 1048579 n in i 3 o 0
+CC sm 374 sg 3 dm 373 dg 1048579
+GC m 376 g 1048576 n in i 0 o 0
+CC sm 375 sg 7 dm 376 dg 1048576
+GC m 376 g 2621440 n out i 0 o 1
+CC sm 376 sg 2621440 dm 375 dg 4
+GC m 376 g 1048577 n in i 1 o 0
+CC sm 374 sg 7 dm 376 dg 1048577
+GC m 376 g 2621441 n out i 1 o 1
+CC sm 376 sg 2621441 dm 374 dg 4
+GC m 376 g 2621442 n out i 2 o 1
+CC sm 376 sg 2621442 dm 340 dg 3
+CDC sm 376 sg 2621442 d m=s
+GC m 376 g 1048578 n in i 2 o 0
+CC sm 340 sg 0 dm 376 dg 1048578
+CDC sm 340 sg 0 d m=s
+MC id 381 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 342 n ingressTC cm 1
+GC m 381 g 0 n in o 0
+GC m 381 g 3 n out o 1
+MDC id 381 d p=500,100;i=block/downarrow,black,50
+MC id 382 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 342 n egressTC cm 1
+GC m 382 g 0 n in o 0
+GC m 382 g 3 n out o 1
+MDC id 382 d p=300,100;i=block/downarrow,black,50
+MC id 383 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 342 n queue
+GC m 383 g 0 n in o 0
+GC m 383 g 3 n out o 1
+MDC id 383 d q=l2queue;p=300,200;i=block/queue
+MC id 384 c inet::Ppp t inet.linklayer.ppp.Ppp pid 342 n ppp
+GC m 384 g 0 n upperLayerIn o 0
+GC m 384 g 3 n upperLayerOut o 1
+GC m 384 g 4 n phys$i o 0
+GC m 384 g 5 n phys$o o 1
+MDC id 384 d p=500,300;i=block/rxtx
+CC sm 342 sg 0 dm 382 dg 0
+CDC sm 342 sg 0 d m=n
+CC sm 382 sg 3 dm 383 dg 0
+CC sm 383 sg 3 dm 384 dg 0
+CC sm 342 sg 4 dm 384 dg 4
+CDC sm 342 sg 4 d m=s
+CC sm 384 sg 5 dm 342 dg 5
+CDC sm 384 sg 5 d m=s
+CC sm 384 sg 3 dm 381 dg 0
+CC sm 381 sg 3 dm 342 dg 3
+CDC sm 381 sg 3 d m=n
+CC sm 381 sg 0 dm 381 dg 3
+CC sm 382 sg 0 dm 382 dg 3
+MC id 389 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 9 n status
+MDC id 389 d p=125,80;i=block/cogwheel;is=s
+MC id 390 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 9 n interfaceTable
+MDC id 390 d is=s;p=125,240;i=block/table
+MC id 391 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n cb
+MDC id 391 d p=750,600;b=1000,5,,,,1
+MC id 392 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n bl
+MDC id 392 d p=750,750;b=1000,5,,,,1
+MC id 393 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 9 n ethernet
+GC m 393 g 0 n upperLayerIn o 0
+GC m 393 g 3 n upperLayerOut o 1
+GC m 393 g 4 n lowerLayerIn o 0
+GC m 393 g 7 n lowerLayerOut o 1
+MDC id 393 d p=375,825;i=block/layer
+MC id 394 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n li
+MDC id 394 d p=750,900;b=1000,5,,,,1
+MC id 395 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 9 n lo[0]
+GC m 395 g 0 n upperLayerIn o 0
+GC m 395 g 3 n upperLayerOut o 1
+MDC id 395 d p=750,975,row,150;i=block/ifcard
+MC id 396 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 9 n eth[0]
+GC m 396 g 0 n upperLayerIn o 0
+GC m 396 g 3 n upperLayerOut o 1
+GC m 396 g 4 n cutthroughIn o 0
+GC m 396 g 7 n cutthroughOut o 1
+GC m 396 g 8 n phys$i o 0
+GC m 396 g 9 n phys$o o 1
+MDC id 396 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 397 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 9 n eth[1]
+GC m 397 g 0 n upperLayerIn o 0
+GC m 397 g 3 n upperLayerOut o 1
+GC m 397 g 4 n cutthroughIn o 0
+GC m 397 g 7 n cutthroughOut o 1
+GC m 397 g 8 n phys$i o 0
+GC m 397 g 9 n phys$o o 1
+MDC id 397 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 391 g 2621440 n out i 0 o 1
+GC m 392 g 1048576 n in i 0 o 0
+CC sm 391 sg 2621440 dm 392 dg 1048576
+GC m 392 g 2621440 n out i 0 o 1
+GC m 391 g 1048576 n in i 0 o 0
+CC sm 392 sg 2621440 dm 391 dg 1048576
+GC m 392 g 2621441 n out i 1 o 1
+GC m 394 g 1048576 n in i 0 o 0
+CC sm 392 sg 2621441 dm 394 dg 1048576
+GC m 394 g 2621440 n out i 0 o 1
+GC m 392 g 1048577 n in i 1 o 0
+CC sm 394 sg 2621440 dm 392 dg 1048577
+GC m 392 g 2621442 n out i 2 o 1
+CC sm 392 sg 2621442 dm 393 dg 0
+GC m 392 g 1048578 n in i 2 o 0
+CC sm 393 sg 3 dm 392 dg 1048578
+GC m 394 g 1048577 n in i 1 o 0
+CC sm 393 sg 7 dm 394 dg 1048577
+GC m 394 g 2621441 n out i 1 o 1
+CC sm 394 sg 2621441 dm 393 dg 4
+CC sm 9 sg 3145728 dm 396 dg 8
+CDC sm 9 sg 3145728 d m=s
+CC sm 396 sg 9 dm 9 dg 3670016
+CDC sm 396 sg 9 d m=s
+CC sm 9 sg 3145729 dm 397 dg 8
+CDC sm 9 sg 3145729 d m=s
+CC sm 397 sg 9 dm 9 dg 3670017
+CDC sm 397 sg 9 d m=s
+GC m 394 g 2621442 n out i 2 o 1
+CC sm 394 sg 2621442 dm 395 dg 0
+GC m 394 g 1048578 n in i 2 o 0
+CC sm 395 sg 3 dm 394 dg 1048578
+GC m 394 g 1048579 n in i 3 o 0
+CC sm 396 sg 3 dm 394 dg 1048579
+GC m 394 g 2621443 n out i 3 o 1
+CC sm 394 sg 2621443 dm 396 dg 0
+GC m 394 g 1048580 n in i 4 o 0
+CC sm 397 sg 3 dm 394 dg 1048580
+GC m 394 g 2621444 n out i 4 o 1
+CC sm 394 sg 2621444 dm 397 dg 0
+MC id 402 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 9 n ipv4 cm 1
+GC m 402 g 0 n ifIn o 0
+GC m 402 g 3 n ifOut o 1
+GC m 402 g 4 n transportIn o 0
+GC m 402 g 7 n transportOut o 1
+MDC id 402 d q=queue;p=375,375;i=block/fork
+MC id 403 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n nl
+MDC id 403 d p=750,450;b=1000,5,,,,1
+GC m 403 g 2621440 n out i 0 o 1
+CC sm 403 sg 2621440 dm 402 dg 0
+GC m 403 g 1048576 n in i 0 o 0
+CC sm 402 sg 3 dm 403 dg 1048576
+GC m 391 g 2621441 n out i 1 o 1
+GC m 403 g 1048577 n in i 1 o 0
+CC sm 391 sg 2621441 dm 403 dg 1048577
+GC m 403 g 2621441 n out i 1 o 1
+GC m 391 g 1048577 n in i 1 o 0
+CC sm 403 sg 2621441 dm 391 dg 1048577
+MC id 404 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n tn
+MDC id 404 d p=750,300;b=1000,5,,,,1
+GC m 404 g 2621440 n out i 0 o 1
+CC sm 404 sg 2621440 dm 402 dg 4
+GC m 404 g 1048576 n in i 0 o 0
+CC sm 402 sg 7 dm 404 dg 1048576
+GC m 404 g 2621441 n out i 1 o 1
+GC m 403 g 1048578 n in i 2 o 0
+CC sm 404 sg 2621441 dm 403 dg 1048578
+GC m 403 g 2621442 n out i 2 o 1
+GC m 404 g 1048577 n in i 1 o 0
+CC sm 403 sg 2621442 dm 404 dg 1048577
+MC id 405 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 9 n at
+MDC id 405 d p=750,150;b=1000,5,,,,1
+GC m 405 g 2621440 n out i 0 o 1
+GC m 404 g 1048578 n in i 2 o 0
+CC sm 405 sg 2621440 dm 404 dg 1048578
+GC m 404 g 2621442 n out i 2 o 1
+GC m 405 g 1048576 n in i 0 o 0
+CC sm 404 sg 2621442 dm 405 dg 1048576
+MC id 406 c inet::Loopback t inet.linklayer.loopback.Loopback pid 395 n lo
+GC m 406 g 0 n upperLayerIn o 0
+GC m 406 g 3 n upperLayerOut o 1
+MDC id 406 d p=300,100;i=block/rxtx
+CC sm 395 sg 0 dm 406 dg 0
+CDC sm 395 sg 0 d m=n
+CC sm 406 sg 3 dm 395 dg 3
+CDC sm 406 sg 3 d m=n
+MC id 409 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 396 n egressTC cm 1
+GC m 409 g 0 n in o 0
+GC m 409 g 3 n out o 1
+MDC id 409 d p=300,100;i=block/downarrow,black,50
+MC id 410 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 396 n ingressTC cm 1
+GC m 410 g 0 n in o 0
+GC m 410 g 3 n out o 1
+MDC id 410 d p=700,100;i=block/uparrow,black,50
+MC id 411 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 396 n queue
+GC m 411 g 0 n in o 0
+GC m 411 g 3 n out o 1
+MDC id 411 d p=300,250;i=block/queue
+MC id 412 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 396 n mac
+GC m 412 g 0 n upperLayerIn o 0
+GC m 412 g 3 n upperLayerOut o 1
+GC m 412 g 4 n phys$i o 0
+GC m 412 g 5 n phys$o o 1
+MDC id 412 d p=500,300;i=block/rxtx
+CC sm 396 sg 0 dm 409 dg 0
+CDC sm 396 sg 0 d m=n
+CC sm 409 sg 3 dm 411 dg 0
+CC sm 411 sg 3 dm 412 dg 0
+CC sm 412 sg 5 dm 396 dg 9
+CDC sm 412 sg 5 d m=s
+CC sm 396 sg 8 dm 412 dg 4
+CDC sm 396 sg 8 d m=s
+CC sm 412 sg 3 dm 410 dg 0
+CC sm 410 sg 3 dm 396 dg 3
+CDC sm 410 sg 3 d m=n
+CC sm 409 sg 0 dm 409 dg 3
+CC sm 410 sg 0 dm 410 dg 3
+MC id 417 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 397 n egressTC cm 1
+GC m 417 g 0 n in o 0
+GC m 417 g 3 n out o 1
+MDC id 417 d p=300,100;i=block/downarrow,black,50
+MC id 418 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 397 n ingressTC cm 1
+GC m 418 g 0 n in o 0
+GC m 418 g 3 n out o 1
+MDC id 418 d p=700,100;i=block/uparrow,black,50
+MC id 419 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 397 n queue
+GC m 419 g 0 n in o 0
+GC m 419 g 3 n out o 1
+MDC id 419 d p=300,250;i=block/queue
+MC id 420 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 397 n mac
+GC m 420 g 0 n upperLayerIn o 0
+GC m 420 g 3 n upperLayerOut o 1
+GC m 420 g 4 n phys$i o 0
+GC m 420 g 5 n phys$o o 1
+MDC id 420 d p=500,300;i=block/rxtx
+CC sm 397 sg 0 dm 417 dg 0
+CDC sm 397 sg 0 d m=n
+CC sm 417 sg 3 dm 419 dg 0
+CC sm 419 sg 3 dm 420 dg 0
+CC sm 420 sg 5 dm 397 dg 9
+CDC sm 420 sg 5 d m=s
+CC sm 397 sg 8 dm 420 dg 4
+CDC sm 397 sg 8 d m=s
+CC sm 420 sg 3 dm 418 dg 0
+CC sm 418 sg 3 dm 397 dg 3
+CDC sm 418 sg 3 d m=n
+CC sm 417 sg 0 dm 417 dg 3
+CC sm 418 sg 0 dm 418 dg 3
+MC id 425 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 402 n configurator
+MDC id 425 d is=s;p=100,100;i=block/cogwheel
+MC id 426 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 402 n routingTable
+MDC id 426 d is=s;p=100,200;i=block/table
+MC id 427 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 402 n natTable
+MDC id 427 d is=s;p=100,300;i=block/table
+MC id 428 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 402 n up
+MDC id 428 d p=550,100;b=600,5,,,,1
+MC id 429 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 402 n igmp
+GC m 429 g 0 n ipIn o 0
+GC m 429 g 3 n ipOut o 1
+GC m 429 g 4 n routerIn o 0
+GC m 429 g 7 n routerOut o 1
+MDC id 429 d p=400,200;i=block/cogwheel
+MC id 430 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 402 n icmp
+GC m 430 g 0 n transportIn o 0
+GC m 430 g 3 n transportOut o 1
+GC m 430 g 4 n ipIn o 0
+GC m 430 g 7 n ipOut o 1
+MDC id 430 d p=700,200;i=block/control
+MC id 431 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 402 n mp
+MDC id 431 d p=550,300;b=600,5,,,,1
+MC id 432 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 402 n ip
+GC m 432 g 0 n transportIn o 0
+GC m 432 g 3 n transportOut o 1
+GC m 432 g 4 n queueIn o 0
+GC m 432 g 7 n queueOut o 1
+MDC id 432 d q=queue;p=700,400;i=block/routing
+MC id 433 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 402 n arp
+GC m 433 g 0 n netwIn o 0
+GC m 433 g 3 n netwOut o 1
+GC m 433 g 4 n ifIn o 0
+GC m 433 g 7 n ifOut o 1
+MDC id 433 d q=pendingQueue;p=400,400;i=block/layer
+MC id 434 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 402 n lp
+MDC id 434 d p=550,500;b=600,5,,,,1
+GC m 428 g 1048576 n in i 0 o 0
+CC sm 402 sg 4 dm 428 dg 1048576
+CDC sm 402 sg 4 d m=n
+GC m 428 g 2621440 n out i 0 o 1
+CC sm 428 sg 2621440 dm 402 dg 7
+CDC sm 428 sg 2621440 d m=n
+GC m 428 g 2621441 n out i 1 o 1
+CC sm 428 sg 2621441 dm 429 dg 4
+GC m 428 g 1048577 n in i 1 o 0
+CC sm 429 sg 7 dm 428 dg 1048577
+GC m 428 g 2621442 n out i 2 o 1
+GC m 431 g 1048576 n in i 0 o 0
+CC sm 428 sg 2621442 dm 431 dg 1048576
+GC m 431 g 2621440 n out i 0 o 1
+GC m 428 g 1048578 n in i 2 o 0
+CC sm 431 sg 2621440 dm 428 dg 1048578
+GC m 428 g 2621443 n out i 3 o 1
+CC sm 428 sg 2621443 dm 430 dg 0
+GC m 428 g 1048579 n in i 3 o 0
+CC sm 430 sg 3 dm 428 dg 1048579
+GC m 431 g 1048577 n in i 1 o 0
+CC sm 429 sg 3 dm 431 dg 1048577
+GC m 431 g 2621441 n out i 1 o 1
+CC sm 431 sg 2621441 dm 429 dg 0
+GC m 431 g 1048578 n in i 2 o 0
+CC sm 430 sg 7 dm 431 dg 1048578
+GC m 431 g 2621442 n out i 2 o 1
+CC sm 431 sg 2621442 dm 430 dg 4
+GC m 431 g 2621443 n out i 3 o 1
+CC sm 431 sg 2621443 dm 432 dg 0
+GC m 431 g 1048579 n in i 3 o 0
+CC sm 432 sg 3 dm 431 dg 1048579
+GC m 434 g 1048576 n in i 0 o 0
+CC sm 433 sg 7 dm 434 dg 1048576
+GC m 434 g 2621440 n out i 0 o 1
+CC sm 434 sg 2621440 dm 433 dg 4
+GC m 434 g 1048577 n in i 1 o 0
+CC sm 432 sg 7 dm 434 dg 1048577
+GC m 434 g 2621441 n out i 1 o 1
+CC sm 434 sg 2621441 dm 432 dg 4
+GC m 434 g 2621442 n out i 2 o 1
+CC sm 434 sg 2621442 dm 402 dg 3
+CDC sm 434 sg 2621442 d m=s
+GC m 434 g 1048578 n in i 2 o 0
+CC sm 402 sg 0 dm 434 dg 1048578
+CDC sm 402 sg 0 d m=s
+MC id 439 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 10 n status
+MDC id 439 d p=125,80;i=block/cogwheel;is=s
+MC id 440 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 10 n interfaceTable
+MDC id 440 d is=s;p=125,240;i=block/table
+MC id 441 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n cb
+MDC id 441 d p=750,600;b=1000,5,,,,1
+MC id 442 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n bl
+MDC id 442 d p=750,750;b=1000,5,,,,1
+MC id 443 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 10 n ethernet
+GC m 443 g 0 n upperLayerIn o 0
+GC m 443 g 3 n upperLayerOut o 1
+GC m 443 g 4 n lowerLayerIn o 0
+GC m 443 g 7 n lowerLayerOut o 1
+MDC id 443 d p=375,825;i=block/layer
+MC id 444 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n li
+MDC id 444 d p=750,900;b=1000,5,,,,1
+MC id 445 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 10 n lo[0]
+GC m 445 g 0 n upperLayerIn o 0
+GC m 445 g 3 n upperLayerOut o 1
+MDC id 445 d p=750,975,row,150;i=block/ifcard
+MC id 446 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 10 n eth[0]
+GC m 446 g 0 n upperLayerIn o 0
+GC m 446 g 3 n upperLayerOut o 1
+GC m 446 g 4 n cutthroughIn o 0
+GC m 446 g 7 n cutthroughOut o 1
+GC m 446 g 8 n phys$i o 0
+GC m 446 g 9 n phys$o o 1
+MDC id 446 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 441 g 2621440 n out i 0 o 1
+GC m 442 g 1048576 n in i 0 o 0
+CC sm 441 sg 2621440 dm 442 dg 1048576
+GC m 442 g 2621440 n out i 0 o 1
+GC m 441 g 1048576 n in i 0 o 0
+CC sm 442 sg 2621440 dm 441 dg 1048576
+GC m 442 g 2621441 n out i 1 o 1
+GC m 444 g 1048576 n in i 0 o 0
+CC sm 442 sg 2621441 dm 444 dg 1048576
+GC m 444 g 2621440 n out i 0 o 1
+GC m 442 g 1048577 n in i 1 o 0
+CC sm 444 sg 2621440 dm 442 dg 1048577
+GC m 442 g 2621442 n out i 2 o 1
+CC sm 442 sg 2621442 dm 443 dg 0
+GC m 442 g 1048578 n in i 2 o 0
+CC sm 443 sg 3 dm 442 dg 1048578
+GC m 444 g 1048577 n in i 1 o 0
+CC sm 443 sg 7 dm 444 dg 1048577
+GC m 444 g 2621441 n out i 1 o 1
+CC sm 444 sg 2621441 dm 443 dg 4
+CC sm 10 sg 3145728 dm 446 dg 8
+CDC sm 10 sg 3145728 d m=s
+CC sm 446 sg 9 dm 10 dg 3670016
+CDC sm 446 sg 9 d m=s
+GC m 444 g 2621442 n out i 2 o 1
+CC sm 444 sg 2621442 dm 445 dg 0
+GC m 444 g 1048578 n in i 2 o 0
+CC sm 445 sg 3 dm 444 dg 1048578
+GC m 444 g 1048579 n in i 3 o 0
+CC sm 446 sg 3 dm 444 dg 1048579
+GC m 444 g 2621443 n out i 3 o 1
+CC sm 444 sg 2621443 dm 446 dg 0
+MC id 449 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 10 n ipv4 cm 1
+GC m 449 g 0 n ifIn o 0
+GC m 449 g 3 n ifOut o 1
+GC m 449 g 4 n transportIn o 0
+GC m 449 g 7 n transportOut o 1
+MDC id 449 d q=queue;p=375,375;i=block/fork
+MC id 450 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n nl
+MDC id 450 d p=750,450;b=1000,5,,,,1
+GC m 450 g 2621440 n out i 0 o 1
+CC sm 450 sg 2621440 dm 449 dg 0
+GC m 450 g 1048576 n in i 0 o 0
+CC sm 449 sg 3 dm 450 dg 1048576
+GC m 441 g 2621441 n out i 1 o 1
+GC m 450 g 1048577 n in i 1 o 0
+CC sm 441 sg 2621441 dm 450 dg 1048577
+GC m 450 g 2621441 n out i 1 o 1
+GC m 441 g 1048577 n in i 1 o 0
+CC sm 450 sg 2621441 dm 441 dg 1048577
+MC id 451 c inet::Udp t inet.transportlayer.udp.Udp pid 10 n udp
+GC m 451 g 0 n appIn o 0
+GC m 451 g 2 n ipIn o 0
+GC m 451 g 5 n appOut o 1
+GC m 451 g 7 n ipOut o 1
+MDC id 451 d p=375,225;i=block/transport
+MC id 452 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 10 n tcp
+GC m 452 g 0 n appIn o 0
+GC m 452 g 2 n ipIn o 0
+GC m 452 g 5 n appOut o 1
+GC m 452 g 7 n ipOut o 1
+MDC id 452 d p=525,225;i=block/wheelbarrow
+MC id 453 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n tn
+MDC id 453 d p=750,300;b=1000,5,,,,1
+GC m 453 g 1048576 n in i 0 o 0
+CC sm 451 sg 7 dm 453 dg 1048576
+GC m 453 g 2621440 n out i 0 o 1
+CC sm 453 sg 2621440 dm 451 dg 2
+GC m 453 g 1048577 n in i 1 o 0
+CC sm 452 sg 7 dm 453 dg 1048577
+GC m 453 g 2621441 n out i 1 o 1
+CC sm 453 sg 2621441 dm 452 dg 2
+GC m 453 g 2621442 n out i 2 o 1
+CC sm 453 sg 2621442 dm 449 dg 4
+GC m 453 g 1048578 n in i 2 o 0
+CC sm 449 sg 7 dm 453 dg 1048578
+GC m 453 g 2621443 n out i 3 o 1
+GC m 450 g 1048578 n in i 2 o 0
+CC sm 453 sg 2621443 dm 450 dg 1048578
+GC m 450 g 2621442 n out i 2 o 1
+GC m 453 g 1048579 n in i 3 o 0
+CC sm 450 sg 2621442 dm 453 dg 1048579
+MC id 454 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 10 n at
+MDC id 454 d p=750,150;b=1000,5,,,,1
+GC m 454 g 2621440 n out i 0 o 1
+CC sm 454 sg 2621440 dm 451 dg 0
+GC m 454 g 1048576 n in i 0 o 0
+CC sm 451 sg 5 dm 454 dg 1048576
+GC m 454 g 2621441 n out i 1 o 1
+CC sm 454 sg 2621441 dm 452 dg 0
+GC m 454 g 1048577 n in i 1 o 0
+CC sm 452 sg 5 dm 454 dg 1048577
+GC m 454 g 2621442 n out i 2 o 1
+GC m 453 g 1048580 n in i 4 o 0
+CC sm 454 sg 2621442 dm 453 dg 1048580
+GC m 453 g 2621444 n out i 4 o 1
+GC m 454 g 1048578 n in i 2 o 0
+CC sm 453 sg 2621444 dm 454 dg 1048578
+MC id 455 c inet::Loopback t inet.linklayer.loopback.Loopback pid 445 n lo
+GC m 455 g 0 n upperLayerIn o 0
+GC m 455 g 3 n upperLayerOut o 1
+MDC id 455 d p=300,100;i=block/rxtx
+CC sm 445 sg 0 dm 455 dg 0
+CDC sm 445 sg 0 d m=n
+CC sm 455 sg 3 dm 445 dg 3
+CDC sm 455 sg 3 d m=n
+MC id 458 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 446 n egressTC cm 1
+GC m 458 g 0 n in o 0
+GC m 458 g 3 n out o 1
+MDC id 458 d p=300,100;i=block/downarrow,black,50
+MC id 459 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 446 n ingressTC cm 1
+GC m 459 g 0 n in o 0
+GC m 459 g 3 n out o 1
+MDC id 459 d p=700,100;i=block/uparrow,black,50
+MC id 460 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 446 n queue
+GC m 460 g 0 n in o 0
+GC m 460 g 3 n out o 1
+MDC id 460 d p=300,250;i=block/queue
+MC id 461 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 446 n mac
+GC m 461 g 0 n upperLayerIn o 0
+GC m 461 g 3 n upperLayerOut o 1
+GC m 461 g 4 n phys$i o 0
+GC m 461 g 5 n phys$o o 1
+MDC id 461 d p=500,300;i=block/rxtx
+CC sm 446 sg 0 dm 458 dg 0
+CDC sm 446 sg 0 d m=n
+CC sm 458 sg 3 dm 460 dg 0
+CC sm 460 sg 3 dm 461 dg 0
+CC sm 461 sg 5 dm 446 dg 9
+CDC sm 461 sg 5 d m=s
+CC sm 446 sg 8 dm 461 dg 4
+CDC sm 446 sg 8 d m=s
+CC sm 461 sg 3 dm 459 dg 0
+CC sm 459 sg 3 dm 446 dg 3
+CDC sm 459 sg 3 d m=n
+CC sm 458 sg 0 dm 458 dg 3
+CC sm 459 sg 0 dm 459 dg 3
+MC id 466 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 449 n configurator
+MDC id 466 d is=s;p=100,100;i=block/cogwheel
+MC id 467 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 449 n routingTable
+MDC id 467 d is=s;p=100,200;i=block/table
+MC id 468 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 449 n natTable
+MDC id 468 d is=s;p=100,300;i=block/table
+MC id 469 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 449 n up
+MDC id 469 d p=550,100;b=600,5,,,,1
+MC id 470 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 449 n igmp
+GC m 470 g 0 n ipIn o 0
+GC m 470 g 3 n ipOut o 1
+GC m 470 g 4 n routerIn o 0
+GC m 470 g 7 n routerOut o 1
+MDC id 470 d p=400,200;i=block/cogwheel
+MC id 471 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 449 n icmp
+GC m 471 g 0 n transportIn o 0
+GC m 471 g 3 n transportOut o 1
+GC m 471 g 4 n ipIn o 0
+GC m 471 g 7 n ipOut o 1
+MDC id 471 d p=700,200;i=block/control
+MC id 472 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 449 n mp
+MDC id 472 d p=550,300;b=600,5,,,,1
+MC id 473 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 449 n ip
+GC m 473 g 0 n transportIn o 0
+GC m 473 g 3 n transportOut o 1
+GC m 473 g 4 n queueIn o 0
+GC m 473 g 7 n queueOut o 1
+MDC id 473 d q=queue;p=700,400;i=block/routing
+MC id 474 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 449 n arp
+GC m 474 g 0 n netwIn o 0
+GC m 474 g 3 n netwOut o 1
+GC m 474 g 4 n ifIn o 0
+GC m 474 g 7 n ifOut o 1
+MDC id 474 d q=pendingQueue;p=400,400;i=block/layer
+MC id 475 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 449 n lp
+MDC id 475 d p=550,500;b=600,5,,,,1
+GC m 469 g 1048576 n in i 0 o 0
+CC sm 449 sg 4 dm 469 dg 1048576
+CDC sm 449 sg 4 d m=n
+GC m 469 g 2621440 n out i 0 o 1
+CC sm 469 sg 2621440 dm 449 dg 7
+CDC sm 469 sg 2621440 d m=n
+GC m 469 g 2621441 n out i 1 o 1
+CC sm 469 sg 2621441 dm 470 dg 4
+GC m 469 g 1048577 n in i 1 o 0
+CC sm 470 sg 7 dm 469 dg 1048577
+GC m 469 g 2621442 n out i 2 o 1
+GC m 472 g 1048576 n in i 0 o 0
+CC sm 469 sg 2621442 dm 472 dg 1048576
+GC m 472 g 2621440 n out i 0 o 1
+GC m 469 g 1048578 n in i 2 o 0
+CC sm 472 sg 2621440 dm 469 dg 1048578
+GC m 469 g 2621443 n out i 3 o 1
+CC sm 469 sg 2621443 dm 471 dg 0
+GC m 469 g 1048579 n in i 3 o 0
+CC sm 471 sg 3 dm 469 dg 1048579
+GC m 472 g 1048577 n in i 1 o 0
+CC sm 470 sg 3 dm 472 dg 1048577
+GC m 472 g 2621441 n out i 1 o 1
+CC sm 472 sg 2621441 dm 470 dg 0
+GC m 472 g 1048578 n in i 2 o 0
+CC sm 471 sg 7 dm 472 dg 1048578
+GC m 472 g 2621442 n out i 2 o 1
+CC sm 472 sg 2621442 dm 471 dg 4
+GC m 472 g 2621443 n out i 3 o 1
+CC sm 472 sg 2621443 dm 473 dg 0
+GC m 472 g 1048579 n in i 3 o 0
+CC sm 473 sg 3 dm 472 dg 1048579
+GC m 475 g 1048576 n in i 0 o 0
+CC sm 474 sg 7 dm 475 dg 1048576
+GC m 475 g 2621440 n out i 0 o 1
+CC sm 475 sg 2621440 dm 474 dg 4
+GC m 475 g 1048577 n in i 1 o 0
+CC sm 473 sg 7 dm 475 dg 1048577
+GC m 475 g 2621441 n out i 1 o 1
+CC sm 475 sg 2621441 dm 473 dg 4
+GC m 475 g 2621442 n out i 2 o 1
+CC sm 475 sg 2621442 dm 449 dg 3
+CDC sm 475 sg 2621442 d m=s
+GC m 475 g 1048578 n in i 2 o 0
+CC sm 449 sg 0 dm 475 dg 1048578
+CDC sm 449 sg 0 d m=s
+MC id 480 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 14 n status
+MDC id 480 d p=125,80;i=block/cogwheel;is=s
+MC id 481 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 14 n interfaceTable
+MDC id 481 d is=s;p=125,240;i=block/table
+MC id 482 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n cb
+MDC id 482 d p=750,600;b=1000,5,,,,1
+MC id 483 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n bl
+MDC id 483 d p=750,750;b=1000,5,,,,1
+MC id 484 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 14 n ethernet
+GC m 484 g 0 n upperLayerIn o 0
+GC m 484 g 3 n upperLayerOut o 1
+GC m 484 g 4 n lowerLayerIn o 0
+GC m 484 g 7 n lowerLayerOut o 1
+MDC id 484 d p=375,825;i=block/layer
+MC id 485 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n li
+MDC id 485 d p=750,900;b=1000,5,,,,1
+MC id 486 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 14 n lo[0]
+GC m 486 g 0 n upperLayerIn o 0
+GC m 486 g 3 n upperLayerOut o 1
+MDC id 486 d p=750,975,row,150;i=block/ifcard
+MC id 487 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 14 n eth[0]
+GC m 487 g 0 n upperLayerIn o 0
+GC m 487 g 3 n upperLayerOut o 1
+GC m 487 g 4 n cutthroughIn o 0
+GC m 487 g 7 n cutthroughOut o 1
+GC m 487 g 8 n phys$i o 0
+GC m 487 g 9 n phys$o o 1
+MDC id 487 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 488 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 14 n eth[1]
+GC m 488 g 0 n upperLayerIn o 0
+GC m 488 g 3 n upperLayerOut o 1
+GC m 488 g 4 n cutthroughIn o 0
+GC m 488 g 7 n cutthroughOut o 1
+GC m 488 g 8 n phys$i o 0
+GC m 488 g 9 n phys$o o 1
+MDC id 488 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 489 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 14 n eth[2]
+GC m 489 g 0 n upperLayerIn o 0
+GC m 489 g 3 n upperLayerOut o 1
+GC m 489 g 4 n cutthroughIn o 0
+GC m 489 g 7 n cutthroughOut o 1
+GC m 489 g 8 n phys$i o 0
+GC m 489 g 9 n phys$o o 1
+MDC id 489 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 482 g 2621440 n out i 0 o 1
+GC m 483 g 1048576 n in i 0 o 0
+CC sm 482 sg 2621440 dm 483 dg 1048576
+GC m 483 g 2621440 n out i 0 o 1
+GC m 482 g 1048576 n in i 0 o 0
+CC sm 483 sg 2621440 dm 482 dg 1048576
+GC m 483 g 2621441 n out i 1 o 1
+GC m 485 g 1048576 n in i 0 o 0
+CC sm 483 sg 2621441 dm 485 dg 1048576
+GC m 485 g 2621440 n out i 0 o 1
+GC m 483 g 1048577 n in i 1 o 0
+CC sm 485 sg 2621440 dm 483 dg 1048577
+GC m 483 g 2621442 n out i 2 o 1
+CC sm 483 sg 2621442 dm 484 dg 0
+GC m 483 g 1048578 n in i 2 o 0
+CC sm 484 sg 3 dm 483 dg 1048578
+GC m 485 g 1048577 n in i 1 o 0
+CC sm 484 sg 7 dm 485 dg 1048577
+GC m 485 g 2621441 n out i 1 o 1
+CC sm 485 sg 2621441 dm 484 dg 4
+CC sm 14 sg 3145728 dm 487 dg 8
+CDC sm 14 sg 3145728 d m=s
+CC sm 487 sg 9 dm 14 dg 3670016
+CDC sm 487 sg 9 d m=s
+CC sm 14 sg 3145729 dm 488 dg 8
+CDC sm 14 sg 3145729 d m=s
+CC sm 488 sg 9 dm 14 dg 3670017
+CDC sm 488 sg 9 d m=s
+CC sm 14 sg 3145730 dm 489 dg 8
+CDC sm 14 sg 3145730 d m=s
+CC sm 489 sg 9 dm 14 dg 3670018
+CDC sm 489 sg 9 d m=s
+GC m 485 g 2621442 n out i 2 o 1
+CC sm 485 sg 2621442 dm 486 dg 0
+GC m 485 g 1048578 n in i 2 o 0
+CC sm 486 sg 3 dm 485 dg 1048578
+GC m 485 g 1048579 n in i 3 o 0
+CC sm 487 sg 3 dm 485 dg 1048579
+GC m 485 g 2621443 n out i 3 o 1
+CC sm 485 sg 2621443 dm 487 dg 0
+GC m 485 g 1048580 n in i 4 o 0
+CC sm 488 sg 3 dm 485 dg 1048580
+GC m 485 g 2621444 n out i 4 o 1
+CC sm 485 sg 2621444 dm 488 dg 0
+GC m 485 g 1048581 n in i 5 o 0
+CC sm 489 sg 3 dm 485 dg 1048581
+GC m 485 g 2621445 n out i 5 o 1
+CC sm 485 sg 2621445 dm 489 dg 0
+MC id 496 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 14 n ipv4 cm 1
+GC m 496 g 0 n ifIn o 0
+GC m 496 g 3 n ifOut o 1
+GC m 496 g 4 n transportIn o 0
+GC m 496 g 7 n transportOut o 1
+MDC id 496 d q=queue;p=375,375;i=block/fork
+MC id 497 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n nl
+MDC id 497 d p=750,450;b=1000,5,,,,1
+GC m 497 g 2621440 n out i 0 o 1
+CC sm 497 sg 2621440 dm 496 dg 0
+GC m 497 g 1048576 n in i 0 o 0
+CC sm 496 sg 3 dm 497 dg 1048576
+GC m 482 g 2621441 n out i 1 o 1
+GC m 497 g 1048577 n in i 1 o 0
+CC sm 482 sg 2621441 dm 497 dg 1048577
+GC m 497 g 2621441 n out i 1 o 1
+GC m 482 g 1048577 n in i 1 o 0
+CC sm 497 sg 2621441 dm 482 dg 1048577
+MC id 498 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 14 n pppIf
+GC m 498 g 0 n upperLayerIn o 0
+GC m 498 g 3 n upperLayerOut o 1
+GC m 498 g 4 n phys$i o 0
+GC m 498 g 5 n phys$o o 1
+MDC id 498 d p=1150,525;i=block/ifcard
+MC id 499 c inet::Udp t inet.transportlayer.udp.Udp pid 14 n udp
+GC m 499 g 0 n appIn o 0
+GC m 499 g 2 n ipIn o 0
+GC m 499 g 5 n appOut o 1
+GC m 499 g 7 n ipOut o 1
+MDC id 499 d p=374.0425,201.4075;i=block/transport
+MC id 500 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 14 n trafficFlowFilter
+GC m 500 g 0 n internetFilterGateIn o 0
+GC m 500 g 3 n gtpUserGateOut o 1
+MDC id 500 d p=881.7925,79.5475;i=block/filter
+MC id 501 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 14 n gtp_user
+GC m 501 g 1 n socketOut o 1
+GC m 501 g 2 n socketIn o 0
+GC m 501 g 4 n trafficFlowFilterGate o 0
+GC m 501 g 7 n pppGate o 1
+MDC id 501 d p=525,80;i=block/tunnel
+MC id 502 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n tn
+MDC id 502 d p=750,296;b=1000,5,,,,1
+MC id 503 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 14 n at
+MDC id 503 d p=750,146;b=1000,5,,,,1
+GC m 503 g 1048576 n in i 0 o 0
+CC sm 501 sg 1 dm 503 dg 1048576
+GC m 503 g 2621440 n out i 0 o 1
+CC sm 503 sg 2621440 dm 501 dg 2
+CC sm 498 sg 3 dm 500 dg 0
+CC sm 501 sg 7 dm 498 dg 0
+CC sm 500 sg 3 dm 501 dg 4
+GC m 503 g 2621441 n out i 1 o 1
+CC sm 503 sg 2621441 dm 499 dg 0
+GC m 503 g 1048577 n in i 1 o 0
+CC sm 499 sg 5 dm 503 dg 1048577
+GC m 502 g 1048576 n in i 0 o 0
+CC sm 499 sg 7 dm 502 dg 1048576
+GC m 502 g 2621440 n out i 0 o 1
+CC sm 502 sg 2621440 dm 499 dg 2
+GC m 502 g 2621441 n out i 1 o 1
+CC sm 502 sg 2621441 dm 496 dg 4
+GC m 502 g 1048577 n in i 1 o 0
+CC sm 496 sg 7 dm 502 dg 1048577
+GC m 502 g 2621442 n out i 2 o 1
+GC m 497 g 1048578 n in i 2 o 0
+CC sm 502 sg 2621442 dm 497 dg 1048578
+GC m 497 g 2621442 n out i 2 o 1
+GC m 502 g 1048578 n in i 2 o 0
+CC sm 497 sg 2621442 dm 502 dg 1048578
+CC sm 498 sg 5 dm 14 dg 7
+CC sm 14 sg 6 dm 498 dg 4
+MC id 504 c inet::Loopback t inet.linklayer.loopback.Loopback pid 486 n lo
+GC m 504 g 0 n upperLayerIn o 0
+GC m 504 g 3 n upperLayerOut o 1
+MDC id 504 d p=300,100;i=block/rxtx
+CC sm 486 sg 0 dm 504 dg 0
+CDC sm 486 sg 0 d m=n
+CC sm 504 sg 3 dm 486 dg 3
+CDC sm 504 sg 3 d m=n
+MC id 507 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 487 n egressTC cm 1
+GC m 507 g 0 n in o 0
+GC m 507 g 3 n out o 1
+MDC id 507 d p=300,100;i=block/downarrow,black,50
+MC id 508 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 487 n ingressTC cm 1
+GC m 508 g 0 n in o 0
+GC m 508 g 3 n out o 1
+MDC id 508 d p=700,100;i=block/uparrow,black,50
+MC id 509 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 487 n queue
+GC m 509 g 0 n in o 0
+GC m 509 g 3 n out o 1
+MDC id 509 d p=300,250;i=block/queue
+MC id 510 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 487 n mac
+GC m 510 g 0 n upperLayerIn o 0
+GC m 510 g 3 n upperLayerOut o 1
+GC m 510 g 4 n phys$i o 0
+GC m 510 g 5 n phys$o o 1
+MDC id 510 d p=500,300;i=block/rxtx
+CC sm 487 sg 0 dm 507 dg 0
+CDC sm 487 sg 0 d m=n
+CC sm 507 sg 3 dm 509 dg 0
+CC sm 509 sg 3 dm 510 dg 0
+CC sm 510 sg 5 dm 487 dg 9
+CDC sm 510 sg 5 d m=s
+CC sm 487 sg 8 dm 510 dg 4
+CDC sm 487 sg 8 d m=s
+CC sm 510 sg 3 dm 508 dg 0
+CC sm 508 sg 3 dm 487 dg 3
+CDC sm 508 sg 3 d m=n
+CC sm 507 sg 0 dm 507 dg 3
+CC sm 508 sg 0 dm 508 dg 3
+MC id 515 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 488 n egressTC cm 1
+GC m 515 g 0 n in o 0
+GC m 515 g 3 n out o 1
+MDC id 515 d p=300,100;i=block/downarrow,black,50
+MC id 516 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 488 n ingressTC cm 1
+GC m 516 g 0 n in o 0
+GC m 516 g 3 n out o 1
+MDC id 516 d p=700,100;i=block/uparrow,black,50
+MC id 517 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 488 n queue
+GC m 517 g 0 n in o 0
+GC m 517 g 3 n out o 1
+MDC id 517 d p=300,250;i=block/queue
+MC id 518 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 488 n mac
+GC m 518 g 0 n upperLayerIn o 0
+GC m 518 g 3 n upperLayerOut o 1
+GC m 518 g 4 n phys$i o 0
+GC m 518 g 5 n phys$o o 1
+MDC id 518 d p=500,300;i=block/rxtx
+CC sm 488 sg 0 dm 515 dg 0
+CDC sm 488 sg 0 d m=n
+CC sm 515 sg 3 dm 517 dg 0
+CC sm 517 sg 3 dm 518 dg 0
+CC sm 518 sg 5 dm 488 dg 9
+CDC sm 518 sg 5 d m=s
+CC sm 488 sg 8 dm 518 dg 4
+CDC sm 488 sg 8 d m=s
+CC sm 518 sg 3 dm 516 dg 0
+CC sm 516 sg 3 dm 488 dg 3
+CDC sm 516 sg 3 d m=n
+CC sm 515 sg 0 dm 515 dg 3
+CC sm 516 sg 0 dm 516 dg 3
+MC id 523 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 489 n egressTC cm 1
+GC m 523 g 0 n in o 0
+GC m 523 g 3 n out o 1
+MDC id 523 d p=300,100;i=block/downarrow,black,50
+MC id 524 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 489 n ingressTC cm 1
+GC m 524 g 0 n in o 0
+GC m 524 g 3 n out o 1
+MDC id 524 d p=700,100;i=block/uparrow,black,50
+MC id 525 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 489 n queue
+GC m 525 g 0 n in o 0
+GC m 525 g 3 n out o 1
+MDC id 525 d p=300,250;i=block/queue
+MC id 526 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 489 n mac
+GC m 526 g 0 n upperLayerIn o 0
+GC m 526 g 3 n upperLayerOut o 1
+GC m 526 g 4 n phys$i o 0
+GC m 526 g 5 n phys$o o 1
+MDC id 526 d p=500,300;i=block/rxtx
+CC sm 489 sg 0 dm 523 dg 0
+CDC sm 489 sg 0 d m=n
+CC sm 523 sg 3 dm 525 dg 0
+CC sm 525 sg 3 dm 526 dg 0
+CC sm 526 sg 5 dm 489 dg 9
+CDC sm 526 sg 5 d m=s
+CC sm 489 sg 8 dm 526 dg 4
+CDC sm 489 sg 8 d m=s
+CC sm 526 sg 3 dm 524 dg 0
+CC sm 524 sg 3 dm 489 dg 3
+CDC sm 524 sg 3 d m=n
+CC sm 523 sg 0 dm 523 dg 3
+CC sm 524 sg 0 dm 524 dg 3
+MC id 531 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 496 n configurator
+MDC id 531 d is=s;p=100,100;i=block/cogwheel
+MC id 532 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 496 n routingTable
+MDC id 532 d is=s;p=100,200;i=block/table
+MC id 533 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 496 n natTable
+MDC id 533 d is=s;p=100,300;i=block/table
+MC id 534 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 496 n up
+MDC id 534 d p=550,100;b=600,5,,,,1
+MC id 535 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 496 n igmp
+GC m 535 g 0 n ipIn o 0
+GC m 535 g 3 n ipOut o 1
+GC m 535 g 4 n routerIn o 0
+GC m 535 g 7 n routerOut o 1
+MDC id 535 d p=400,200;i=block/cogwheel
+MC id 536 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 496 n icmp
+GC m 536 g 0 n transportIn o 0
+GC m 536 g 3 n transportOut o 1
+GC m 536 g 4 n ipIn o 0
+GC m 536 g 7 n ipOut o 1
+MDC id 536 d p=700,200;i=block/control
+MC id 537 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 496 n mp
+MDC id 537 d p=550,300;b=600,5,,,,1
+MC id 538 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 496 n ip
+GC m 538 g 0 n transportIn o 0
+GC m 538 g 3 n transportOut o 1
+GC m 538 g 4 n queueIn o 0
+GC m 538 g 7 n queueOut o 1
+MDC id 538 d q=queue;p=700,400;i=block/routing
+MC id 539 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 496 n arp
+GC m 539 g 0 n netwIn o 0
+GC m 539 g 3 n netwOut o 1
+GC m 539 g 4 n ifIn o 0
+GC m 539 g 7 n ifOut o 1
+MDC id 539 d q=pendingQueue;p=400,400;i=block/layer
+MC id 540 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 496 n lp
+MDC id 540 d p=550,500;b=600,5,,,,1
+GC m 534 g 1048576 n in i 0 o 0
+CC sm 496 sg 4 dm 534 dg 1048576
+CDC sm 496 sg 4 d m=n
+GC m 534 g 2621440 n out i 0 o 1
+CC sm 534 sg 2621440 dm 496 dg 7
+CDC sm 534 sg 2621440 d m=n
+GC m 534 g 2621441 n out i 1 o 1
+CC sm 534 sg 2621441 dm 535 dg 4
+GC m 534 g 1048577 n in i 1 o 0
+CC sm 535 sg 7 dm 534 dg 1048577
+GC m 534 g 2621442 n out i 2 o 1
+GC m 537 g 1048576 n in i 0 o 0
+CC sm 534 sg 2621442 dm 537 dg 1048576
+GC m 537 g 2621440 n out i 0 o 1
+GC m 534 g 1048578 n in i 2 o 0
+CC sm 537 sg 2621440 dm 534 dg 1048578
+GC m 534 g 2621443 n out i 3 o 1
+CC sm 534 sg 2621443 dm 536 dg 0
+GC m 534 g 1048579 n in i 3 o 0
+CC sm 536 sg 3 dm 534 dg 1048579
+GC m 537 g 1048577 n in i 1 o 0
+CC sm 535 sg 3 dm 537 dg 1048577
+GC m 537 g 2621441 n out i 1 o 1
+CC sm 537 sg 2621441 dm 535 dg 0
+GC m 537 g 1048578 n in i 2 o 0
+CC sm 536 sg 7 dm 537 dg 1048578
+GC m 537 g 2621442 n out i 2 o 1
+CC sm 537 sg 2621442 dm 536 dg 4
+GC m 537 g 2621443 n out i 3 o 1
+CC sm 537 sg 2621443 dm 538 dg 0
+GC m 537 g 1048579 n in i 3 o 0
+CC sm 538 sg 3 dm 537 dg 1048579
+GC m 540 g 1048576 n in i 0 o 0
+CC sm 539 sg 7 dm 540 dg 1048576
+GC m 540 g 2621440 n out i 0 o 1
+CC sm 540 sg 2621440 dm 539 dg 4
+GC m 540 g 1048577 n in i 1 o 0
+CC sm 538 sg 7 dm 540 dg 1048577
+GC m 540 g 2621441 n out i 1 o 1
+CC sm 540 sg 2621441 dm 538 dg 4
+GC m 540 g 2621442 n out i 2 o 1
+CC sm 540 sg 2621442 dm 496 dg 3
+CDC sm 540 sg 2621442 d m=s
+GC m 540 g 1048578 n in i 2 o 0
+CC sm 496 sg 0 dm 540 dg 1048578
+CDC sm 496 sg 0 d m=s
+MC id 545 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 498 n ingressTC cm 1
+GC m 545 g 0 n in o 0
+GC m 545 g 3 n out o 1
+MDC id 545 d p=500,100;i=block/downarrow,black,50
+MC id 546 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 498 n egressTC cm 1
+GC m 546 g 0 n in o 0
+GC m 546 g 3 n out o 1
+MDC id 546 d p=300,100;i=block/downarrow,black,50
+MC id 547 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 498 n queue
+GC m 547 g 0 n in o 0
+GC m 547 g 3 n out o 1
+MDC id 547 d q=l2queue;p=300,200;i=block/queue
+MC id 548 c inet::Ppp t inet.linklayer.ppp.Ppp pid 498 n ppp
+GC m 548 g 0 n upperLayerIn o 0
+GC m 548 g 3 n upperLayerOut o 1
+GC m 548 g 4 n phys$i o 0
+GC m 548 g 5 n phys$o o 1
+MDC id 548 d p=500,300;i=block/rxtx
+CC sm 498 sg 0 dm 546 dg 0
+CDC sm 498 sg 0 d m=n
+CC sm 546 sg 3 dm 547 dg 0
+CC sm 547 sg 3 dm 548 dg 0
+CC sm 498 sg 4 dm 548 dg 4
+CDC sm 498 sg 4 d m=s
+CC sm 548 sg 5 dm 498 dg 5
+CDC sm 548 sg 5 d m=s
+CC sm 548 sg 3 dm 545 dg 0
+CC sm 545 sg 3 dm 498 dg 3
+CDC sm 545 sg 3 d m=n
+CC sm 545 sg 0 dm 545 dg 3
+CC sm 546 sg 0 dm 546 dg 3
+MC id 553 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 15 n status
+MDC id 553 d p=125,80;i=block/cogwheel;is=s
+MC id 554 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 15 n interfaceTable
+MDC id 554 d is=s;p=125,240;i=block/table
+MC id 555 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n cb
+MDC id 555 d p=750,600;b=1000,5,,,,1
+MC id 556 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n bl
+MDC id 556 d p=750,750;b=1000,5,,,,1
+MC id 557 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 15 n ethernet
+GC m 557 g 0 n upperLayerIn o 0
+GC m 557 g 3 n upperLayerOut o 1
+GC m 557 g 4 n lowerLayerIn o 0
+GC m 557 g 7 n lowerLayerOut o 1
+MDC id 557 d p=375,825;i=block/layer
+MC id 558 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n li
+MDC id 558 d p=750,900;b=1000,5,,,,1
+MC id 559 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 15 n lo[0]
+GC m 559 g 0 n upperLayerIn o 0
+GC m 559 g 3 n upperLayerOut o 1
+MDC id 559 d p=750,975,row,150;i=block/ifcard
+MC id 560 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 15 n eth[0]
+GC m 560 g 0 n upperLayerIn o 0
+GC m 560 g 3 n upperLayerOut o 1
+GC m 560 g 4 n cutthroughIn o 0
+GC m 560 g 7 n cutthroughOut o 1
+GC m 560 g 8 n phys$i o 0
+GC m 560 g 9 n phys$o o 1
+MDC id 560 d q=txQueue;p=900,975,row,150;i=block/ifcard
+MC id 561 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 15 n eth[1]
+GC m 561 g 0 n upperLayerIn o 0
+GC m 561 g 3 n upperLayerOut o 1
+GC m 561 g 4 n cutthroughIn o 0
+GC m 561 g 7 n cutthroughOut o 1
+GC m 561 g 8 n phys$i o 0
+GC m 561 g 9 n phys$o o 1
+MDC id 561 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 555 g 2621440 n out i 0 o 1
+GC m 556 g 1048576 n in i 0 o 0
+CC sm 555 sg 2621440 dm 556 dg 1048576
+GC m 556 g 2621440 n out i 0 o 1
+GC m 555 g 1048576 n in i 0 o 0
+CC sm 556 sg 2621440 dm 555 dg 1048576
+GC m 556 g 2621441 n out i 1 o 1
+GC m 558 g 1048576 n in i 0 o 0
+CC sm 556 sg 2621441 dm 558 dg 1048576
+GC m 558 g 2621440 n out i 0 o 1
+GC m 556 g 1048577 n in i 1 o 0
+CC sm 558 sg 2621440 dm 556 dg 1048577
+GC m 556 g 2621442 n out i 2 o 1
+CC sm 556 sg 2621442 dm 557 dg 0
+GC m 556 g 1048578 n in i 2 o 0
+CC sm 557 sg 3 dm 556 dg 1048578
+GC m 558 g 1048577 n in i 1 o 0
+CC sm 557 sg 7 dm 558 dg 1048577
+GC m 558 g 2621441 n out i 1 o 1
+CC sm 558 sg 2621441 dm 557 dg 4
+CC sm 15 sg 3145728 dm 560 dg 8
+CDC sm 15 sg 3145728 d m=s
+CC sm 560 sg 9 dm 15 dg 3670016
+CDC sm 560 sg 9 d m=s
+CC sm 15 sg 3145729 dm 561 dg 8
+CDC sm 15 sg 3145729 d m=s
+CC sm 561 sg 9 dm 15 dg 3670017
+CDC sm 561 sg 9 d m=s
+GC m 558 g 2621442 n out i 2 o 1
+CC sm 558 sg 2621442 dm 559 dg 0
+GC m 558 g 1048578 n in i 2 o 0
+CC sm 559 sg 3 dm 558 dg 1048578
+GC m 558 g 1048579 n in i 3 o 0
+CC sm 560 sg 3 dm 558 dg 1048579
+GC m 558 g 2621443 n out i 3 o 1
+CC sm 558 sg 2621443 dm 560 dg 0
+GC m 558 g 1048580 n in i 4 o 0
+CC sm 561 sg 3 dm 558 dg 1048580
+GC m 558 g 2621444 n out i 4 o 1
+CC sm 558 sg 2621444 dm 561 dg 0
+MC id 566 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 15 n ipv4 cm 1
+GC m 566 g 0 n ifIn o 0
+GC m 566 g 3 n ifOut o 1
+GC m 566 g 4 n transportIn o 0
+GC m 566 g 7 n transportOut o 1
+MDC id 566 d q=queue;p=375,375;i=block/fork
+MC id 567 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n nl
+MDC id 567 d p=750,450;b=1000,5,,,,1
+GC m 567 g 2621440 n out i 0 o 1
+CC sm 567 sg 2621440 dm 566 dg 0
+GC m 567 g 1048576 n in i 0 o 0
+CC sm 566 sg 3 dm 567 dg 1048576
+GC m 555 g 2621441 n out i 1 o 1
+GC m 567 g 1048577 n in i 1 o 0
+CC sm 555 sg 2621441 dm 567 dg 1048577
+GC m 567 g 2621441 n out i 1 o 1
+GC m 555 g 1048577 n in i 1 o 0
+CC sm 567 sg 2621441 dm 555 dg 1048577
+MC id 568 c inet::NetworkInterface t inet.linklayer.ppp.PppInterface pid 15 n pppIf
+GC m 568 g 0 n upperLayerIn o 0
+GC m 568 g 3 n upperLayerOut o 1
+GC m 568 g 4 n phys$i o 0
+GC m 568 g 5 n phys$o o 1
+MDC id 568 d p=1150,525;i=block/ifcard
+MC id 569 c inet::Udp t inet.transportlayer.udp.Udp pid 15 n udp
+GC m 569 g 0 n appIn o 0
+GC m 569 g 2 n ipIn o 0
+GC m 569 g 5 n appOut o 1
+GC m 569 g 7 n ipOut o 1
+MDC id 569 d p=374.0425,201.4075;i=block/transport
+MC id 570 c TrafficFlowFilter t simu5g.corenetwork.trafficFlowFilter.TrafficFlowFilter pid 15 n trafficFlowFilter
+GC m 570 g 0 n internetFilterGateIn o 0
+GC m 570 g 3 n gtpUserGateOut o 1
+MDC id 570 d p=881.7925,79.5475;i=block/filter
+MC id 571 c GtpUser t simu5g.corenetwork.gtp.GtpUser pid 15 n gtp_user
+GC m 571 g 1 n socketOut o 1
+GC m 571 g 2 n socketIn o 0
+GC m 571 g 4 n trafficFlowFilterGate o 0
+GC m 571 g 7 n pppGate o 1
+MDC id 571 d p=525,80;i=block/tunnel
+MC id 572 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n tn
+MDC id 572 d p=750,296;b=1000,5,,,,1
+MC id 573 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 15 n at
+MDC id 573 d p=750,146;b=1000,5,,,,1
+GC m 573 g 1048576 n in i 0 o 0
+CC sm 571 sg 1 dm 573 dg 1048576
+GC m 573 g 2621440 n out i 0 o 1
+CC sm 573 sg 2621440 dm 571 dg 2
+CC sm 568 sg 3 dm 570 dg 0
+CC sm 571 sg 7 dm 568 dg 0
+CC sm 570 sg 3 dm 571 dg 4
+GC m 573 g 2621441 n out i 1 o 1
+CC sm 573 sg 2621441 dm 569 dg 0
+GC m 573 g 1048577 n in i 1 o 0
+CC sm 569 sg 5 dm 573 dg 1048577
+GC m 572 g 1048576 n in i 0 o 0
+CC sm 569 sg 7 dm 572 dg 1048576
+GC m 572 g 2621440 n out i 0 o 1
+CC sm 572 sg 2621440 dm 569 dg 2
+GC m 572 g 2621441 n out i 1 o 1
+CC sm 572 sg 2621441 dm 566 dg 4
+GC m 572 g 1048577 n in i 1 o 0
+CC sm 566 sg 7 dm 572 dg 1048577
+GC m 572 g 2621442 n out i 2 o 1
+GC m 567 g 1048578 n in i 2 o 0
+CC sm 572 sg 2621442 dm 567 dg 1048578
+GC m 567 g 2621442 n out i 2 o 1
+GC m 572 g 1048578 n in i 2 o 0
+CC sm 567 sg 2621442 dm 572 dg 1048578
+CC sm 568 sg 5 dm 15 dg 7
+CC sm 15 sg 6 dm 568 dg 4
+MC id 574 c inet::Loopback t inet.linklayer.loopback.Loopback pid 559 n lo
+GC m 574 g 0 n upperLayerIn o 0
+GC m 574 g 3 n upperLayerOut o 1
+MDC id 574 d p=300,100;i=block/rxtx
+CC sm 559 sg 0 dm 574 dg 0
+CDC sm 559 sg 0 d m=n
+CC sm 574 sg 3 dm 559 dg 3
+CDC sm 574 sg 3 d m=n
+MC id 577 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 560 n egressTC cm 1
+GC m 577 g 0 n in o 0
+GC m 577 g 3 n out o 1
+MDC id 577 d p=300,100;i=block/downarrow,black,50
+MC id 578 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 560 n ingressTC cm 1
+GC m 578 g 0 n in o 0
+GC m 578 g 3 n out o 1
+MDC id 578 d p=700,100;i=block/uparrow,black,50
+MC id 579 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 560 n queue
+GC m 579 g 0 n in o 0
+GC m 579 g 3 n out o 1
+MDC id 579 d p=300,250;i=block/queue
+MC id 580 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 560 n mac
+GC m 580 g 0 n upperLayerIn o 0
+GC m 580 g 3 n upperLayerOut o 1
+GC m 580 g 4 n phys$i o 0
+GC m 580 g 5 n phys$o o 1
+MDC id 580 d p=500,300;i=block/rxtx
+CC sm 560 sg 0 dm 577 dg 0
+CDC sm 560 sg 0 d m=n
+CC sm 577 sg 3 dm 579 dg 0
+CC sm 579 sg 3 dm 580 dg 0
+CC sm 580 sg 5 dm 560 dg 9
+CDC sm 580 sg 5 d m=s
+CC sm 560 sg 8 dm 580 dg 4
+CDC sm 560 sg 8 d m=s
+CC sm 580 sg 3 dm 578 dg 0
+CC sm 578 sg 3 dm 560 dg 3
+CDC sm 578 sg 3 d m=n
+CC sm 577 sg 0 dm 577 dg 3
+CC sm 578 sg 0 dm 578 dg 3
+MC id 585 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 561 n egressTC cm 1
+GC m 585 g 0 n in o 0
+GC m 585 g 3 n out o 1
+MDC id 585 d p=300,100;i=block/downarrow,black,50
+MC id 586 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 561 n ingressTC cm 1
+GC m 586 g 0 n in o 0
+GC m 586 g 3 n out o 1
+MDC id 586 d p=700,100;i=block/uparrow,black,50
+MC id 587 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 561 n queue
+GC m 587 g 0 n in o 0
+GC m 587 g 3 n out o 1
+MDC id 587 d p=300,250;i=block/queue
+MC id 588 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 561 n mac
+GC m 588 g 0 n upperLayerIn o 0
+GC m 588 g 3 n upperLayerOut o 1
+GC m 588 g 4 n phys$i o 0
+GC m 588 g 5 n phys$o o 1
+MDC id 588 d p=500,300;i=block/rxtx
+CC sm 561 sg 0 dm 585 dg 0
+CDC sm 561 sg 0 d m=n
+CC sm 585 sg 3 dm 587 dg 0
+CC sm 587 sg 3 dm 588 dg 0
+CC sm 588 sg 5 dm 561 dg 9
+CDC sm 588 sg 5 d m=s
+CC sm 561 sg 8 dm 588 dg 4
+CDC sm 561 sg 8 d m=s
+CC sm 588 sg 3 dm 586 dg 0
+CC sm 586 sg 3 dm 561 dg 3
+CDC sm 586 sg 3 d m=n
+CC sm 585 sg 0 dm 585 dg 3
+CC sm 586 sg 0 dm 586 dg 3
+MC id 593 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 566 n configurator
+MDC id 593 d is=s;p=100,100;i=block/cogwheel
+MC id 594 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 566 n routingTable
+MDC id 594 d is=s;p=100,200;i=block/table
+MC id 595 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 566 n natTable
+MDC id 595 d is=s;p=100,300;i=block/table
+MC id 596 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 566 n up
+MDC id 596 d p=550,100;b=600,5,,,,1
+MC id 597 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 566 n igmp
+GC m 597 g 0 n ipIn o 0
+GC m 597 g 3 n ipOut o 1
+GC m 597 g 4 n routerIn o 0
+GC m 597 g 7 n routerOut o 1
+MDC id 597 d p=400,200;i=block/cogwheel
+MC id 598 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 566 n icmp
+GC m 598 g 0 n transportIn o 0
+GC m 598 g 3 n transportOut o 1
+GC m 598 g 4 n ipIn o 0
+GC m 598 g 7 n ipOut o 1
+MDC id 598 d p=700,200;i=block/control
+MC id 599 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 566 n mp
+MDC id 599 d p=550,300;b=600,5,,,,1
+MC id 600 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 566 n ip
+GC m 600 g 0 n transportIn o 0
+GC m 600 g 3 n transportOut o 1
+GC m 600 g 4 n queueIn o 0
+GC m 600 g 7 n queueOut o 1
+MDC id 600 d q=queue;p=700,400;i=block/routing
+MC id 601 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 566 n arp
+GC m 601 g 0 n netwIn o 0
+GC m 601 g 3 n netwOut o 1
+GC m 601 g 4 n ifIn o 0
+GC m 601 g 7 n ifOut o 1
+MDC id 601 d q=pendingQueue;p=400,400;i=block/layer
+MC id 602 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 566 n lp
+MDC id 602 d p=550,500;b=600,5,,,,1
+GC m 596 g 1048576 n in i 0 o 0
+CC sm 566 sg 4 dm 596 dg 1048576
+CDC sm 566 sg 4 d m=n
+GC m 596 g 2621440 n out i 0 o 1
+CC sm 596 sg 2621440 dm 566 dg 7
+CDC sm 596 sg 2621440 d m=n
+GC m 596 g 2621441 n out i 1 o 1
+CC sm 596 sg 2621441 dm 597 dg 4
+GC m 596 g 1048577 n in i 1 o 0
+CC sm 597 sg 7 dm 596 dg 1048577
+GC m 596 g 2621442 n out i 2 o 1
+GC m 599 g 1048576 n in i 0 o 0
+CC sm 596 sg 2621442 dm 599 dg 1048576
+GC m 599 g 2621440 n out i 0 o 1
+GC m 596 g 1048578 n in i 2 o 0
+CC sm 599 sg 2621440 dm 596 dg 1048578
+GC m 596 g 2621443 n out i 3 o 1
+CC sm 596 sg 2621443 dm 598 dg 0
+GC m 596 g 1048579 n in i 3 o 0
+CC sm 598 sg 3 dm 596 dg 1048579
+GC m 599 g 1048577 n in i 1 o 0
+CC sm 597 sg 3 dm 599 dg 1048577
+GC m 599 g 2621441 n out i 1 o 1
+CC sm 599 sg 2621441 dm 597 dg 0
+GC m 599 g 1048578 n in i 2 o 0
+CC sm 598 sg 7 dm 599 dg 1048578
+GC m 599 g 2621442 n out i 2 o 1
+CC sm 599 sg 2621442 dm 598 dg 4
+GC m 599 g 2621443 n out i 3 o 1
+CC sm 599 sg 2621443 dm 600 dg 0
+GC m 599 g 1048579 n in i 3 o 0
+CC sm 600 sg 3 dm 599 dg 1048579
+GC m 602 g 1048576 n in i 0 o 0
+CC sm 601 sg 7 dm 602 dg 1048576
+GC m 602 g 2621440 n out i 0 o 1
+CC sm 602 sg 2621440 dm 601 dg 4
+GC m 602 g 1048577 n in i 1 o 0
+CC sm 600 sg 7 dm 602 dg 1048577
+GC m 602 g 2621441 n out i 1 o 1
+CC sm 602 sg 2621441 dm 600 dg 4
+GC m 602 g 2621442 n out i 2 o 1
+CC sm 602 sg 2621442 dm 566 dg 3
+CDC sm 602 sg 2621442 d m=s
+GC m 602 g 1048578 n in i 2 o 0
+CC sm 566 sg 0 dm 602 dg 1048578
+CDC sm 566 sg 0 d m=s
+MC id 607 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 568 n ingressTC cm 1
+GC m 607 g 0 n in o 0
+GC m 607 g 3 n out o 1
+MDC id 607 d p=500,100;i=block/downarrow,black,50
+MC id 608 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 568 n egressTC cm 1
+GC m 608 g 0 n in o 0
+GC m 608 g 3 n out o 1
+MDC id 608 d p=300,100;i=block/downarrow,black,50
+MC id 609 c inet::queueing::PacketQueue t inet.queueing.queue.DropTailQueue pid 568 n queue
+GC m 609 g 0 n in o 0
+GC m 609 g 3 n out o 1
+MDC id 609 d q=l2queue;p=300,200;i=block/queue
+MC id 610 c inet::Ppp t inet.linklayer.ppp.Ppp pid 568 n ppp
+GC m 610 g 0 n upperLayerIn o 0
+GC m 610 g 3 n upperLayerOut o 1
+GC m 610 g 4 n phys$i o 0
+GC m 610 g 5 n phys$o o 1
+MDC id 610 d p=500,300;i=block/rxtx
+CC sm 568 sg 0 dm 608 dg 0
+CDC sm 568 sg 0 d m=n
+CC sm 608 sg 3 dm 609 dg 0
+CC sm 609 sg 3 dm 610 dg 0
+CC sm 568 sg 4 dm 610 dg 4
+CDC sm 568 sg 4 d m=s
+CC sm 610 sg 5 dm 568 dg 5
+CDC sm 610 sg 5 d m=s
+CC sm 610 sg 3 dm 607 dg 0
+CC sm 607 sg 3 dm 568 dg 3
+CDC sm 607 sg 3 d m=n
+CC sm 607 sg 0 dm 607 dg 3
+CC sm 608 sg 0 dm 608 dg 3
+MC id 615 c inet::NodeStatus t inet.common.lifecycle.NodeStatus pid 16 n status
+MDC id 615 d p=125,80;i=block/cogwheel;is=s
+MC id 616 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 16 n mobility
+MDC id 616 d is=s;p=125,160;i=block/cogwheel
+MC id 617 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 16 n interfaceTable
+MDC id 617 d is=s;p=125,240;i=block/table
+MC id 618 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n cb
+MDC id 618 d p=750,600;b=1000,5,,,,1
+MC id 619 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n bl
+MDC id 619 d p=750,750;b=1000,5,,,,1
+MC id 620 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 16 n ethernet
+GC m 620 g 0 n upperLayerIn o 0
+GC m 620 g 3 n upperLayerOut o 1
+GC m 620 g 4 n lowerLayerIn o 0
+GC m 620 g 7 n lowerLayerOut o 1
+MDC id 620 d p=375,825;i=block/layer
+MC id 621 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n li
+MDC id 621 d p=750,900;b=1000,5,,,,1
+MC id 622 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 16 n lo[0]
+GC m 622 g 0 n upperLayerIn o 0
+GC m 622 g 3 n upperLayerOut o 1
+MDC id 622 d p=750,975,row,150;i=block/ifcard
+MC id 623 c inet::NetworkInterface t inet.linklayer.ieee80211.Ieee80211Interface pid 16 n wlan[0]
+GC m 623 g 0 n upperLayerIn o 0
+GC m 623 g 3 n upperLayerOut o 1
+GC m 623 g 4 n radioIn o 0
+MDC id 623 d q=queue;p=375,1000,row,150;i=block/ifcard
+MC id 624 c inet::NetworkInterface t inet.linklayer.ethernet.EthernetInterface pid 16 n eth[0]
+GC m 624 g 0 n upperLayerIn o 0
+GC m 624 g 3 n upperLayerOut o 1
+GC m 624 g 4 n cutthroughIn o 0
+GC m 624 g 7 n cutthroughOut o 1
+GC m 624 g 8 n phys$i o 0
+GC m 624 g 9 n phys$o o 1
+MDC id 624 d q=txQueue;p=900,975,row,150;i=block/ifcard
+GC m 618 g 2621440 n out i 0 o 1
+GC m 619 g 1048576 n in i 0 o 0
+CC sm 618 sg 2621440 dm 619 dg 1048576
+GC m 619 g 2621440 n out i 0 o 1
+GC m 618 g 1048576 n in i 0 o 0
+CC sm 619 sg 2621440 dm 618 dg 1048576
+GC m 619 g 2621441 n out i 1 o 1
+GC m 621 g 1048576 n in i 0 o 0
+CC sm 619 sg 2621441 dm 621 dg 1048576
+GC m 621 g 2621440 n out i 0 o 1
+GC m 619 g 1048577 n in i 1 o 0
+CC sm 621 sg 2621440 dm 619 dg 1048577
+GC m 619 g 2621442 n out i 2 o 1
+CC sm 619 sg 2621442 dm 620 dg 0
+GC m 619 g 1048578 n in i 2 o 0
+CC sm 620 sg 3 dm 619 dg 1048578
+GC m 621 g 1048577 n in i 1 o 0
+CC sm 620 sg 7 dm 621 dg 1048577
+GC m 621 g 2621441 n out i 1 o 1
+CC sm 621 sg 2621441 dm 620 dg 4
+CC sm 16 sg 1048576 dm 623 dg 4
+CDC sm 16 sg 1048576 d m=s
+CC sm 16 sg 3145728 dm 624 dg 8
+CDC sm 16 sg 3145728 d m=s
+CC sm 624 sg 9 dm 16 dg 3670016
+CDC sm 624 sg 9 d m=s
+GC m 621 g 2621442 n out i 2 o 1
+CC sm 621 sg 2621442 dm 622 dg 0
+GC m 621 g 1048578 n in i 2 o 0
+CC sm 622 sg 3 dm 621 dg 1048578
+GC m 621 g 1048579 n in i 3 o 0
+CC sm 623 sg 3 dm 621 dg 1048579
+GC m 621 g 2621443 n out i 3 o 1
+CC sm 621 sg 2621443 dm 623 dg 0
+GC m 621 g 1048580 n in i 4 o 0
+CC sm 624 sg 3 dm 621 dg 1048580
+GC m 621 g 2621444 n out i 4 o 1
+CC sm 621 sg 2621444 dm 624 dg 0
+MC id 628 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 16 n ipv4 cm 1
+GC m 628 g 0 n ifIn o 0
+GC m 628 g 3 n ifOut o 1
+GC m 628 g 4 n transportIn o 0
+GC m 628 g 7 n transportOut o 1
+MDC id 628 d q=queue;p=375,375;i=block/fork
+MC id 629 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n nl
+MDC id 629 d p=750,450;b=1000,5,,,,1
+GC m 629 g 2621440 n out i 0 o 1
+CC sm 629 sg 2621440 dm 628 dg 0
+GC m 629 g 1048576 n in i 0 o 0
+CC sm 628 sg 3 dm 629 dg 1048576
+GC m 618 g 2621441 n out i 1 o 1
+GC m 629 g 1048577 n in i 1 o 0
+CC sm 618 sg 2621441 dm 629 dg 1048577
+GC m 629 g 2621441 n out i 1 o 1
+GC m 618 g 1048577 n in i 1 o 0
+CC sm 629 sg 2621441 dm 618 dg 1048577
+MC id 630 c inet::Udp t inet.transportlayer.udp.Udp pid 16 n udp
+GC m 630 g 0 n appIn o 0
+GC m 630 g 2 n ipIn o 0
+GC m 630 g 5 n appOut o 1
+GC m 630 g 7 n ipOut o 1
+MDC id 630 d p=375,225;i=block/transport
+MC id 631 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 16 n tcp
+GC m 631 g 0 n appIn o 0
+GC m 631 g 2 n ipIn o 0
+GC m 631 g 5 n appOut o 1
+GC m 631 g 7 n ipOut o 1
+MDC id 631 d p=525,225;i=block/wheelbarrow
+MC id 632 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n tn
+MDC id 632 d p=750,300;b=1000,5,,,,1
+GC m 632 g 1048576 n in i 0 o 0
+CC sm 630 sg 7 dm 632 dg 1048576
+GC m 632 g 2621440 n out i 0 o 1
+CC sm 632 sg 2621440 dm 630 dg 2
+GC m 632 g 1048577 n in i 1 o 0
+CC sm 631 sg 7 dm 632 dg 1048577
+GC m 632 g 2621441 n out i 1 o 1
+CC sm 632 sg 2621441 dm 631 dg 2
+GC m 632 g 2621442 n out i 2 o 1
+CC sm 632 sg 2621442 dm 628 dg 4
+GC m 632 g 1048578 n in i 2 o 0
+CC sm 628 sg 7 dm 632 dg 1048578
+GC m 632 g 2621443 n out i 3 o 1
+GC m 629 g 1048578 n in i 2 o 0
+CC sm 632 sg 2621443 dm 629 dg 1048578
+GC m 629 g 2621442 n out i 2 o 1
+GC m 632 g 1048579 n in i 3 o 0
+CC sm 629 sg 2621442 dm 632 dg 1048579
+MC id 633 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 16 n at
+MDC id 633 d p=750,150;b=1000,5,,,,1
+GC m 633 g 2621440 n out i 0 o 1
+CC sm 633 sg 2621440 dm 630 dg 0
+GC m 633 g 1048576 n in i 0 o 0
+CC sm 630 sg 5 dm 633 dg 1048576
+GC m 633 g 2621441 n out i 1 o 1
+CC sm 633 sg 2621441 dm 631 dg 0
+GC m 633 g 1048577 n in i 1 o 0
+CC sm 631 sg 5 dm 633 dg 1048577
+GC m 633 g 2621442 n out i 2 o 1
+GC m 632 g 1048580 n in i 4 o 0
+CC sm 633 sg 2621442 dm 632 dg 1048580
+GC m 632 g 2621444 n out i 4 o 1
+GC m 633 g 1048578 n in i 2 o 0
+CC sm 632 sg 2621444 dm 633 dg 1048578
+MC id 634 c inet::Loopback t inet.linklayer.loopback.Loopback pid 622 n lo
+GC m 634 g 0 n upperLayerIn o 0
+GC m 634 g 3 n upperLayerOut o 1
+MDC id 634 d p=300,100;i=block/rxtx
+CC sm 622 sg 0 dm 634 dg 0
+CDC sm 622 sg 0 d m=n
+CC sm 634 sg 3 dm 622 dg 3
+CDC sm 634 sg 3 d m=n
+MC id 637 c inet::ieee80211::Ieee80211Mib t inet.linklayer.ieee80211.mib.Ieee80211Mib pid 623 n mib
+MDC id 637 d is=s;p=100,300;i=block/table
+MC id 638 c inet::ieee80211::Ieee80211LlcLpd t inet.linklayer.ieee80211.llc.Ieee80211LlcLpd pid 623 n llc
+GC m 638 g 0 n upperLayerIn o 0
+GC m 638 g 3 n upperLayerOut o 1
+GC m 638 g 4 n lowerLayerIn o 0
+GC m 638 g 7 n lowerLayerOut o 1
+MDC id 638 d p=300,200;i=block/layer
+MC id 639 c inet::OmittedModule t inet.linklayer.common.OmittedIeee8021dQosClassifier pid 623 n classifier cm 1
+GC m 639 g 0 n in o 0
+GC m 639 g 3 n out o 1
+MDC id 639 d p=500,100;i=block/classifier,black,50
+MC id 640 c inet::ieee80211::Ieee80211AgentSta t inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta pid 623 n agent
+GC m 640 g 0 n mgmtIn o 0
+GC m 640 g 3 n mgmtOut o 1
+MDC id 640 d p=700,300;i=block/control
+MC id 641 c inet::ieee80211::Ieee80211MgmtSta t inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta pid 623 n mgmt
+GC m 641 g 0 n macIn o 0
+GC m 641 g 3 n macOut o 1
+GC m 641 g 4 n agentIn o 0
+GC m 641 g 7 n agentOut o 1
+MDC id 641 d p=500,300;i=block/cogwheel
+MC id 642 c inet::ieee80211::Ieee80211Mac t inet.linklayer.ieee80211.mac.Ieee80211Mac pid 623 n mac
+GC m 642 g 0 n upperLayerIn o 0
+GC m 642 g 3 n upperLayerOut o 1
+GC m 642 g 4 n lowerLayerIn o 0
+GC m 642 g 7 n lowerLayerOut o 1
+GC m 642 g 8 n mgmtIn o 0
+GC m 642 g 11 n mgmtOut o 1
+MDC id 642 d p=300,300;i=block/layer
+MC id 643 c inet::physicallayer::Ieee80211Radio t inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio pid 623 n radio
+GC m 643 g 0 n upperLayerIn o 0
+GC m 643 g 3 n upperLayerOut o 1
+GC m 643 g 4 n radioIn o 0
+MDC id 643 d p=300,400;i=block/wrxtx
+CC sm 623 sg 4 dm 643 dg 4
+CDC sm 623 sg 4 d m=s
+CC sm 642 sg 7 dm 643 dg 0
+CC sm 643 sg 3 dm 642 dg 4
+CC sm 642 sg 11 dm 641 dg 0
+CC sm 641 sg 3 dm 642 dg 8
+CC sm 641 sg 7 dm 640 dg 0
+CC sm 640 sg 3 dm 641 dg 4
+CC sm 638 sg 3 dm 623 dg 3
+CDC sm 638 sg 3 d m=n
+CC sm 639 sg 3 dm 638 dg 0
+CDC sm 639 sg 3 d m=n
+CC sm 638 sg 7 dm 642 dg 0
+CC sm 642 sg 3 dm 638 dg 4
+CC sm 623 sg 0 dm 639 dg 0
+CDC sm 623 sg 0 d m=n
+CC sm 639 sg 0 dm 639 dg 3
+MC id 648 c inet::ieee80211::Dcf t inet.linklayer.ieee80211.mac.coordinationfunction.Dcf pid 642 n dcf
+MDC id 648 d p=100,100;i=block/layer
+MC id 649 c inet::ieee80211::Ds t inet.linklayer.ieee80211.mac.Ds pid 642 n ds
+MDC id 649 d p=400,100;i=block/routing
+MC id 650 c inet::ieee80211::Rx t inet.linklayer.ieee80211.mac.Rx pid 642 n rx
+MDC id 650 d p=100,200;i=block/rx
+MC id 651 c inet::ieee80211::Tx t inet.linklayer.ieee80211.mac.Tx pid 642 n tx
+MDC id 651 d p=250,200;i=block/tx
+MC id 652 c inet::ieee80211::Dcaf t inet.linklayer.ieee80211.mac.channelaccess.Dcaf pid 648 n channelAccess
+MDC id 652 d p=150,100;i=block/star
+MC id 653 c inet::ieee80211::OriginatorMacDataService t inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService pid 648 n originatorMacDataService
+MDC id 653 d p=150,200;i=block/fork
+MC id 654 c inet::ieee80211::RecipientMacDataService t inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService pid 648 n recipientMacDataService
+MDC id 654 d p=150,300;i=block/join
+MC id 655 c inet::ieee80211::RateSelection t inet.linklayer.ieee80211.mac.rateselection.RateSelection pid 648 n rateSelection
+MDC id 655 d p=350,100;i=block/cogwheel
+MC id 656 c inet::ieee80211::NonQosRecoveryProcedure t inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure pid 648 n recoveryProcedure
+MDC id 656 d p=350,300;i=block/cogwheel
+MC id 657 c inet::ieee80211::OriginatorProtectionMechanism t inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism pid 648 n originatorProtectionMechanism
+MDC id 657 d p=150,400;i=block/encrypt
+MC id 658 c inet::ieee80211::AckHandler t inet.linklayer.ieee80211.mac.originator.AckHandler pid 648 n ackHandler
+MDC id 658 d p=350,400;i=block/table2
+MC id 659 c inet::ieee80211::OriginatorAckPolicy t inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy pid 648 n originatorAckPolicy
+MDC id 659 d p=550,100;i=block/control
+MC id 660 c inet::ieee80211::RecipientAckPolicy t inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy pid 648 n recipientAckPolicy
+MDC id 660 d p=550,200;i=block/control
+MC id 661 c inet::ieee80211::RtsPolicy t inet.linklayer.ieee80211.mac.originator.RtsPolicy pid 648 n rtsPolicy
+MDC id 661 d p=550,300;i=block/control
+MC id 662 c inet::ieee80211::CtsPolicy t inet.linklayer.ieee80211.mac.recipient.CtsPolicy pid 648 n ctsPolicy
+MDC id 662 d p=550,400;i=block/control
+MC id 663 c inet::queueing::PacketQueue t inet.linklayer.ieee80211.mac.queue.PendingQueue pid 652 n pendingQueue
+GC m 663 g 0 n in o 0
+GC m 663 g 3 n out o 1
+MDC id 663 d p=100,100;i=block/queue
+MC id 664 c inet::ieee80211::InProgressFrames t inet.linklayer.ieee80211.mac.queue.InProgressFrames pid 652 n inProgressFrames
+MDC id 664 d p=100,200;i=block/queue
+MC id 665 c inet::ieee80211::Contention t inet.linklayer.ieee80211.mac.contention.Contention pid 652 n contention
+MDC id 665 d p=100,300;i=block/timer
+MC id 666 c inet::ieee80211::BasicFragmentationPolicy t inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy pid 653 n fragmentationPolicy
+MDC id 666 d p=100,100;i=block/control
+MC id 667 c inet::physicallayer::IsotropicAntenna t inet.physicallayer.wireless.common.antenna.IsotropicAntenna pid 643 n antenna cm 1
+MDC id 667 d p=100,100;i=device/antennatower
+MC id 668 c inet::physicallayer::Ieee80211ScalarTransmitter t inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter pid 643 n transmitter cm 1
+MDC id 668 d p=100,200;i=block/wtx
+MC id 669 c inet::physicallayer::Ieee80211ScalarReceiver t inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver pid 643 n receiver cm 1
+MDC id 669 d p=100,300;i=block/wrx
+MC id 670 c inet::physicallayer::Ieee80211NistErrorModel t inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel pid 669 n errorModel cm 1
+MDC id 670 d p=100,100;i=block/broadcast
+MC id 671 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 624 n egressTC cm 1
+GC m 671 g 0 n in o 0
+GC m 671 g 3 n out o 1
+MDC id 671 d p=300,100;i=block/downarrow,black,50
+MC id 672 c inet::OmittedModule t inet.queueing.shaper.OmittedTrafficConditioner pid 624 n ingressTC cm 1
+GC m 672 g 0 n in o 0
+GC m 672 g 3 n out o 1
+MDC id 672 d p=700,100;i=block/uparrow,black,50
+MC id 673 c inet::queueing::PacketQueue t inet.linklayer.ethernet.common.EthernetQueue pid 624 n queue
+GC m 673 g 0 n in o 0
+GC m 673 g 3 n out o 1
+MDC id 673 d p=300,250;i=block/queue
+MC id 674 c inet::EthernetMac t inet.linklayer.ethernet.basic.EthernetMac pid 624 n mac
+GC m 674 g 0 n upperLayerIn o 0
+GC m 674 g 3 n upperLayerOut o 1
+GC m 674 g 4 n phys$i o 0
+GC m 674 g 5 n phys$o o 1
+MDC id 674 d p=500,300;i=block/rxtx
+CC sm 624 sg 0 dm 671 dg 0
+CDC sm 624 sg 0 d m=n
+CC sm 671 sg 3 dm 673 dg 0
+CC sm 673 sg 3 dm 674 dg 0
+CC sm 674 sg 5 dm 624 dg 9
+CDC sm 674 sg 5 d m=s
+CC sm 624 sg 8 dm 674 dg 4
+CDC sm 624 sg 8 d m=s
+CC sm 674 sg 3 dm 672 dg 0
+CC sm 672 sg 3 dm 624 dg 3
+CDC sm 672 sg 3 d m=n
+CC sm 671 sg 0 dm 671 dg 3
+CC sm 672 sg 0 dm 672 dg 3
+MC id 679 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 628 n configurator
+MDC id 679 d is=s;p=100,100;i=block/cogwheel
+MC id 680 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 628 n routingTable
+MDC id 680 d is=s;p=100,200;i=block/table
+MC id 681 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 628 n natTable
+MDC id 681 d is=s;p=100,300;i=block/table
+MC id 682 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 628 n up
+MDC id 682 d p=550,100;b=600,5,,,,1
+MC id 683 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 628 n igmp
+GC m 683 g 0 n ipIn o 0
+GC m 683 g 3 n ipOut o 1
+GC m 683 g 4 n routerIn o 0
+GC m 683 g 7 n routerOut o 1
+MDC id 683 d p=400,200;i=block/cogwheel
+MC id 684 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 628 n icmp
+GC m 684 g 0 n transportIn o 0
+GC m 684 g 3 n transportOut o 1
+GC m 684 g 4 n ipIn o 0
+GC m 684 g 7 n ipOut o 1
+MDC id 684 d p=700,200;i=block/control
+MC id 685 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 628 n mp
+MDC id 685 d p=550,300;b=600,5,,,,1
+MC id 686 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 628 n ip
+GC m 686 g 0 n transportIn o 0
+GC m 686 g 3 n transportOut o 1
+GC m 686 g 4 n queueIn o 0
+GC m 686 g 7 n queueOut o 1
+MDC id 686 d q=queue;p=700,400;i=block/routing
+MC id 687 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 628 n arp
+GC m 687 g 0 n netwIn o 0
+GC m 687 g 3 n netwOut o 1
+GC m 687 g 4 n ifIn o 0
+GC m 687 g 7 n ifOut o 1
+MDC id 687 d q=pendingQueue;p=400,400;i=block/layer
+MC id 688 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 628 n lp
+MDC id 688 d p=550,500;b=600,5,,,,1
+GC m 682 g 1048576 n in i 0 o 0
+CC sm 628 sg 4 dm 682 dg 1048576
+CDC sm 628 sg 4 d m=n
+GC m 682 g 2621440 n out i 0 o 1
+CC sm 682 sg 2621440 dm 628 dg 7
+CDC sm 682 sg 2621440 d m=n
+GC m 682 g 2621441 n out i 1 o 1
+CC sm 682 sg 2621441 dm 683 dg 4
+GC m 682 g 1048577 n in i 1 o 0
+CC sm 683 sg 7 dm 682 dg 1048577
+GC m 682 g 2621442 n out i 2 o 1
+GC m 685 g 1048576 n in i 0 o 0
+CC sm 682 sg 2621442 dm 685 dg 1048576
+GC m 685 g 2621440 n out i 0 o 1
+GC m 682 g 1048578 n in i 2 o 0
+CC sm 685 sg 2621440 dm 682 dg 1048578
+GC m 682 g 2621443 n out i 3 o 1
+CC sm 682 sg 2621443 dm 684 dg 0
+GC m 682 g 1048579 n in i 3 o 0
+CC sm 684 sg 3 dm 682 dg 1048579
+GC m 685 g 1048577 n in i 1 o 0
+CC sm 683 sg 3 dm 685 dg 1048577
+GC m 685 g 2621441 n out i 1 o 1
+CC sm 685 sg 2621441 dm 683 dg 0
+GC m 685 g 1048578 n in i 2 o 0
+CC sm 684 sg 7 dm 685 dg 1048578
+GC m 685 g 2621442 n out i 2 o 1
+CC sm 685 sg 2621442 dm 684 dg 4
+GC m 685 g 2621443 n out i 3 o 1
+CC sm 685 sg 2621443 dm 686 dg 0
+GC m 685 g 1048579 n in i 3 o 0
+CC sm 686 sg 3 dm 685 dg 1048579
+GC m 688 g 1048576 n in i 0 o 0
+CC sm 687 sg 7 dm 688 dg 1048576
+GC m 688 g 2621440 n out i 0 o 1
+CC sm 688 sg 2621440 dm 687 dg 4
+GC m 688 g 1048577 n in i 1 o 0
+CC sm 686 sg 7 dm 688 dg 1048577
+GC m 688 g 2621441 n out i 1 o 1
+CC sm 688 sg 2621441 dm 686 dg 4
+GC m 688 g 2621442 n out i 2 o 1
+CC sm 688 sg 2621442 dm 628 dg 3
+CDC sm 688 sg 2621442 d m=s
+GC m 688 g 1048578 n in i 2 o 0
+CC sm 628 sg 0 dm 688 dg 1048578
+CDC sm 628 sg 0 d m=s
+MC id 693 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 17 n interfaceTable
+MDC id 693 d is=s;p=127.368004,257.868;i=block/table
+MC id 694 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 17 n mobility
+MDC id 694 d is=s;p=127.368004,172.26001;i=block/cogwheel
+MC id 695 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 17 n lo[0]
+GC m 695 g 0 n upperLayerIn o 0
+GC m 695 g 3 n upperLayerOut o 1
+MDC id 695 d p=503.736,589.50397,row,150;i=block/ifcard
+MC id 696 c inet::NetworkInterface t simu5g.stack.LteNicUe pid 17 n cellularNic
+GC m 696 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 696 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 696 g 2 n upperLayerIn o 0
+GC m 696 g 5 n upperLayerOut o 1
+GC m 696 g 6 n radioIn o 0
+GC m 696 g 8 n nrRadioIn o 0
+MDC id 696 d p=355.152,589.50397;bgl=3;bgb=704,443;i=block/ifcard
+MC id 697 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 17 n encap
+GC m 697 g 0 n upperLayerIn o 0
+GC m 697 g 3 n upperLayerOut o 1
+GC m 697 g 4 n lowerLayerIn o 0
+GC m 697 g 7 n lowerLayerOut o 1
+MDC id 697 d p=674.06396,496.488;i=block/layer
+MC id 698 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 17 n ipv4 cm 1
+GC m 698 g 0 n ifIn o 0
+GC m 698 g 3 n ifOut o 1
+GC m 698 g 4 n transportIn o 0
+GC m 698 g 7 n transportOut o 1
+MDC id 698 d q=queue;p=375,376;i=block/fork
+MC id 699 c inet::Udp t inet.transportlayer.udp.Udp pid 17 n udp
+GC m 699 g 0 n appIn o 0
+GC m 699 g 2 n ipIn o 0
+GC m 699 g 5 n appOut o 1
+GC m 699 g 7 n ipOut o 1
+MDC id 699 d p=375,226;i=block/transport
+MC id 700 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 17 n tcp
+GC m 700 g 0 n appIn o 0
+GC m 700 g 2 n ipIn o 0
+GC m 700 g 5 n appOut o 1
+GC m 700 g 7 n ipOut o 1
+MDC id 700 d p=525,226;i=block/wheelbarrow
+MC id 701 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 17 n at
+MDC id 701 d p=550,146;b=600,5,,,,1
+MC id 702 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 17 n tn
+MDC id 702 d p=550,296;b=600,5,,,,1
+MC id 703 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 17 n nl
+MDC id 703 d p=550,446;b=600,5,,,,1
+GC m 701 g 2621440 n out i 0 o 1
+CC sm 701 sg 2621440 dm 699 dg 0
+GC m 701 g 1048576 n in i 0 o 0
+CC sm 699 sg 5 dm 701 dg 1048576
+GC m 701 g 2621441 n out i 1 o 1
+CC sm 701 sg 2621441 dm 700 dg 0
+GC m 701 g 1048577 n in i 1 o 0
+CC sm 700 sg 5 dm 701 dg 1048577
+GC m 702 g 1048576 n in i 0 o 0
+CC sm 699 sg 7 dm 702 dg 1048576
+GC m 702 g 2621440 n out i 0 o 1
+CC sm 702 sg 2621440 dm 699 dg 2
+GC m 702 g 1048577 n in i 1 o 0
+CC sm 700 sg 7 dm 702 dg 1048577
+GC m 702 g 2621441 n out i 1 o 1
+CC sm 702 sg 2621441 dm 700 dg 2
+GC m 703 g 2621440 n out i 0 o 1
+CC sm 703 sg 2621440 dm 698 dg 0
+GC m 703 g 1048576 n in i 0 o 0
+CC sm 698 sg 3 dm 703 dg 1048576
+GC m 702 g 2621442 n out i 2 o 1
+CC sm 702 sg 2621442 dm 698 dg 4
+GC m 702 g 1048578 n in i 2 o 0
+CC sm 698 sg 7 dm 702 dg 1048578
+GC m 702 g 2621443 n out i 3 o 1
+GC m 703 g 1048577 n in i 1 o 0
+CC sm 702 sg 2621443 dm 703 dg 1048577
+GC m 703 g 2621441 n out i 1 o 1
+GC m 702 g 1048579 n in i 3 o 0
+CC sm 703 sg 2621441 dm 702 dg 1048579
+GC m 703 g 1048578 n in i 2 o 0
+CC sm 696 sg 5 dm 703 dg 1048578
+GC m 703 g 2621442 n out i 2 o 1
+CC sm 703 sg 2621442 dm 696 dg 2
+GC m 703 g 2621443 n out i 3 o 1
+CC sm 703 sg 2621443 dm 695 dg 0
+GC m 703 g 1048579 n in i 3 o 0
+CC sm 695 sg 3 dm 703 dg 1048579
+CC sm 17 sg 0 dm 696 dg 6
+MC id 704 c inet::Loopback t inet.linklayer.loopback.Loopback pid 695 n lo
+GC m 704 g 0 n upperLayerIn o 0
+GC m 704 g 3 n upperLayerOut o 1
+MDC id 704 d p=300,100;i=block/rxtx
+CC sm 695 sg 0 dm 704 dg 0
+CDC sm 695 sg 0 d m=n
+CC sm 704 sg 3 dm 695 dg 3
+CDC sm 704 sg 3 d m=n
+MC id 707 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 696 n ip2nic
+GC m 707 g 0 n upperLayerIn o 0
+GC m 707 g 3 n upperLayerOut o 1
+GC m 707 g 4 n stackNic$i o 0
+GC m 707 g 5 n stackNic$o o 1
+MDC id 707 d p=362,67;i=block/layer
+MC id 708 c LtePdcpRrcUe t simu5g.stack.pdcp_rrc.LtePdcpRrcUe pid 696 n pdcpRrc
+GC m 708 g 0 n DataPort$i o 0
+GC m 708 g 1 n DataPort$o o 1
+GC m 708 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 708 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 708 d p=362,141;i=block/fork
+MC id 709 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 696 n rlc cm 1
+GC m 709 g 0 n TM_Sap$i o 0
+GC m 709 g 1 n TM_Sap$o o 1
+GC m 709 g 2 n UM_Sap$i o 0
+GC m 709 g 3 n UM_Sap$o o 1
+GC m 709 g 4 n AM_Sap$i o 0
+GC m 709 g 5 n AM_Sap$o o 1
+GC m 709 g 6 n MAC_to_RLC o 0
+GC m 709 g 9 n RLC_to_MAC o 1
+MDC id 709 d p=362,226;i=block/transport
+MC id 710 c LteMacUe t simu5g.stack.mac.LteMacUe pid 696 n mac
+GC m 710 g 0 n RLC_to_MAC o 0
+GC m 710 g 3 n MAC_to_RLC o 1
+GC m 710 g 4 n PHY_to_MAC o 0
+GC m 710 g 7 n MAC_to_PHY o 1
+MDC id 710 d p=363,314;i=block/mac
+MC id 711 c LtePhyUe t simu5g.stack.phy.LtePhyUe pid 696 n phy
+GC m 711 g 0 n upperGateIn o 0
+GC m 711 g 3 n upperGateOut o 1
+GC m 711 g 4 n radioIn o 0
+MDC id 711 d p=363,389;i=block/wrxtx
+MC id 712 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 696 n channelModel[0]
+MDC id 712 d p=100,389;i=block/classifier2
+CC sm 707 sg 5 dm 708 dg 0
+CC sm 708 sg 1 dm 707 dg 4
+CC sm 696 sg 0 dm 708 dg 2
+CC sm 708 sg 3 dm 696 dg 1
+GC m 708 g 4194304 n UM_Sap$i i 0 o 0
+GC m 708 g 4718592 n UM_Sap$o i 0 o 1
+CC sm 708 sg 4718592 dm 709 dg 2
+CC sm 709 sg 3 dm 708 dg 4194304
+GC m 708 g 5242880 n AM_Sap$i i 0 o 0
+GC m 708 g 5767168 n AM_Sap$o i 0 o 1
+CC sm 708 sg 5767168 dm 709 dg 4
+CC sm 709 sg 5 dm 708 dg 5242880
+GC m 708 g 3145728 n TM_Sap$i i 0 o 0
+GC m 708 g 3670016 n TM_Sap$o i 0 o 1
+CC sm 708 sg 3670016 dm 709 dg 0
+CC sm 709 sg 1 dm 708 dg 3145728
+CC sm 709 sg 9 dm 710 dg 0
+CC sm 710 sg 3 dm 709 dg 6
+CC sm 710 sg 7 dm 711 dg 0
+CC sm 711 sg 3 dm 710 dg 4
+CC sm 696 sg 6 dm 711 dg 4
+CC sm 707 sg 3 dm 696 dg 5
+CDC sm 707 sg 3 d ""
+CC sm 696 sg 2 dm 707 dg 0
+CDC sm 696 sg 2 d ""
+MC id 715 c LteDlFeedbackGenerator t simu5g.stack.phy.feedback.LteDlFeedbackGenerator pid 696 n dlFbGen
+MDC id 715 d is=s;p=50,50;i=block/cogwheel
+MC id 716 c LteRlcTm t simu5g.stack.rlc.LteRlcTm pid 709 n tm
+GC m 716 g 0 n TM_Sap_up$i o 0
+GC m 716 g 1 n TM_Sap_up$o o 1
+GC m 716 g 2 n TM_Sap_down$i o 0
+GC m 716 g 3 n TM_Sap_down$o o 1
+MDC id 716 d p=100,100;i=block/wheelbarrow
+MC id 717 c LteRlcUm t simu5g.stack.rlc.LteRlcUm pid 709 n um
+GC m 717 g 0 n UM_Sap_up$i o 0
+GC m 717 g 1 n UM_Sap_up$o o 1
+GC m 717 g 2 n UM_Sap_down$i o 0
+GC m 717 g 3 n UM_Sap_down$o o 1
+MDC id 717 d p=200,100;i=block/wheelbarrow
+MC id 718 c LteRlcAm t simu5g.stack.rlc.LteRlcAm pid 709 n am
+GC m 718 g 0 n AM_Sap_up$i o 0
+GC m 718 g 1 n AM_Sap_up$o o 1
+GC m 718 g 2 n AM_Sap_down$i o 0
+GC m 718 g 3 n AM_Sap_down$o o 1
+MDC id 718 d p=300,100;i=block/wheelbarrow
+MC id 719 c LteRlcMux t simu5g.stack.rlc.LteRlcMux pid 709 n mux
+GC m 719 g 0 n TM_Sap$i o 0
+GC m 719 g 1 n TM_Sap$o o 1
+GC m 719 g 2 n UM_Sap$i o 0
+GC m 719 g 3 n UM_Sap$o o 1
+GC m 719 g 4 n AM_Sap$i o 0
+GC m 719 g 5 n AM_Sap$o o 1
+GC m 719 g 6 n MAC_to_RLC o 0
+GC m 719 g 9 n RLC_to_MAC o 1
+MDC id 719 d p=200,200;i=block/classifier
+CC sm 716 sg 1 dm 709 dg 1
+CC sm 709 sg 0 dm 716 dg 0
+CC sm 717 sg 1 dm 709 dg 3
+CC sm 709 sg 2 dm 717 dg 0
+CC sm 718 sg 1 dm 709 dg 5
+CC sm 709 sg 4 dm 718 dg 0
+CC sm 716 sg 3 dm 719 dg 0
+CC sm 719 sg 1 dm 716 dg 2
+CC sm 717 sg 3 dm 719 dg 2
+CC sm 719 sg 3 dm 717 dg 2
+CC sm 718 sg 3 dm 719 dg 4
+CC sm 719 sg 5 dm 718 dg 2
+CC sm 709 sg 6 dm 719 dg 6
+CC sm 719 sg 9 dm 709 dg 9
+MC id 720 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 698 n configurator
+MDC id 720 d is=s;p=100,100;i=block/cogwheel
+MC id 721 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 698 n routingTable
+MDC id 721 d is=s;p=100,200;i=block/table
+MC id 722 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 698 n natTable
+MDC id 722 d is=s;p=100,300;i=block/table
+MC id 723 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 698 n up
+MDC id 723 d p=550,100;b=600,5,,,,1
+MC id 724 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 698 n igmp
+GC m 724 g 0 n ipIn o 0
+GC m 724 g 3 n ipOut o 1
+GC m 724 g 4 n routerIn o 0
+GC m 724 g 7 n routerOut o 1
+MDC id 724 d p=400,200;i=block/cogwheel
+MC id 725 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 698 n icmp
+GC m 725 g 0 n transportIn o 0
+GC m 725 g 3 n transportOut o 1
+GC m 725 g 4 n ipIn o 0
+GC m 725 g 7 n ipOut o 1
+MDC id 725 d p=700,200;i=block/control
+MC id 726 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 698 n mp
+MDC id 726 d p=550,300;b=600,5,,,,1
+MC id 727 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 698 n ip
+GC m 727 g 0 n transportIn o 0
+GC m 727 g 3 n transportOut o 1
+GC m 727 g 4 n queueIn o 0
+GC m 727 g 7 n queueOut o 1
+MDC id 727 d q=queue;p=700,400;i=block/routing
+MC id 728 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 698 n arp
+GC m 728 g 0 n netwIn o 0
+GC m 728 g 3 n netwOut o 1
+GC m 728 g 4 n ifIn o 0
+GC m 728 g 7 n ifOut o 1
+MDC id 728 d q=pendingQueue;p=400,400;i=block/layer
+MC id 729 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 698 n lp
+MDC id 729 d p=550,500;b=600,5,,,,1
+GC m 723 g 1048576 n in i 0 o 0
+CC sm 698 sg 4 dm 723 dg 1048576
+CDC sm 698 sg 4 d m=n
+GC m 723 g 2621440 n out i 0 o 1
+CC sm 723 sg 2621440 dm 698 dg 7
+CDC sm 723 sg 2621440 d m=n
+GC m 723 g 2621441 n out i 1 o 1
+CC sm 723 sg 2621441 dm 724 dg 4
+GC m 723 g 1048577 n in i 1 o 0
+CC sm 724 sg 7 dm 723 dg 1048577
+GC m 723 g 2621442 n out i 2 o 1
+GC m 726 g 1048576 n in i 0 o 0
+CC sm 723 sg 2621442 dm 726 dg 1048576
+GC m 726 g 2621440 n out i 0 o 1
+GC m 723 g 1048578 n in i 2 o 0
+CC sm 726 sg 2621440 dm 723 dg 1048578
+GC m 723 g 2621443 n out i 3 o 1
+CC sm 723 sg 2621443 dm 725 dg 0
+GC m 723 g 1048579 n in i 3 o 0
+CC sm 725 sg 3 dm 723 dg 1048579
+GC m 726 g 1048577 n in i 1 o 0
+CC sm 724 sg 3 dm 726 dg 1048577
+GC m 726 g 2621441 n out i 1 o 1
+CC sm 726 sg 2621441 dm 724 dg 0
+GC m 726 g 1048578 n in i 2 o 0
+CC sm 725 sg 7 dm 726 dg 1048578
+GC m 726 g 2621442 n out i 2 o 1
+CC sm 726 sg 2621442 dm 725 dg 4
+GC m 726 g 2621443 n out i 3 o 1
+CC sm 726 sg 2621443 dm 727 dg 0
+GC m 726 g 1048579 n in i 3 o 0
+CC sm 727 sg 3 dm 726 dg 1048579
+GC m 729 g 1048576 n in i 0 o 0
+CC sm 728 sg 7 dm 729 dg 1048576
+GC m 729 g 2621440 n out i 0 o 1
+CC sm 729 sg 2621440 dm 728 dg 4
+GC m 729 g 1048577 n in i 1 o 0
+CC sm 727 sg 7 dm 729 dg 1048577
+GC m 729 g 2621441 n out i 1 o 1
+CC sm 729 sg 2621441 dm 727 dg 4
+GC m 729 g 2621442 n out i 2 o 1
+CC sm 729 sg 2621442 dm 698 dg 3
+CDC sm 729 sg 2621442 d m=s
+GC m 729 g 1048578 n in i 2 o 0
+CC sm 698 sg 0 dm 729 dg 1048578
+CDC sm 698 sg 0 d m=s
+MC id 734 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 18 n interfaceTable
+MDC id 734 d is=s;p=127.368004,257.868;i=block/table
+MC id 735 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 18 n mobility
+MDC id 735 d is=s;p=127.368004,172.26001;i=block/cogwheel
+MC id 736 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 18 n lo[0]
+GC m 736 g 0 n upperLayerIn o 0
+GC m 736 g 3 n upperLayerOut o 1
+MDC id 736 d p=503.736,589.50397,row,150;i=block/ifcard
+MC id 737 c inet::NetworkInterface t simu5g.stack.LteNicUe pid 18 n cellularNic
+GC m 737 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 737 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 737 g 2 n upperLayerIn o 0
+GC m 737 g 5 n upperLayerOut o 1
+GC m 737 g 6 n radioIn o 0
+GC m 737 g 8 n nrRadioIn o 0
+MDC id 737 d p=355.152,589.50397;bgl=3;bgb=704,443;i=block/ifcard
+MC id 738 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 18 n encap
+GC m 738 g 0 n upperLayerIn o 0
+GC m 738 g 3 n upperLayerOut o 1
+GC m 738 g 4 n lowerLayerIn o 0
+GC m 738 g 7 n lowerLayerOut o 1
+MDC id 738 d p=674.06396,496.488;i=block/layer
+MC id 739 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 18 n ipv4 cm 1
+GC m 739 g 0 n ifIn o 0
+GC m 739 g 3 n ifOut o 1
+GC m 739 g 4 n transportIn o 0
+GC m 739 g 7 n transportOut o 1
+MDC id 739 d q=queue;p=375,376;i=block/fork
+MC id 740 c inet::Udp t inet.transportlayer.udp.Udp pid 18 n udp
+GC m 740 g 0 n appIn o 0
+GC m 740 g 2 n ipIn o 0
+GC m 740 g 5 n appOut o 1
+GC m 740 g 7 n ipOut o 1
+MDC id 740 d p=375,226;i=block/transport
+MC id 741 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 18 n tcp
+GC m 741 g 0 n appIn o 0
+GC m 741 g 2 n ipIn o 0
+GC m 741 g 5 n appOut o 1
+GC m 741 g 7 n ipOut o 1
+MDC id 741 d p=525,226;i=block/wheelbarrow
+MC id 742 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 18 n at
+MDC id 742 d p=550,146;b=600,5,,,,1
+MC id 743 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 18 n tn
+MDC id 743 d p=550,296;b=600,5,,,,1
+MC id 744 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 18 n nl
+MDC id 744 d p=550,446;b=600,5,,,,1
+GC m 742 g 2621440 n out i 0 o 1
+CC sm 742 sg 2621440 dm 740 dg 0
+GC m 742 g 1048576 n in i 0 o 0
+CC sm 740 sg 5 dm 742 dg 1048576
+GC m 742 g 2621441 n out i 1 o 1
+CC sm 742 sg 2621441 dm 741 dg 0
+GC m 742 g 1048577 n in i 1 o 0
+CC sm 741 sg 5 dm 742 dg 1048577
+GC m 743 g 1048576 n in i 0 o 0
+CC sm 740 sg 7 dm 743 dg 1048576
+GC m 743 g 2621440 n out i 0 o 1
+CC sm 743 sg 2621440 dm 740 dg 2
+GC m 743 g 1048577 n in i 1 o 0
+CC sm 741 sg 7 dm 743 dg 1048577
+GC m 743 g 2621441 n out i 1 o 1
+CC sm 743 sg 2621441 dm 741 dg 2
+GC m 744 g 2621440 n out i 0 o 1
+CC sm 744 sg 2621440 dm 739 dg 0
+GC m 744 g 1048576 n in i 0 o 0
+CC sm 739 sg 3 dm 744 dg 1048576
+GC m 743 g 2621442 n out i 2 o 1
+CC sm 743 sg 2621442 dm 739 dg 4
+GC m 743 g 1048578 n in i 2 o 0
+CC sm 739 sg 7 dm 743 dg 1048578
+GC m 743 g 2621443 n out i 3 o 1
+GC m 744 g 1048577 n in i 1 o 0
+CC sm 743 sg 2621443 dm 744 dg 1048577
+GC m 744 g 2621441 n out i 1 o 1
+GC m 743 g 1048579 n in i 3 o 0
+CC sm 744 sg 2621441 dm 743 dg 1048579
+GC m 744 g 1048578 n in i 2 o 0
+CC sm 737 sg 5 dm 744 dg 1048578
+GC m 744 g 2621442 n out i 2 o 1
+CC sm 744 sg 2621442 dm 737 dg 2
+GC m 744 g 2621443 n out i 3 o 1
+CC sm 744 sg 2621443 dm 736 dg 0
+GC m 744 g 1048579 n in i 3 o 0
+CC sm 736 sg 3 dm 744 dg 1048579
+CC sm 18 sg 0 dm 737 dg 6
+MC id 745 c inet::Loopback t inet.linklayer.loopback.Loopback pid 736 n lo
+GC m 745 g 0 n upperLayerIn o 0
+GC m 745 g 3 n upperLayerOut o 1
+MDC id 745 d p=300,100;i=block/rxtx
+CC sm 736 sg 0 dm 745 dg 0
+CDC sm 736 sg 0 d m=n
+CC sm 745 sg 3 dm 736 dg 3
+CDC sm 745 sg 3 d m=n
+MC id 748 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 737 n ip2nic
+GC m 748 g 0 n upperLayerIn o 0
+GC m 748 g 3 n upperLayerOut o 1
+GC m 748 g 4 n stackNic$i o 0
+GC m 748 g 5 n stackNic$o o 1
+MDC id 748 d p=362,67;i=block/layer
+MC id 749 c LtePdcpRrcUe t simu5g.stack.pdcp_rrc.LtePdcpRrcUe pid 737 n pdcpRrc
+GC m 749 g 0 n DataPort$i o 0
+GC m 749 g 1 n DataPort$o o 1
+GC m 749 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 749 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 749 d p=362,141;i=block/fork
+MC id 750 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 737 n rlc cm 1
+GC m 750 g 0 n TM_Sap$i o 0
+GC m 750 g 1 n TM_Sap$o o 1
+GC m 750 g 2 n UM_Sap$i o 0
+GC m 750 g 3 n UM_Sap$o o 1
+GC m 750 g 4 n AM_Sap$i o 0
+GC m 750 g 5 n AM_Sap$o o 1
+GC m 750 g 6 n MAC_to_RLC o 0
+GC m 750 g 9 n RLC_to_MAC o 1
+MDC id 750 d p=362,226;i=block/transport
+MC id 751 c LteMacUe t simu5g.stack.mac.LteMacUe pid 737 n mac
+GC m 751 g 0 n RLC_to_MAC o 0
+GC m 751 g 3 n MAC_to_RLC o 1
+GC m 751 g 4 n PHY_to_MAC o 0
+GC m 751 g 7 n MAC_to_PHY o 1
+MDC id 751 d p=363,314;i=block/mac
+MC id 752 c LtePhyUe t simu5g.stack.phy.LtePhyUe pid 737 n phy
+GC m 752 g 0 n upperGateIn o 0
+GC m 752 g 3 n upperGateOut o 1
+GC m 752 g 4 n radioIn o 0
+MDC id 752 d p=363,389;i=block/wrxtx
+MC id 753 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 737 n channelModel[0]
+MDC id 753 d p=100,389;i=block/classifier2
+CC sm 748 sg 5 dm 749 dg 0
+CC sm 749 sg 1 dm 748 dg 4
+CC sm 737 sg 0 dm 749 dg 2
+CC sm 749 sg 3 dm 737 dg 1
+GC m 749 g 4194304 n UM_Sap$i i 0 o 0
+GC m 749 g 4718592 n UM_Sap$o i 0 o 1
+CC sm 749 sg 4718592 dm 750 dg 2
+CC sm 750 sg 3 dm 749 dg 4194304
+GC m 749 g 5242880 n AM_Sap$i i 0 o 0
+GC m 749 g 5767168 n AM_Sap$o i 0 o 1
+CC sm 749 sg 5767168 dm 750 dg 4
+CC sm 750 sg 5 dm 749 dg 5242880
+GC m 749 g 3145728 n TM_Sap$i i 0 o 0
+GC m 749 g 3670016 n TM_Sap$o i 0 o 1
+CC sm 749 sg 3670016 dm 750 dg 0
+CC sm 750 sg 1 dm 749 dg 3145728
+CC sm 750 sg 9 dm 751 dg 0
+CC sm 751 sg 3 dm 750 dg 6
+CC sm 751 sg 7 dm 752 dg 0
+CC sm 752 sg 3 dm 751 dg 4
+CC sm 737 sg 6 dm 752 dg 4
+CC sm 748 sg 3 dm 737 dg 5
+CDC sm 748 sg 3 d ""
+CC sm 737 sg 2 dm 748 dg 0
+CDC sm 737 sg 2 d ""
+MC id 756 c LteDlFeedbackGenerator t simu5g.stack.phy.feedback.LteDlFeedbackGenerator pid 737 n dlFbGen
+MDC id 756 d is=s;p=50,50;i=block/cogwheel
+MC id 757 c LteRlcTm t simu5g.stack.rlc.LteRlcTm pid 750 n tm
+GC m 757 g 0 n TM_Sap_up$i o 0
+GC m 757 g 1 n TM_Sap_up$o o 1
+GC m 757 g 2 n TM_Sap_down$i o 0
+GC m 757 g 3 n TM_Sap_down$o o 1
+MDC id 757 d p=100,100;i=block/wheelbarrow
+MC id 758 c LteRlcUm t simu5g.stack.rlc.LteRlcUm pid 750 n um
+GC m 758 g 0 n UM_Sap_up$i o 0
+GC m 758 g 1 n UM_Sap_up$o o 1
+GC m 758 g 2 n UM_Sap_down$i o 0
+GC m 758 g 3 n UM_Sap_down$o o 1
+MDC id 758 d p=200,100;i=block/wheelbarrow
+MC id 759 c LteRlcAm t simu5g.stack.rlc.LteRlcAm pid 750 n am
+GC m 759 g 0 n AM_Sap_up$i o 0
+GC m 759 g 1 n AM_Sap_up$o o 1
+GC m 759 g 2 n AM_Sap_down$i o 0
+GC m 759 g 3 n AM_Sap_down$o o 1
+MDC id 759 d p=300,100;i=block/wheelbarrow
+MC id 760 c LteRlcMux t simu5g.stack.rlc.LteRlcMux pid 750 n mux
+GC m 760 g 0 n TM_Sap$i o 0
+GC m 760 g 1 n TM_Sap$o o 1
+GC m 760 g 2 n UM_Sap$i o 0
+GC m 760 g 3 n UM_Sap$o o 1
+GC m 760 g 4 n AM_Sap$i o 0
+GC m 760 g 5 n AM_Sap$o o 1
+GC m 760 g 6 n MAC_to_RLC o 0
+GC m 760 g 9 n RLC_to_MAC o 1
+MDC id 760 d p=200,200;i=block/classifier
+CC sm 757 sg 1 dm 750 dg 1
+CC sm 750 sg 0 dm 757 dg 0
+CC sm 758 sg 1 dm 750 dg 3
+CC sm 750 sg 2 dm 758 dg 0
+CC sm 759 sg 1 dm 750 dg 5
+CC sm 750 sg 4 dm 759 dg 0
+CC sm 757 sg 3 dm 760 dg 0
+CC sm 760 sg 1 dm 757 dg 2
+CC sm 758 sg 3 dm 760 dg 2
+CC sm 760 sg 3 dm 758 dg 2
+CC sm 759 sg 3 dm 760 dg 4
+CC sm 760 sg 5 dm 759 dg 2
+CC sm 750 sg 6 dm 760 dg 6
+CC sm 760 sg 9 dm 750 dg 9
+MC id 761 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 739 n configurator
+MDC id 761 d is=s;p=100,100;i=block/cogwheel
+MC id 762 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 739 n routingTable
+MDC id 762 d is=s;p=100,200;i=block/table
+MC id 763 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 739 n natTable
+MDC id 763 d is=s;p=100,300;i=block/table
+MC id 764 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 739 n up
+MDC id 764 d p=550,100;b=600,5,,,,1
+MC id 765 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 739 n igmp
+GC m 765 g 0 n ipIn o 0
+GC m 765 g 3 n ipOut o 1
+GC m 765 g 4 n routerIn o 0
+GC m 765 g 7 n routerOut o 1
+MDC id 765 d p=400,200;i=block/cogwheel
+MC id 766 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 739 n icmp
+GC m 766 g 0 n transportIn o 0
+GC m 766 g 3 n transportOut o 1
+GC m 766 g 4 n ipIn o 0
+GC m 766 g 7 n ipOut o 1
+MDC id 766 d p=700,200;i=block/control
+MC id 767 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 739 n mp
+MDC id 767 d p=550,300;b=600,5,,,,1
+MC id 768 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 739 n ip
+GC m 768 g 0 n transportIn o 0
+GC m 768 g 3 n transportOut o 1
+GC m 768 g 4 n queueIn o 0
+GC m 768 g 7 n queueOut o 1
+MDC id 768 d q=queue;p=700,400;i=block/routing
+MC id 769 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 739 n arp
+GC m 769 g 0 n netwIn o 0
+GC m 769 g 3 n netwOut o 1
+GC m 769 g 4 n ifIn o 0
+GC m 769 g 7 n ifOut o 1
+MDC id 769 d q=pendingQueue;p=400,400;i=block/layer
+MC id 770 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 739 n lp
+MDC id 770 d p=550,500;b=600,5,,,,1
+GC m 764 g 1048576 n in i 0 o 0
+CC sm 739 sg 4 dm 764 dg 1048576
+CDC sm 739 sg 4 d m=n
+GC m 764 g 2621440 n out i 0 o 1
+CC sm 764 sg 2621440 dm 739 dg 7
+CDC sm 764 sg 2621440 d m=n
+GC m 764 g 2621441 n out i 1 o 1
+CC sm 764 sg 2621441 dm 765 dg 4
+GC m 764 g 1048577 n in i 1 o 0
+CC sm 765 sg 7 dm 764 dg 1048577
+GC m 764 g 2621442 n out i 2 o 1
+GC m 767 g 1048576 n in i 0 o 0
+CC sm 764 sg 2621442 dm 767 dg 1048576
+GC m 767 g 2621440 n out i 0 o 1
+GC m 764 g 1048578 n in i 2 o 0
+CC sm 767 sg 2621440 dm 764 dg 1048578
+GC m 764 g 2621443 n out i 3 o 1
+CC sm 764 sg 2621443 dm 766 dg 0
+GC m 764 g 1048579 n in i 3 o 0
+CC sm 766 sg 3 dm 764 dg 1048579
+GC m 767 g 1048577 n in i 1 o 0
+CC sm 765 sg 3 dm 767 dg 1048577
+GC m 767 g 2621441 n out i 1 o 1
+CC sm 767 sg 2621441 dm 765 dg 0
+GC m 767 g 1048578 n in i 2 o 0
+CC sm 766 sg 7 dm 767 dg 1048578
+GC m 767 g 2621442 n out i 2 o 1
+CC sm 767 sg 2621442 dm 766 dg 4
+GC m 767 g 2621443 n out i 3 o 1
+CC sm 767 sg 2621443 dm 768 dg 0
+GC m 767 g 1048579 n in i 3 o 0
+CC sm 768 sg 3 dm 767 dg 1048579
+GC m 770 g 1048576 n in i 0 o 0
+CC sm 769 sg 7 dm 770 dg 1048576
+GC m 770 g 2621440 n out i 0 o 1
+CC sm 770 sg 2621440 dm 769 dg 4
+GC m 770 g 1048577 n in i 1 o 0
+CC sm 768 sg 7 dm 770 dg 1048577
+GC m 770 g 2621441 n out i 1 o 1
+CC sm 770 sg 2621441 dm 768 dg 4
+GC m 770 g 2621442 n out i 2 o 1
+CC sm 770 sg 2621442 dm 739 dg 3
+CDC sm 770 sg 2621442 d m=s
+GC m 770 g 1048578 n in i 2 o 0
+CC sm 739 sg 0 dm 770 dg 1048578
+CDC sm 739 sg 0 d m=s
+MC id 775 c inet::InterfaceTable t inet.networklayer.common.InterfaceTable pid 19 n interfaceTable
+MDC id 775 d is=s;p=127.368004,257.868;i=block/table
+MC id 776 c inet::StationaryMobility t inet.mobility.static.StationaryMobility pid 19 n mobility
+MDC id 776 d is=s;p=127.368004,172.26001;i=block/cogwheel
+MC id 777 c inet::NetworkInterface t inet.linklayer.loopback.LoopbackInterface pid 19 n lo[0]
+GC m 777 g 0 n upperLayerIn o 0
+GC m 777 g 3 n upperLayerOut o 1
+MDC id 777 d p=503.736,589.50397,row,150;i=block/ifcard
+MC id 778 c inet::NetworkInterface t simu5g.stack.LteNicUe pid 19 n cellularNic
+GC m 778 g 0 n EUTRAN_RRC_Sap$i o 0
+GC m 778 g 1 n EUTRAN_RRC_Sap$o o 1
+GC m 778 g 2 n upperLayerIn o 0
+GC m 778 g 5 n upperLayerOut o 1
+GC m 778 g 6 n radioIn o 0
+GC m 778 g 8 n nrRadioIn o 0
+MDC id 778 d p=355.152,589.50397;bgl=3;bgb=704,443;i=block/ifcard
+MC id 779 c inet::EthernetEncapsulation t inet.linklayer.ethernet.basic.EthernetEncapsulation pid 19 n encap
+GC m 779 g 0 n upperLayerIn o 0
+GC m 779 g 3 n upperLayerOut o 1
+GC m 779 g 4 n lowerLayerIn o 0
+GC m 779 g 7 n lowerLayerOut o 1
+MDC id 779 d p=674.06396,496.488;i=block/layer
+MC id 780 c inet::Ipv4NetworkLayer t inet.networklayer.ipv4.Ipv4NetworkLayer pid 19 n ipv4 cm 1
+GC m 780 g 0 n ifIn o 0
+GC m 780 g 3 n ifOut o 1
+GC m 780 g 4 n transportIn o 0
+GC m 780 g 7 n transportOut o 1
+MDC id 780 d q=queue;p=375,376;i=block/fork
+MC id 781 c inet::Udp t inet.transportlayer.udp.Udp pid 19 n udp
+GC m 781 g 0 n appIn o 0
+GC m 781 g 2 n ipIn o 0
+GC m 781 g 5 n appOut o 1
+GC m 781 g 7 n ipOut o 1
+MDC id 781 d p=375,226;i=block/transport
+MC id 782 c inet::tcp::Tcp t inet.transportlayer.tcp.Tcp pid 19 n tcp
+GC m 782 g 0 n appIn o 0
+GC m 782 g 2 n ipIn o 0
+GC m 782 g 5 n appOut o 1
+GC m 782 g 7 n ipOut o 1
+MDC id 782 d p=525,226;i=block/wheelbarrow
+MC id 783 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 19 n at
+MDC id 783 d p=550,146;b=600,5,,,,1
+MC id 784 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 19 n tn
+MDC id 784 d p=550,296;b=600,5,,,,1
+MC id 785 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 19 n nl
+MDC id 785 d p=550,446;b=600,5,,,,1
+GC m 783 g 2621440 n out i 0 o 1
+CC sm 783 sg 2621440 dm 781 dg 0
+GC m 783 g 1048576 n in i 0 o 0
+CC sm 781 sg 5 dm 783 dg 1048576
+GC m 783 g 2621441 n out i 1 o 1
+CC sm 783 sg 2621441 dm 782 dg 0
+GC m 783 g 1048577 n in i 1 o 0
+CC sm 782 sg 5 dm 783 dg 1048577
+GC m 784 g 1048576 n in i 0 o 0
+CC sm 781 sg 7 dm 784 dg 1048576
+GC m 784 g 2621440 n out i 0 o 1
+CC sm 784 sg 2621440 dm 781 dg 2
+GC m 784 g 1048577 n in i 1 o 0
+CC sm 782 sg 7 dm 784 dg 1048577
+GC m 784 g 2621441 n out i 1 o 1
+CC sm 784 sg 2621441 dm 782 dg 2
+GC m 785 g 2621440 n out i 0 o 1
+CC sm 785 sg 2621440 dm 780 dg 0
+GC m 785 g 1048576 n in i 0 o 0
+CC sm 780 sg 3 dm 785 dg 1048576
+GC m 784 g 2621442 n out i 2 o 1
+CC sm 784 sg 2621442 dm 780 dg 4
+GC m 784 g 1048578 n in i 2 o 0
+CC sm 780 sg 7 dm 784 dg 1048578
+GC m 784 g 2621443 n out i 3 o 1
+GC m 785 g 1048577 n in i 1 o 0
+CC sm 784 sg 2621443 dm 785 dg 1048577
+GC m 785 g 2621441 n out i 1 o 1
+GC m 784 g 1048579 n in i 3 o 0
+CC sm 785 sg 2621441 dm 784 dg 1048579
+GC m 785 g 1048578 n in i 2 o 0
+CC sm 778 sg 5 dm 785 dg 1048578
+GC m 785 g 2621442 n out i 2 o 1
+CC sm 785 sg 2621442 dm 778 dg 2
+GC m 785 g 2621443 n out i 3 o 1
+CC sm 785 sg 2621443 dm 777 dg 0
+GC m 785 g 1048579 n in i 3 o 0
+CC sm 777 sg 3 dm 785 dg 1048579
+CC sm 19 sg 0 dm 778 dg 6
+MC id 786 c inet::Loopback t inet.linklayer.loopback.Loopback pid 777 n lo
+GC m 786 g 0 n upperLayerIn o 0
+GC m 786 g 3 n upperLayerOut o 1
+MDC id 786 d p=300,100;i=block/rxtx
+CC sm 777 sg 0 dm 786 dg 0
+CDC sm 777 sg 0 d m=n
+CC sm 786 sg 3 dm 777 dg 3
+CDC sm 786 sg 3 d m=n
+MC id 789 c IP2Nic t simu5g.stack.ip2nic.IP2Nic pid 778 n ip2nic
+GC m 789 g 0 n upperLayerIn o 0
+GC m 789 g 3 n upperLayerOut o 1
+GC m 789 g 4 n stackNic$i o 0
+GC m 789 g 5 n stackNic$o o 1
+MDC id 789 d p=362,67;i=block/layer
+MC id 790 c LtePdcpRrcUe t simu5g.stack.pdcp_rrc.LtePdcpRrcUe pid 778 n pdcpRrc
+GC m 790 g 0 n DataPort$i o 0
+GC m 790 g 1 n DataPort$o o 1
+GC m 790 g 2 n EUTRAN_RRC_Sap$i o 0
+GC m 790 g 3 n EUTRAN_RRC_Sap$o o 1
+MDC id 790 d p=362,141;i=block/fork
+MC id 791 c omnetpp::cModule t simu5g.stack.rlc.LteRlc pid 778 n rlc cm 1
+GC m 791 g 0 n TM_Sap$i o 0
+GC m 791 g 1 n TM_Sap$o o 1
+GC m 791 g 2 n UM_Sap$i o 0
+GC m 791 g 3 n UM_Sap$o o 1
+GC m 791 g 4 n AM_Sap$i o 0
+GC m 791 g 5 n AM_Sap$o o 1
+GC m 791 g 6 n MAC_to_RLC o 0
+GC m 791 g 9 n RLC_to_MAC o 1
+MDC id 791 d p=362,226;i=block/transport
+MC id 792 c LteMacUe t simu5g.stack.mac.LteMacUe pid 778 n mac
+GC m 792 g 0 n RLC_to_MAC o 0
+GC m 792 g 3 n MAC_to_RLC o 1
+GC m 792 g 4 n PHY_to_MAC o 0
+GC m 792 g 7 n MAC_to_PHY o 1
+MDC id 792 d p=363,314;i=block/mac
+MC id 793 c LtePhyUe t simu5g.stack.phy.LtePhyUe pid 778 n phy
+GC m 793 g 0 n upperGateIn o 0
+GC m 793 g 3 n upperGateOut o 1
+GC m 793 g 4 n radioIn o 0
+MDC id 793 d p=363,389;i=block/wrxtx
+MC id 794 c LteRealisticChannelModel t simu5g.stack.phy.ChannelModel.LteRealisticChannelModel pid 778 n channelModel[0]
+MDC id 794 d p=100,389;i=block/classifier2
+CC sm 789 sg 5 dm 790 dg 0
+CC sm 790 sg 1 dm 789 dg 4
+CC sm 778 sg 0 dm 790 dg 2
+CC sm 790 sg 3 dm 778 dg 1
+GC m 790 g 4194304 n UM_Sap$i i 0 o 0
+GC m 790 g 4718592 n UM_Sap$o i 0 o 1
+CC sm 790 sg 4718592 dm 791 dg 2
+CC sm 791 sg 3 dm 790 dg 4194304
+GC m 790 g 5242880 n AM_Sap$i i 0 o 0
+GC m 790 g 5767168 n AM_Sap$o i 0 o 1
+CC sm 790 sg 5767168 dm 791 dg 4
+CC sm 791 sg 5 dm 790 dg 5242880
+GC m 790 g 3145728 n TM_Sap$i i 0 o 0
+GC m 790 g 3670016 n TM_Sap$o i 0 o 1
+CC sm 790 sg 3670016 dm 791 dg 0
+CC sm 791 sg 1 dm 790 dg 3145728
+CC sm 791 sg 9 dm 792 dg 0
+CC sm 792 sg 3 dm 791 dg 6
+CC sm 792 sg 7 dm 793 dg 0
+CC sm 793 sg 3 dm 792 dg 4
+CC sm 778 sg 6 dm 793 dg 4
+CC sm 789 sg 3 dm 778 dg 5
+CDC sm 789 sg 3 d ""
+CC sm 778 sg 2 dm 789 dg 0
+CDC sm 778 sg 2 d ""
+MC id 797 c LteDlFeedbackGenerator t simu5g.stack.phy.feedback.LteDlFeedbackGenerator pid 778 n dlFbGen
+MDC id 797 d is=s;p=50,50;i=block/cogwheel
+MC id 798 c LteRlcTm t simu5g.stack.rlc.LteRlcTm pid 791 n tm
+GC m 798 g 0 n TM_Sap_up$i o 0
+GC m 798 g 1 n TM_Sap_up$o o 1
+GC m 798 g 2 n TM_Sap_down$i o 0
+GC m 798 g 3 n TM_Sap_down$o o 1
+MDC id 798 d p=100,100;i=block/wheelbarrow
+MC id 799 c LteRlcUm t simu5g.stack.rlc.LteRlcUm pid 791 n um
+GC m 799 g 0 n UM_Sap_up$i o 0
+GC m 799 g 1 n UM_Sap_up$o o 1
+GC m 799 g 2 n UM_Sap_down$i o 0
+GC m 799 g 3 n UM_Sap_down$o o 1
+MDC id 799 d p=200,100;i=block/wheelbarrow
+MC id 800 c LteRlcAm t simu5g.stack.rlc.LteRlcAm pid 791 n am
+GC m 800 g 0 n AM_Sap_up$i o 0
+GC m 800 g 1 n AM_Sap_up$o o 1
+GC m 800 g 2 n AM_Sap_down$i o 0
+GC m 800 g 3 n AM_Sap_down$o o 1
+MDC id 800 d p=300,100;i=block/wheelbarrow
+MC id 801 c LteRlcMux t simu5g.stack.rlc.LteRlcMux pid 791 n mux
+GC m 801 g 0 n TM_Sap$i o 0
+GC m 801 g 1 n TM_Sap$o o 1
+GC m 801 g 2 n UM_Sap$i o 0
+GC m 801 g 3 n UM_Sap$o o 1
+GC m 801 g 4 n AM_Sap$i o 0
+GC m 801 g 5 n AM_Sap$o o 1
+GC m 801 g 6 n MAC_to_RLC o 0
+GC m 801 g 9 n RLC_to_MAC o 1
+MDC id 801 d p=200,200;i=block/classifier
+CC sm 798 sg 1 dm 791 dg 1
+CC sm 791 sg 0 dm 798 dg 0
+CC sm 799 sg 1 dm 791 dg 3
+CC sm 791 sg 2 dm 799 dg 0
+CC sm 800 sg 1 dm 791 dg 5
+CC sm 791 sg 4 dm 800 dg 0
+CC sm 798 sg 3 dm 801 dg 0
+CC sm 801 sg 1 dm 798 dg 2
+CC sm 799 sg 3 dm 801 dg 2
+CC sm 801 sg 3 dm 799 dg 2
+CC sm 800 sg 3 dm 801 dg 4
+CC sm 801 sg 5 dm 800 dg 2
+CC sm 791 sg 6 dm 801 dg 6
+CC sm 801 sg 9 dm 791 dg 9
+MC id 802 c inet::Ipv4NodeConfigurator t inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator pid 780 n configurator
+MDC id 802 d is=s;p=100,100;i=block/cogwheel
+MC id 803 c inet::Ipv4RoutingTable t inet.networklayer.ipv4.Ipv4RoutingTable pid 780 n routingTable
+MDC id 803 d is=s;p=100,200;i=block/table
+MC id 804 c inet::Ipv4NatTable t inet.networklayer.ipv4.Ipv4NatTable pid 780 n natTable
+MDC id 804 d is=s;p=100,300;i=block/table
+MC id 805 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 780 n up
+MDC id 805 d p=550,100;b=600,5,,,,1
+MC id 806 c inet::Igmpv2 t inet.networklayer.ipv4.Igmpv2 pid 780 n igmp
+GC m 806 g 0 n ipIn o 0
+GC m 806 g 3 n ipOut o 1
+GC m 806 g 4 n routerIn o 0
+GC m 806 g 7 n routerOut o 1
+MDC id 806 d p=400,200;i=block/cogwheel
+MC id 807 c inet::Icmp t inet.networklayer.ipv4.Icmp pid 780 n icmp
+GC m 807 g 0 n transportIn o 0
+GC m 807 g 3 n transportOut o 1
+GC m 807 g 4 n ipIn o 0
+GC m 807 g 7 n ipOut o 1
+MDC id 807 d p=700,200;i=block/control
+MC id 808 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 780 n mp
+MDC id 808 d p=550,300;b=600,5,,,,1
+MC id 809 c inet::Ipv4 t inet.networklayer.ipv4.Ipv4 pid 780 n ip
+GC m 809 g 0 n transportIn o 0
+GC m 809 g 3 n transportOut o 1
+GC m 809 g 4 n queueIn o 0
+GC m 809 g 7 n queueOut o 1
+MDC id 809 d q=queue;p=700,400;i=block/routing
+MC id 810 c inet::Arp t inet.networklayer.arp.ipv4.Arp pid 780 n arp
+GC m 810 g 0 n netwIn o 0
+GC m 810 g 3 n netwOut o 1
+GC m 810 g 4 n ifIn o 0
+GC m 810 g 7 n ifOut o 1
+MDC id 810 d q=pendingQueue;p=400,400;i=block/layer
+MC id 811 c inet::MessageDispatcher t inet.common.MessageDispatcher pid 780 n lp
+MDC id 811 d p=550,500;b=600,5,,,,1
+GC m 805 g 1048576 n in i 0 o 0
+CC sm 780 sg 4 dm 805 dg 1048576
+CDC sm 780 sg 4 d m=n
+GC m 805 g 2621440 n out i 0 o 1
+CC sm 805 sg 2621440 dm 780 dg 7
+CDC sm 805 sg 2621440 d m=n
+GC m 805 g 2621441 n out i 1 o 1
+CC sm 805 sg 2621441 dm 806 dg 4
+GC m 805 g 1048577 n in i 1 o 0
+CC sm 806 sg 7 dm 805 dg 1048577
+GC m 805 g 2621442 n out i 2 o 1
+GC m 808 g 1048576 n in i 0 o 0
+CC sm 805 sg 2621442 dm 808 dg 1048576
+GC m 808 g 2621440 n out i 0 o 1
+GC m 805 g 1048578 n in i 2 o 0
+CC sm 808 sg 2621440 dm 805 dg 1048578
+GC m 805 g 2621443 n out i 3 o 1
+CC sm 805 sg 2621443 dm 807 dg 0
+GC m 805 g 1048579 n in i 3 o 0
+CC sm 807 sg 3 dm 805 dg 1048579
+GC m 808 g 1048577 n in i 1 o 0
+CC sm 806 sg 3 dm 808 dg 1048577
+GC m 808 g 2621441 n out i 1 o 1
+CC sm 808 sg 2621441 dm 806 dg 0
+GC m 808 g 1048578 n in i 2 o 0
+CC sm 807 sg 7 dm 808 dg 1048578
+GC m 808 g 2621442 n out i 2 o 1
+CC sm 808 sg 2621442 dm 807 dg 4
+GC m 808 g 2621443 n out i 3 o 1
+CC sm 808 sg 2621443 dm 809 dg 0
+GC m 808 g 1048579 n in i 3 o 0
+CC sm 809 sg 3 dm 808 dg 1048579
+GC m 811 g 1048576 n in i 0 o 0
+CC sm 810 sg 7 dm 811 dg 1048576
+GC m 811 g 2621440 n out i 0 o 1
+CC sm 811 sg 2621440 dm 810 dg 4
+GC m 811 g 1048577 n in i 1 o 0
+CC sm 809 sg 7 dm 811 dg 1048577
+GC m 811 g 2621441 n out i 1 o 1
+CC sm 811 sg 2621441 dm 809 dg 4
+GC m 811 g 2621442 n out i 2 o 1
+CC sm 811 sg 2621442 dm 780 dg 3
+CDC sm 811 sg 2621442 d m=s
+GC m 811 g 1048578 n in i 2 o 0
+CC sm 780 sg 0 dm 811 dg 1048578
+CDC sm 780 sg 0 d m=s
+MC id 816 c ComponentCarrier t simu5g.common.carrierAggregation.ComponentCarrier pid 21 n componentCarrier[0]
+MDC id 816 d i=block/control

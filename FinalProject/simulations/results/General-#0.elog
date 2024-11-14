@@ -1,0 +1,42 @@
+SB ov 1536 ev 2 rid General-0-20241111-18:47:37-18835
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t finalproject.simulations.Network n Network cm 1
+MDC id 1 d bgb=1002.3001,552.50006,,,0;bgi=background/budapest
+MC id 2 c ChannelControl t simu5g.world.radio.ChannelControl pid 1 n channelControl
+MDC id 2 d is=vs;p=87.10001,20.800003;i=misc/sun
+MC id 3 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB1 cm 1
+GC m 3 g 0 n ppp$i o 0
+GC m 3 g 1 n ppp$o o 1
+GC m 3 g 2 n radioIn o 0
+GC m 3 g 6 n pppMEHost$i o 0
+GC m 3 g 7 n pppMEHost$o o 1
+MDC id 3 d p=228.8,137.8;i=device/antennatower;bgb=1260,600
+MC id 4 c omnetpp::cModule t simu5g.nodes.eNodeB pid 1 n eNodeB2 cm 1
+GC m 4 g 0 n ppp$i o 0
+GC m 4 g 1 n ppp$o o 1
+GC m 4 g 2 n radioIn o 0
+GC m 4 g 6 n pppMEHost$i o 0
+GC m 4 g 7 n pppMEHost$o o 1
+MDC id 4 d p=211.90002,353.60004;i=device/antennatower;bgb=1260,600
+MC id 5 c inet::NodeBase t inet.node.inet.Router pid 1 n router1 cm 1
+MDC id 5 d is=s;p=414.70004,136.50002;i=abstract/router;bgb=1256,1125
+MC id 6 c inet::NodeBase t inet.node.inet.Router pid 1 n router2 cm 1
+MDC id 6 d is=s;p=462.8,356.19998;i=abstract/router;bgb=1256,1125
+MC id 7 c inet::NodeBase t inet.node.inet.Router pid 1 n coreRouter cm 1
+MDC id 7 d is=s;p=594.1001,206.70003;i=abstract/router;bgb=1256,1125
+MC id 8 c inet::NodeBase t simu5g.nodes.PgwStandard pid 1 n pgw cm 1
+GC m 8 g 6 n filterGate$i o 0
+GC m 8 g 7 n filterGate$o o 1
+MDC id 8 d is=s;p=728.0001,206.70003;i=device/mainframe;bgb=1350,750
+MC id 9 c inet::NodeBase t inet.node.inet.Router pid 1 n edgeRouter cm 1
+MDC id 9 d is=s;p=907.40015,206.70003;i=abstract/router;bgb=1256,1125
+MC id 10 c inet::NodeBase t inet.node.inet.StandardHost pid 1 n standardHost cm 1
+MDC id 10 d is=s;p=763.1,55.899998;i=device/pc2;bgb=1256,1125
+MC id 11 c Binder t simu5g.common.binder.Binder pid 1 n binder
+MDC id 11 d is=vs;p=88.40001,171.60002;i=block/cogwheel
+MC id 12 c inet::RoutingTableRecorder t inet.networklayer.ipv4.RoutingTableRecorder pid 1 n routingRecorder
+MDC id 12 d is=vs;p=88.40001,72.80001;i=block/control
+MC id 13 c inet::Ipv4NetworkConfigurator t inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator pid 1 n Configurator
+
+SE e 0 c -1 m ""

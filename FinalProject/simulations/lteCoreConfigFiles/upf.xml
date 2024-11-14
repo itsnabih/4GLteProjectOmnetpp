@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lteCoreConfigFiles/upf.xml -->
+<filterTable>
+    <!-- VoLTE bearer configuration for UPF1 -->
+    <filter>
+        <id>1</id>
+        <precedence>1</precedence>
+        <tftFlow>
+            <direction>BIDIRECTIONAL</direction>
+            <type>IPV4</type>
+            <source>10.0.0.1</source>  <!-- UE1 -->
+            <destination>10.0.0.2</destination>  <!-- UE2 -->
+            <tos>0</tos>
+            <protocol>17</protocol>  <!-- UDP -->
+            <sourcePortStart>3000</sourcePortStart>
+            <sourcePortEnd>3000</sourcePortEnd>
+            <destinationPortStart>3000</destinationPortStart>
+            <destinationPortEnd>3000</destinationPortEnd>
+        </tftFlow>
+        <qosInfo>
+            <qci>1</qci>  <!-- QCI 1 for guaranteed bit rate VoLTE -->
+            <gbr>128</gbr>  <!-- Guaranteed Bit Rate in Kbps -->
+            <mbr>256</mbr>  <!-- Maximum Bit Rate in Kbps -->
+            <arp>1</arp>    <!-- Allocation Retention Priority -->
+            <delay>50</delay>  <!-- Maximum delay in ms -->
+            <loss>1</loss>    <!-- Maximum packet loss rate in percentage -->
+        </qosInfo>
+    </filter>
+
+    <!-- Signaling bearer configuration -->
+    <filter>
+        <id>2</id>
+        <precedence>2</precedence>
+        <tftFlow>
+            <direction>BIDIRECTIONAL</direction>
+            <type>IPV4</type>
+            <source>10.0.0.0/24</source>
+            <destination>10.0.4.0/24</destination>
+            <tos>0</tos>
+            <protocol>17</protocol>
+        </tftFlow>
+        <qosInfo>
+            <qci>5</qci>  <!-- QCI 5 for IMS signaling -->
+            <gbr>64</gbr>
+            <mbr>128</mbr>
+            <arp>2</arp>
+            <delay>100</delay>
+            <loss>0.01</loss>
+        </qosInfo>
+    </filter>
+
+    <!-- Default bearer configuration -->
+    <filter>
+        <id>3</id>
+        <precedence>3</precedence>
+        <tftFlow>
+            <direction>BIDIRECTIONAL</direction>
+            <type>IPV4</type>
+            <source>10.0.0.0/24</source>
+            <destination>0.0.0.0/0</destination>
+            <tos>0</tos>
+        </tftFlow>
+        <qosInfo>
+            <qci>9</qci>  <!-- QCI 9 for default bearer -->
+            <gbr>0</gbr>
+            <mbr>1024</mbr>
+            <arp>3</arp>
+        </qosInfo>
+    </filter>
+</filterTable>
